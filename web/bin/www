@@ -1,0 +1,648 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../app');
+var debug = require('debug')('zappy:server');
+var http = require('http');
+
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+
+/**
+ * Create WebSocket server.
+ */
+
+var WsServer = require('ws').Server,
+    wss = new WsServer({server : server});
+
+/**
+ * Create TCP socket to ZAPPY server.
+ */
+
+/**
+ * Array for preparing JSON object.
+ */
+
+var tabCmd = {
+  "bct" : function (data, ws) {
+    var tab = data.split("\n");
+
+    // on récupère chaque ligne
+    tab.forEach(function (line) {
+      var posXInString = 1,
+          posYInString = 2;
+
+      var splitSpace = line.split(' ');
+
+      var i = 0;
+      var obj = {
+        cmd   : "bct",
+        posX  : 0,
+        posY  : 0,
+        quantities : []
+      };
+      // On récupère chaque mots entre chaque espace
+      splitSpace.forEach(function (word) {
+        if (i == posXInString)
+          obj.posX = parseInt(word);
+        if (i == posYInString)
+          obj.posY = parseInt(word);
+        if (i > posYInString) {
+          var number = parseInt(word);
+          if (number || number == 0) {
+            obj.quantities.push(number);
+          }
+        }
+        i++;
+      });
+      // on envoie
+      if (obj.quantities.length == 7)
+        ws.send(JSON.stringify(obj));
+    });
+  },
+  "tna" : function (data, ws) {
+    var obj = {
+      cmd : "tna",
+      teams : []
+    };
+    var splitSpace = data.split(' ');
+    var isFirst = false;
+    splitSpace.forEach(function (word) {
+      if (!isFirst) {
+        isFirst = true;
+      } else {
+        obj.teams.push(word);
+      }
+    });
+    ws.send(JSON.stringify(obj));
+  },
+  "msz" : function (data, ws) {
+    var obj = {
+      cmd : "msz",
+      x   : 0,
+      y   : 0
+    };
+    var posXInString = 1,
+        posYInString = 2;
+    var i = 0;
+    var splitSpace = data.split(' ');
+    splitSpace.forEach(function (word) {
+      if (i == posXInString)
+        obj.x = parseInt(word);
+      if (i == posYInString)
+        obj.y = parseInt(word);
+      i++;
+    });
+    ws.send(JSON.stringify(obj));
+  },
+  "pnw" : function (data, ws) {
+    var obj = {
+      cmd : "pnw",
+      id     : 0,
+      posX   : 0,
+      posY   : 0,
+      orientation : 0,
+      level : 0,
+      team : ""
+    };
+    var posIdInString = 1,
+        posXInString = 2,
+        posYInString = 3,
+        posOrientationInString = 4,
+        posLevelInString = 5,
+        posTeamNameInString = 6;
+    var i = 0;
+    var splitSpace = data.split(' ');
+    splitSpace.forEach(function (word) {
+      if (i == posIdInString)
+        obj.id = parseInt(word.substr(1));
+      if (i == posXInString)
+        obj.posX = parseInt(word);
+      if (i == posYInString)
+        obj.posY = parseInt(word);
+      if (i == posOrientationInString)
+        obj.orientation = parseInt(word);
+      if (i == posLevelInString)
+        obj.level = parseInt(word);
+      if (i == posTeamNameInString)
+        obj.team= word;
+      i++;
+    });
+    ws.send(JSON.stringify(obj));
+  },
+  "ppo" : function (data, ws) {
+    var obj = {
+      cmd : "ppo",
+      id  :   0,
+      posX   : 0,
+      posY   : 0,
+      orientation : 0
+    };
+    var posIdInString = 1,
+        posXInString = 2,
+        posYInString = 3,
+        posOrientationInString = 4;
+    var i = 0;
+    var splitSpace = data.split(' ');
+    splitSpace.forEach(function (word) {
+      if (i == posIdInString)
+        obj.id = parseInt(word.substr(1));
+      if (i == posXInString)
+        obj.posX = parseInt(word);
+      if (i == posYInString)
+        obj.posY = parseInt(word);
+      if (i == posOrientationInString)
+        obj.orientation = parseInt(word);
+      i++;
+    });
+    ws.send(JSON.stringify(obj));
+  },
+  "plv" : function (data, ws) {
+    var obj = {
+      cmd : "plv",
+      id  :   0,
+      level : 0
+    };
+    var posIdInString = 1,
+        posLevelInString = 2;
+    var i = 0;
+    var splitSpace = data.split(' ');
+    splitSpace.forEach(function (word) {
+      if (i == posIdInString)
+        obj.id = parseInt(word.substr(1));
+      if (i == posLevelInString)
+        obj.level = parseInt(word);
+      i++;
+    });
+    ws.send(JSON.stringify(obj));
+  },
+  "pin" : function (data, ws) {
+    var tab = data.split("\n");
+
+    // on récupère chaque ligne
+    tab.forEach(function (line) {
+      var posIdInString = 1,
+          posXInString = 2,
+          posYInString = 3;
+
+      var splitSpace = line.split(' ');
+
+      var i = 0;
+      var obj = {
+        cmd   : "pin",
+        id    : 0,
+        posX  : 0,
+        posY  : 0,
+        quantities : []
+      };
+      // On récupère chaque mots entre chaque espace
+      splitSpace.forEach(function (word) {
+        if (i == posIdInString)
+          obj.id = parseInt(word.substr(1));
+        if (i == posXInString)
+          obj.posX = parseInt(word);
+        if (i == posYInString)
+          obj.posY = parseInt(word);
+        if (i > posYInString) {
+          var number = parseInt(word);
+          if (number || number == 0) {
+            obj.quantities.push(number);
+          }
+        }
+        i++;
+      });
+      // on envoie
+      if (obj.quantities.length == 7)
+        ws.send(JSON.stringify(obj));
+    });
+  },
+  "pex" : function (data, ws) {
+    var obj = {
+      cmd : "pex",
+      id  :   0
+    };
+    var posIdInString = 1;
+    var i = 0;
+    var splitSpace = data.split(' ');
+    splitSpace.forEach(function (word) {
+      if (i == posIdInString)
+        obj.id = parseInt(word.substr(1));
+      i++;
+    });
+    ws.send(JSON.stringify(obj));
+  },
+  "pbc" : function (data, ws) {
+    var obj = {
+      cmd : "plv",
+      id  :   0,
+      msg : ""
+    };
+    obj.id = parseInt(data.substr(5));
+    obj.msg = data.substr(data.substr(5).indexOf(' ') + 1);
+    ws.send(JSON.stringify(obj));
+  },
+  "pic" : function (data, ws) {
+    var tab = data.split("\n");
+
+    // on récupère chaque ligne
+    tab.forEach(function (line) {
+      var posXInString = 1,
+          posYInString = 2,
+          posLevelInString = 3;
+
+      var splitSpace = line.split(' ');
+
+      var i = 0;
+      var obj = {
+        cmd: "pic",
+        posX: 0,
+        posY: 0,
+        level: 0,
+        ids: []
+      };
+      // On récupère chaque mots entre chaque espace
+      splitSpace.forEach(function (word) {
+        if (i == posXInString)
+          obj.posX = parseInt(word);
+        if (i == posYInString)
+          obj.posY = parseInt(word);
+        if (i == posLevelInString)
+          obj.level = parseInt(word);
+        if (i > posYInString) {
+          var number = parseInt(word.substr(1));
+          if (number || number == 0) {
+            obj.ids.push(number);
+          }
+        }
+        i++;
+      });
+      // on envoie
+      if (obj.ids.length > 0)
+        ws.send(JSON.stringify(obj));
+    });
+  },
+  "pie" : function (data, ws) {
+      var obj = {
+        cmd : "pie",
+        posX   : 0,
+        posY   : 0,
+        resultat : 0
+      };
+      var posXInString = 1,
+          posYInString = 2,
+          posResultatInString = 3;
+      var i = 0;
+      var splitSpace = data.split(' ');
+      splitSpace.forEach(function (word) {
+        if (i == posXInString)
+          obj.posX = parseInt(word);
+        if (i == posYInString)
+          obj.posY = parseInt(word);
+        if (i == posResultatInString)
+          obj.resultat = parseInt(word);
+        i++;
+      });
+      ws.send(JSON.stringify(obj));
+    },
+  "pfk" : function (data, ws) {
+    var obj = {
+      cmd : "pfk",
+      id  :   0
+    };
+    var posIdInString = 1;
+    var i = 0;
+    var splitSpace = data.split(' ');
+    splitSpace.forEach(function (word) {
+      if (i == posIdInString)
+        obj.id = parseInt(word.substr(1));
+      i++;
+    });
+    ws.send(JSON.stringify(obj));
+  },
+  "pdr" : function (data, ws) {
+    var obj = {
+      cmd : "pdr",
+      id  :   0,
+      resource : 0
+    };
+    var posIdInString = 1,
+        posResourceInString = 2;
+    var i = 0;
+    var splitSpace = data.split(' ');
+    splitSpace.forEach(function (word) {
+      if (i == posIdInString)
+        obj.id = parseInt(word.substr(1));
+      if (i == posResourceInString)
+        obj.resource = parseInt(word);
+      i++;
+    });
+    ws.send(JSON.stringify(obj));
+  },
+  "pgt" : function (data, ws) {
+    var obj = {
+      cmd : "pgt",
+      id  :   0,
+      resource : 0
+    };
+    var posIdInString = 1,
+        posResourceInString = 2;
+    var i = 0;
+    var splitSpace = data.split(' ');
+    splitSpace.forEach(function (word) {
+      if (i == posIdInString)
+        obj.id = parseInt(word.substr(1));
+      if (i == posResourceInString)
+        obj.resource = parseInt(word);
+      i++;
+    });
+    ws.send(JSON.stringify(obj));
+  },
+  "pdi" : function (data, ws) {
+    var obj = {
+      cmd : "pdi",
+      id  :   0,
+    };
+    var posIdInString = 1;
+    var i = 0;
+    var splitSpace = data.split(' ');
+    splitSpace.forEach(function (word) {
+      if (i == posIdInString)
+        obj.id = parseInt(word.substr(1));
+      i++;
+    });
+    ws.send(JSON.stringify(obj));
+  },
+  "enw" : function (data, ws) {
+    var obj = {
+      cmd : "enw",
+      idEgg  :   0,
+      idPlayer  : 0,
+      posX      : 0,
+      posY      : 0
+    };
+    var posIdEggInString = 1,
+        posIdPlayerInString = 2,
+        posXInString = 3,
+        posYInString = 4;
+    var i = 0;
+    var splitSpace = data.split(' ');
+    splitSpace.forEach(function (word) {
+      if (i == posIdEggInString)
+        obj.idEgg = parseInt(word.substr(1));
+      if (i == posIdPlayerInString)
+        obj.idPlayer = parseInt(word.substr(1));
+      if (i == posXInString)
+        obj.posX = parseInt(word);
+      if (i == posYInString)
+        obj.posY = parseInt(word);
+      i++;
+    });
+    ws.send(JSON.stringify(obj));
+  },
+  "eht" : function (data, ws) {
+    var obj = {
+      cmd : "eht",
+      idEgg  :   0
+    };
+    var posIdEggInString = 1;
+    var i = 0;
+    var splitSpace = data.split(' ');
+    splitSpace.forEach(function (word) {
+      if (i == posIdEggInString)
+        obj.idEgg = parseInt(word.substr(1));
+      i++;
+    });
+    ws.send(JSON.stringify(obj));
+  },
+  "ebo" : function (data, ws) {
+    var obj = {
+      cmd : "ebo",
+      idEgg  :   0
+    };
+    var posIdEggInString = 1;
+    var i = 0;
+    var splitSpace = data.split(' ');
+    splitSpace.forEach(function (word) {
+      if (i == posIdEggInString)
+        obj.idEgg = parseInt(word.substr(1));
+      i++;
+    });
+    ws.send(JSON.stringify(obj));
+  },
+  "edi" : function (data, ws) {
+    var obj = {
+      cmd : "edi",
+      idEgg  :   0
+    };
+    var posIdEggInString = 1;
+    var i = 0;
+    var splitSpace = data.split(' ');
+    splitSpace.forEach(function (word) {
+      if (i == posIdEggInString)
+        obj.idEgg = parseInt(word.substr(1));
+      i++;
+    });
+    ws.send(JSON.stringify(obj));
+  },
+  "sgt" : function (data, ws) {
+    var obj = {
+      cmd : "sgt",
+      unit  :   0
+    };
+    var posUnitInString = 1;
+    var i = 0;
+    var splitSpace = data.split(' ');
+    splitSpace.forEach(function (word) {
+      if (i == posUnitInString)
+        obj.unit = parseInt(word);
+      i++;
+    });
+    ws.send(JSON.stringify(obj));
+  },
+  "seg" : function (data, ws) {
+    var obj = {
+      cmd : "seg",
+      team  : ""
+    };
+    var posTeamInString = 1;
+    var i = 0;
+    var splitSpace = data.split(' ');
+    splitSpace.forEach(function (word) {
+      if (i == posTeamInString)
+        obj.team = word;
+      i++;
+    });
+    ws.send(JSON.stringify(obj));
+  },
+  "smg" : function (data, ws) {
+    var obj = {
+      cmd : "smg",
+      msg : ""
+    };
+    obj.msg = data.substr(4);
+    ws.send(JSON.stringify(obj));
+  },
+  "suc" : function (data, ws) {
+    var obj = {
+      cmd : "suc"
+    };
+    ws.send(JSON.stringify(obj));
+  },
+  "sbp" : function (data, ws) {
+    var obj = {
+      cmd : "sbp"
+    };
+    ws.send(JSON.stringify(obj));
+  }
+};
+
+var net = require('net');
+var zappyPORT = -1;
+var zappyHOST = "127.0.0.1";
+
+var zappySocket = function (port, ws) {
+  this.socket = new net.Socket();
+  this.port = port;
+  this.client = ws;
+  var scope = this;
+  this.socket.connect(this.port, zappyHOST, function() {
+      console.log("Connected to zappy server!");
+    });
+  this.socket.on('data', function (data) {
+      var str = data.toString();
+      var array = str.split('\n');
+    array.forEach(function (line) {
+      var cmd = line.substring(0, 3);
+
+      if (tabCmd[cmd] != undefined) {
+        if (scope.client.readyState == 1) {
+          tabCmd[cmd](line, scope.client);
+        }
+      }
+    });
+    });
+  this.sendCmd = function (data) {
+      this.socket.write(JSON.parse(data).cmd);
+    };
+};
+var zs;
+
+
+
+
+process.on('uncaughtException', function (err) {
+  console.log('Caught exception: ' + err);
+  zs.socket.destroy();
+  zs.client.close();
+  process.exit();
+});
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+/**
+ * WebSocket server
+ */
+
+wss.on("connection", function (ws) {
+
+  ws.on('message', function incoming(message) {
+    var data = JSON.parse(message);
+    /*
+    ** Init socket tcp server
+     */
+    if (data.port && zappyPORT == -1) {
+      zs = new zappySocket(parseInt(data.port), this);
+      zs.sendCmd(JSON.stringify({cmd : "GRAPHIC\n"}));
+//      zs.sendCmd(JSON.stringify({cmd : "mct\n"}));
+    }
+    if (data.cmd) {
+      zs.client = this;
+      zs.sendCmd(message);
+    }
+
+  });
+
+});
+
+server.listen(port, function () {
+  console.log("Server is launched on " + port);
+});
+
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}

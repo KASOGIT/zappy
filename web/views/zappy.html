@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en" class="maxHeight">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="stylesheets/style.css" rel="stylesheet">
+</head>
+
+<body class="maxHeight">
+
+    <div class="container-fluid maxHeight">
+        <div class="row maxHeight">
+            <div class="col-xs-3 zappy-info maxHeight">
+                <div class="row maxHeight">
+                    <div class="col-xs-12 zappy-title">
+                        <h1>Zappy</h1>
+                    </div>
+                    <div class="col-xs-12">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Speed</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" id="server-time">
+                                        <option>1</option>
+                                        <option>10</option>
+                                        <option>50</option>
+                                        <option selected>100</option>
+                                        <option>150</option>
+                                        <option>200</option>
+                                        <option>500</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-xs-12 zappy-win-title">
+                        <h3 id="winner"></h3>
+                    </div>
+                    <div class="col-xs-12 score">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="text-bold">Team</th>
+                                    <th class="text-bold">Players</th>
+                                    <th class="text-bold">Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="team-score">
+                                <tr>
+                                    <th></th>
+                                    <th>No team registered</th>
+                                    <th></th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-xs-12 inventory">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <h3>Selected player</h3>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="char-info">
+                                    <span class="text-bold">ID</span>
+                                    <div><span id="char-id">#</span></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="char-info">
+                                    <span class="text-bold">Team</span>
+                                    <div><span id="char-team">#</span></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="char-info">
+                                    <span class="text-bold">Level</span>
+                                    <div><span id="char-level">#</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Items</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody id="char-inventory">
+                                <th></th>
+                                <th>No player selected</th>
+                                <th></th>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-xs-12 inventory">
+                        <div class="row">
+                            <div class="col-xs-12 text-center">
+                                <h3>Selected Case</h3>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="char-info">
+                                    <span class="text-bold">Position X</span>
+                                    <div><span id="case-X">#</span></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="char-info">
+                                    <span class="text-bold">Position Y</span>
+                                    <div><span id="case-Y">#</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Items</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody id="case-inventory">
+                                <tr>
+                                    <th></th>
+                                    <th>No case selected</th>
+                                    <th></th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-9 maxHeight canvas" id="canvas">
+            </div>
+        </div>
+    </div><!-- /.container -->
+    <script src='js/stats.min.js'></script>
+    <script src='js/OrbitControls.js'></script>
+    <script src='js/dat.gui.min.js'></script>
+    <script src='js/MD2Character.js'></script>
+    <script src='js/MD2Loader.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script>
+
+        if ("WebSocket" in window)
+        {
+            var socketToServer = new WebSocket("ws://" + window.location.hostname
+                    + ":" + window.location.port + "/");
+
+            function sendMessage(msg)
+            {
+                // Wait until the state of the socket is not ready and send the message when it is...
+                waitForSocketConnection(socketToServer, function ()
+                {
+                    console.log('Send cmd = [' + msg + ']');
+                    socketToServer.send(msg);
+                })
+            }
+
+            function waitForSocketConnection(socket, callback)
+            {
+                setTimeout(
+                        function ()
+                        {
+                            if (socket.readyState === 1)
+                            {
+                                if (callback != null)
+                                {
+                                    callback();
+                                }
+                                return;
+                            }
+                            else
+                            {
+                                console.log("wait for connection...")
+                                waitForSocketConnection(socket, callback);
+                            }
+                        }, 5); // wait 5 milisecond for the connection...
+            }
+
+            socketToServer.onopen = function (event)
+            {
+                console.log("websocket opened, sending port...");
+                this.send(JSON.stringify({port: 4242}));
+            };
+
+            //============================================================
+            // Variables
+            //============================================================
+
+            var moveRight = false, moveLeft = false, moveBackward = false, moveForward = false;
+
+            var scene, camera, renderer, platform;
+            var raycaster, mouse, INTERSECTED;
+
+            var gameData = {
+                sizeX: undefined,
+                sizeY: undefined,
+                selectedSquare: undefined,
+                selectedPlayerId: undefined,
+                T: undefined,
+                map: undefined,
+                players: [],
+                teams: [],
+                eggs: [],
+                winner: undefined
+            };
+
+            var characters;
+            var clock = new THREE.Clock(), lastRefresh = clock.getElapsedTime();
+
+            var itemColorById = {
+                0: 0xc0392b,
+                1: 0x2980b9,
+                2: 0xe67e22,
+                3: 0xbdc3c7,
+                4: 0x8e44ad,
+                5: 0x27ae60,
+                6: 0x1abc9c
+            };
+
+            var itemPosById = {
+                0: {x: 0.5, y: 0.5},
+                1: {x: 1, y: 0.5},
+                2: {x: 1.5, y: 0.5},
+                3: {x: 1.5, y: 1},
+                4: {x: 1.5, y: 1.5},
+                5: {x: 1, y: 1.5},
+                6: {x: 0.5, y: 1.5}
+            };
+
+            var itemNameById = {
+                0: 'Food',
+                1: 'Linemate',
+                2: 'Deraumere',
+                3: 'Sibur',
+                4: 'Mendiane',
+                5: 'Phiras',
+                6: 'Thystame'
+            };
+
+            var rotationByOrientationId = {
+                1: {
+                    1: {rotation: 0, x: 0, y: 1},
+                    2: {rotation: -Math.PI / 2, x: 0, y: 0},
+                    3: {rotation: Math.PI, x: 0, y: 0},
+                    4: {rotation: Math.PI / 2, x: 0, y: 0}
+                },
+                2: {
+                    1: {rotation: Math.PI / 2, x: 0, y: 0},
+                    2: {rotation: 0, x: 1, y: 0},
+                    3: {rotation: -Math.PI / 2, x: 0, y: 0},
+                    4: {rotation: Math.PI, x: 0, y: 0}
+                },
+                3: {
+                    1: {rotation: Math.PI, x: 0, y: 0},
+                    2: {rotation: Math.PI / 2, x: 0, y: 0},
+                    3: {rotation: 0, x: 0, y: -1},
+                    4: {rotation: -Math.PI / 2, x: 0, y: 0}
+                },
+                4: {
+                    1: {rotation: -Math.PI / 2, x: 0, y: 0},
+                    2: {rotation: Math.PI, x: -1, y: 0},
+                    3: {rotation: Math.PI / 2, x: 0, y: 0},
+                    4: {rotation: 0, x: -1, y: 0}
+                }
+            };
+
+            // CHARACTER
+            var config = {
+                baseUrl: "models/md2/ratamahatta/",
+                body: "ratamahatta.md2",
+                skins: ["ratamahatta.png", "ctf_b.png", "ctf_r.png", "dead.png", "gearwhore.png"],
+                weapons: [["weapon.md2", "weapon.png"],
+                    ["w_bfg.md2", "w_bfg.png"],
+                    ["w_blaster.md2", "w_blaster.png"],
+                    ["w_chaingun.md2", "w_chaingun.png"],
+                    ["w_glauncher.md2", "w_glauncher.png"],
+                    ["w_hyperblaster.md2", "w_hyperblaster.png"],
+                    ["w_machinegun.md2", "w_machinegun.png"],
+                    ["w_railgun.md2", "w_railgun.png"],
+                    ["w_rlauncher.md2", "w_rlauncher.png"],
+                    ["w_shotgun.md2", "w_shotgun.png"],
+                    ["w_sshotgun.md2", "w_sshotgun.png"]
+                ]
+            };
+            //============================================================
+            // CALLS
+            //============================================================
+
+            sendMessage(JSON.stringify({cmd: "msz\n"}));
+            sendMessage(JSON.stringify({cmd: "sgt\n"}));
+            sendMessage(JSON.stringify({cmd: "tna\n"}));
+
+            //============================================================
+            // INIT
+            //============================================================
+
+            function init()
+            {
+                mouse = new THREE.Vector2();
+
+                scene = new THREE.Scene();
+                scene.add(new THREE.AmbientLight(0xFFFFFF));
+
+                gameData.map = new Array(gameData.sizeX);
+                for (var x = 0; x < gameData.sizeX; x++)
+                    gameData.map[x] = new Array(gameData.sizeY);
+
+                // Camera
+                camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
+                camera.position.x = gameData.sizeX / 2;
+                camera.position.y = gameData.sizeY / 2;
+                camera.position.z = (gameData.sizeX + gameData.sizeY) / 2;
+                camera.rotation.x += 0.4;
+
+                // Rendering
+                renderer = new THREE.WebGLRenderer({antialias: true});
+                renderer.setClearColor(0xbfd1e5);
+                var container = document.getElementById('canvas');
+                renderer.setSize(container.clientWidth, container.clientHeight);
+                container.appendChild(renderer.domElement);
+
+                // selector
+                raycaster = new THREE.Raycaster();
+
+                // Platform gen
+                var loader = new THREE.TextureLoader();
+                loader.load('images/grass1-32x32.png', function (texture)
+                {
+                    texture.repeat.set(1, 1);
+
+                    for (var x = 0; x < gameData.sizeX * 2; x += 2)
+                    {
+                        for (var y = 0; y < gameData.sizeY * 2; y += 2)
+                        {
+                            var material = new THREE.MeshBasicMaterial({
+                                map: texture /*color: 0x8888ff*/,
+                                overdraw: 0.5
+                            });
+                            var square = new THREE.Mesh(new THREE.BoxGeometry(2, 2, 0.5), material);
+                            square.position.x = x;
+                            square.position.y = y;
+                            square.position.z = 0;
+                            scene.add(square);
+                        }
+                    }
+                });
+            }
+
+            //============================================================
+            // FUNCTIONS
+            //============================================================
+
+            function getRealPosition(x, y)
+            {
+                x = x - (x % 2);
+                y = y - (y % 2);
+                return {x: x / 2, y: y / 2};
+            }
+
+            function getGraphicPosition(x, y)
+            {
+                return {x: x * 2, y: y * 2};
+            }
+
+            function formatPosition(x, y)
+            {
+                if (x > (gameData.sizeX - 1) * 2)
+                    x = x % 2;
+                else if (x < 0)
+                    x = (gameData.sizeX - 2) * 2 - x;
+                if (y > (gameData.sizeY - 1) * 2)
+                    y = y % 2;
+                else if (y < 0)
+                    y = (gameData.sizeY - 2) * 2 - y;
+                return {x: x, y: y};
+            }
+
+            function removeAllRows(element)
+            {
+                while (element.rows.length > 0)
+                    element.deleteRow(0);
+            }
+
+            function hasEgg(x, y)
+            {
+                var egg = false;
+
+                console.log('eggs length = ' + gameData.eggs.length);
+                gameData.eggs.forEach(function (egg)
+                {
+                    console.log('test x = ' + x + ' | y = ' + y + ' | with egg x = ' + egg.posX + ' | y = ' + egg.posY);
+                    if (egg.posX == x && egg.posY == y)
+                        egg = true;
+                });
+                return egg;
+            }
+
+            function getPlayers(team)
+            {
+                var players = [];
+                gameData.players.forEach(function (player)
+                {
+                    if (team == player.team)
+                        players.push(player);
+                });
+                return players;
+            }
+
+            function getPlayer(id)
+            {
+                var target;
+                gameData.players.forEach(function (player)
+                {
+                    if (player.id == id)
+                        target = player;
+                });
+                return target;
+            }
+
+            function render()
+            {
+                var delta = clock.getDelta();
+                gameData.players.forEach(function (player)
+                {
+                    if (gameData.players.hasOwnProperty(player.id))
+                        gameData.players[player.id].graphic.update(delta);
+                });
+                if (clock.getElapsedTime() - lastRefresh > 1)
+                {
+                    updateScore();
+                    sendMessage(JSON.stringify({cmd: "mct\n"}));
+                    if (gameData.selectedPlayerId != undefined)
+                        sendMessage(JSON.stringify({cmd: "pin #" + gameData.selectedPlayerId + "\n"}));
+                    updateSquareInventory();
+                    lastRefresh = clock.getElapsedTime();
+                }
+
+                applyMovement();
+                selector();
+                if (gameData.winner == undefined)
+                    requestAnimationFrame(render);
+                else
+                {
+                    var elem = document.getElementById('winner');
+                    elem.textContent = 'The winner is ' + gameData.winner;
+                }
+                renderer.render(scene, camera);
+            }
+
+            function selector()
+            {
+                raycaster.setFromCamera(mouse, camera);
+                var intersects = raycaster.intersectObjects(scene.children);
+
+                if (intersects.length > 0)
+                {
+                    if (INTERSECTED != intersects[0].object)
+                    {
+                        var obj = intersects[0];
+                        obj.object.material.color.setRGB(2, 2, 2);
+
+                        if (INTERSECTED !== undefined)
+                            INTERSECTED.material.color.setRGB(1, 1, 1);
+
+                        INTERSECTED = obj.object;
+                    }
+                }
+            }
+
+            function applyMovement()
+            {
+                if (moveForward)
+                {
+//            console.log('move forward');
+                    camera.position.y += 0.1;
+                }
+                if (moveBackward)
+                {
+//            console.log('move backward');
+                    camera.position.y -= 0.1;
+                }
+                if (moveRight)
+                {
+//            console.log('move right');
+                    camera.position.x += 0.1;
+                }
+                if (moveLeft)
+                {
+//            console.log('move left');
+                    camera.position.x -= 0.1;
+                }
+            }
+
+            function updateScore()
+            {
+                var table = document.getElementById('team-score');
+                removeAllRows(table);
+                gameData.teams.forEach(function (team)
+                {
+                    var players = getPlayers(team);
+                    var score = 0;
+                    players.forEach(function (player)
+                    {
+                        score += player.level;
+                    });
+                    var scoreRow = table.insertRow(0);
+                    var teamCell = scoreRow.insertCell(0);
+                    var playersCell = scoreRow.insertCell(1);
+                    var scoreCell = scoreRow.insertCell(2);
+                    teamCell.textContent = team;
+                    playersCell.textContent = players.length;
+                    scoreCell.textContent = score;
+                });
+            }
+
+            function updateSquareInventory()
+            {
+                if (gameData.selectedSquare == undefined)
+                    return;
+
+                // apply data to html
+                var elemPosX = document.getElementById('case-X');
+                var elemPosY = document.getElementById('case-Y');
+                var realPos = getRealPosition(gameData.selectedSquare.position.x, gameData.selectedSquare.position.y);
+                elemPosX.textContent = realPos.x;
+                elemPosY.textContent = realPos.y;
+
+                if (gameData.map[realPos.x][realPos.y] != undefined)
+                {
+                    var quantities = gameData.map[realPos.x][realPos.y].quantities;
+                    var elemTable = document.getElementById('case-inventory');
+                    removeAllRows(elemTable);
+                    quantities.forEach(function (quantitie, i)
+                    {
+                        if (quantitie > 0)
+                        {
+                            var invRow = elemTable.insertRow(0);
+                            var colorCell = invRow.insertCell(0);
+                            var itemCell = invRow.insertCell(1);
+                            var amountCell = invRow.insertCell(2);
+                            colorCell.textContent = '█';
+                            colorCell.style.color = '#' + itemColorById[i].toString(16);
+                            itemCell.textContent = itemNameById[i];
+                            amountCell.textContent = quantitie;
+                        }
+                    });
+                    if (elemTable.rows.length == 0)
+                    {
+                        var invRow = elemTable.insertRow(0);
+                        var colorCell = invRow.insertCell(0);
+                        var itemCell = invRow.insertCell(1);
+                        var amountCell = invRow.insertCell(2);
+                        itemCell.textContent = 'There is no item';
+                    }
+                }
+            }
+
+            //============================================================
+            // LISTENER
+            //============================================================
+
+            var onKeyDown = function (event)
+            {
+                switch (event.keyCode)
+                {
+                    case 38: // up
+                        moveForward = true;
+                        break;
+
+                    case 37: // left
+                        moveLeft = true;
+                        break;
+
+                    case 40: // down
+                        moveBackward = true;
+                        break;
+
+                    case 39: // right
+                        moveRight = true;
+                        break;
+                }
+            };
+
+            var onKeyUp = function (event)
+            {
+                switch (event.keyCode)
+                {
+                    case 38: // up
+                        moveForward = false;
+                        break;
+                    case 37: // left
+                        moveLeft = false;
+                        break;
+                    case 40: // down
+                        moveBackward = false;
+                        break;
+                    case 39: // right
+                        moveRight = false;
+                        break;
+                }
+            };
+
+            var onScroll = function (event)
+            {
+                if (camera == undefined)
+                    return;
+
+                if (event.detail > 0)
+                {
+                    //scroll down
+//            console.log('scroll down');
+                    camera.position.z = Math.min(20, camera.position.z + 0.2);
+                }
+                else
+                {
+                    //scroll up
+//            console.log('scroll up');
+                    camera.position.z = Math.max(5, camera.position.z - 0.2);
+                }
+            };
+
+            var onMouseWheel = function (event)
+            {
+                if (camera == undefined)
+                    return;
+
+                if (event.wheelDelta < 0)
+                    camera.position.z = Math.min(20, camera.position.z + 0.2);
+                else
+                    camera.position.z = Math.max(0, camera.position.z - 0.2); // TODO 0 to 5
+            };
+
+            function onWindowResize()
+            {
+                if (camera == undefined)
+                    return;
+
+                windowHalfX = window.innerWidth / 2;
+                windowHalfY = window.innerHeight / 2;
+
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
+
+            document.getElementById('canvas').onclick = function (e)
+            {
+                gameData.selectedSquare = INTERSECTED;
+                updateSquareInventory();
+            };
+
+            document.getElementById("server-time").onclick = function (e)
+            {
+                var elem = document.getElementById("server-time");
+                sendMessage(JSON.stringify({cmd: "sst " + parseInt(elem.options[elem.selectedIndex].value) + "\n"}));
+            };
+
+
+            function onMouseMove(event)
+            {
+                if (mouse == undefined)
+                    return;
+                event.preventDefault();
+                var container = document.getElementById('canvas');
+                mouse.x = ( ( event.clientX - container.offsetLeft ) / container.clientWidth ) * 2 - 1;
+                mouse.y = -( ( event.clientY - container.offsetTop ) / container.clientHeight ) * 2 + 1;
+            }
+
+            document.addEventListener('keydown', onKeyDown, false);
+            document.addEventListener('keyup', onKeyUp, false);
+            document.addEventListener('DOMMouseScroll', onScroll, false);
+            document.addEventListener('mousewheel', onMouseWheel, false);
+            window.addEventListener('mousemove', onMouseMove, false);
+            window.addEventListener('resize', onWindowResize, false);
+
+            //============================================================
+            // SERVER CMD FUNCTION
+            //============================================================
+
+            function needReload(oldQuantities, newQuantities)
+            {
+                for (var i = 0; i < oldQuantities.length; i++)
+                {
+                    if (oldQuantities[i] != newQuantities[i])
+                        return true;
+                }
+                return false;
+            }
+
+            var bct = function (data)
+            {
+                var square = gameData.map[data.posX][data.posY];
+//                var egg = hasEgg(data.posX, data.posY);
+                if (square != undefined)
+                {
+                    if (/*square.hasEgg == egg && */needReload(square.quantities, data.quantities) == false)
+                        return;
+                    scene.remove(square.group);
+                }
+                console.log('Update case x = ' + data.posX + ' | y = ' + data.posY);
+                square = {group: new THREE.Group(), quantities: data.quantities/*, hasEgg: egg*/};
+
+                for (var i = 0; i < square.quantities.length; i++)
+                {
+                    var amount = square.quantities[i];
+                    if (amount > 0)
+                    {
+                        var id = i;
+                        var material = new THREE.MeshBasicMaterial({
+                            color: itemColorById[id],
+                            overdraw: 0.5
+                        });
+                        var item = new THREE.Mesh(new THREE.DodecahedronGeometry(0.1), material);
+
+                        //console.log(id);
+                        //console.log(itemPosById);
+                        var itemPos = itemPosById[id];
+                        //console.log(itemPos);
+                        item.position.x = data.posX * 2 + itemPos.x - 1;
+                        item.position.y = data.posY * 2 + itemPos.y - 1;
+                        item.position.z = 0.35;
+                        square.group.add(item);
+                    }
+                }/*
+                if (egg == true)
+                {
+                    var material = new THREE.MeshBasicMaterial({
+                        color: 0xEEEEEE,
+                        overdraw: 0.5
+                    });
+                    var item = new THREE.Mesh(new THREE.DodecahedronGeometry(0.25), material);
+
+                    item.position.x = data.posX * 2 + 1;
+                    item.position.y = data.posY * 2 + 1;
+                    item.position.z = 0.35;
+                    square.group.add(item);
+                }*/
+                gameData.map[data.posX][data.posY] = square;
+                scene.add(square.group);
+            };
+
+            // When a team name is sent
+            var tna = function (data)
+            {
+                gameData.teams = data.teams;
+                updateScore();
+            };
+
+            // When new player connect
+            var pnw = function (data)
+            {
+                sendMessage(JSON.stringify({cmd: "pin #" + data.id + "\n"}));
+                // on push son ID
+                var newCharacter = new THREE.MD2Character();
+                newCharacter.scale = 1;
+                newCharacter.root.position.set(300, 300, 1);
+                newCharacter.onLoadComplete = function ()
+                {
+                    var animations = newCharacter.meshBody.geometry.animations;
+                    newCharacter.root.scale.set(0.025, 0.025, 0.025);
+                    var graphicalPos = getGraphicPosition(data.posX, data.posY);
+                    newCharacter.root.position.set(parseFloat(graphicalPos.x), parseFloat(graphicalPos.y), 0.90);
+                    newCharacter.root.rotateX(Math.PI / 2);
+                    newCharacter.root.rotateY(Math.PI);
+                    newCharacter.setSkin(2);
+                    newCharacter.setAnimation(animations[0].name);
+                };
+                // init parametres personnages
+                newCharacter.loadParts(config);
+                gameData.players[parseInt(data.id)] = {
+                    graphic: newCharacter,
+                    id: data.id,
+                    posX: data.posX,
+                    posY: data.posY,
+                    orientation: data.orientation,
+                    level: data.level,
+                    team: data.team
+                };
+                console.log('new player data');
+                console.log(data);
+                scene.add(newCharacter.root);
+            };
+
+            // When player died
+            var pdi = function (data)
+            {
+                console.log("removed player ", data.id);
+                scene.remove(gameData.players[data.id].graphic.root);
+                delete gameData.players[parseInt(data.id)];
+                if (data.id == gameData.selectedPlayerId)
+                    gameData.selectedPlayerId = undefined;
+            };
+
+            // map size
+            var msz = function (data)
+            {
+                gameData.sizeX = data.x;
+                gameData.sizeY = data.y;
+            };
+
+            // server Time unit
+            var sgt = function (data)
+            {
+                gameData.T = data.unit;
+            };
+
+            var seg = function (data)
+            {
+                gameData.winner = data.team;
+            };
+
+            var pin = function (data)
+            {
+                if (data.id == undefined)
+                    return;
+                gameData.selectedPlayerId = data.id;
+                // apply data to html
+                var elemId = document.getElementById('char-id');
+                var elemTeam = document.getElementById('char-team');
+                var elemLevel = document.getElementById('char-level');
+
+                var player = getPlayer(data.id);
+
+                elemId.textContent = data.id;
+                elemTeam.textContent = player.team;
+                elemLevel.textContent = player.level;
+
+                var elemTable = document.getElementById('char-inventory');
+                removeAllRows(elemTable);
+                data.quantities.forEach(function (quantitie, i)
+                {
+                    if (quantitie > 0)
+                    {
+                        var invRow = elemTable.insertRow(0);
+                        var colorCell = invRow.insertCell(0);
+                        var itemCell = invRow.insertCell(1);
+                        var amountCell = invRow.insertCell(2);
+                        colorCell.textContent = '█';
+                        colorCell.style.color = '#' + itemColorById[i].toString(16);
+                        itemCell.textContent = itemNameById[i];
+                        amountCell.textContent = quantitie;
+                    }
+                });
+                if (elemTable.rows.length == 0)
+                {
+                    var invRow = elemTable.insertRow(0);
+                    var colorCell = invRow.insertCell(0);
+                    var itemCell = invRow.insertCell(1);
+                    var amountCell = invRow.insertCell(2);
+                    itemCell.textContent = 'There is no item';
+                }
+            };
+
+            var enw = function (data)
+            {
+                gameData.eggs[data.idEgg] = {
+                    id: data.idEgg,
+                    posX: data.posX,
+                    posY: data.posY
+                };
+            };
+
+            var ppo = function (data)
+            {
+                var player = getPlayer(data.id);
+                var action = rotationByOrientationId[player.orientation][data.orientation];
+                if (player.orientation != data.orientation)
+                {
+                    var rotationValues = rotationByOrientationId[player.orientation];
+                    player.graphic.root.rotateY(action.rotation);
+                    player.orientation = data.orientation;
+                }
+                else
+                {
+                    var graphicalPos = getGraphicPosition(action.x, action.y);
+                    var finalPos = formatPosition(player.graphic.root.position.x + graphicalPos.x,
+                            player.graphic.root.position.y + graphicalPos.y);
+                    player.graphic.root.position.x = finalPos.x;
+                    player.graphic.root.position.y = finalPos.y;
+                }
+            };
+
+            var suc = function (data)
+            {
+                console.log("command unknown");
+            };
+
+            var sbp = function (data)
+            {
+                console.log("bad command");
+            };
+
+            var smg = function (data)
+            {
+                console.log(data.msg);
+            };
+
+            var pdr = function (data)
+            {
+                var id = parseInt(data.id);
+                if (gameData.players[id] != undefined)
+                {
+                    gameData.players[id].graphic.setAnimation("flip");
+                }
+            };
+
+            var pgt = function (data)
+            {
+                var id = parseInt(data.id);
+                if (gameData.players[id] != undefined)
+                {
+                    gameData.players[id].graphic.setAnimation("flip");
+                    gameData.players[id].graphic.setAnimation("stand");
+                }
+            };
+
+            var pbc = function (data)
+            {
+                console.log(data.msg);
+            };
+
+            var plv, pex, pic, pfk, eht, ebo, edi;
+
+            var functionByCmdName = {
+                msz: msz, bct: bct, tna: tna, pnw: pnw, ppo: ppo, plv: plv, pex: pex, pin: pin,
+                pbc: pbc, pic: pic, pfk: pfk, pdr: pdr, pgt: pgt, pdi: pdi, enw: enw, eht: eht,
+                ebo: ebo, edi: edi, sgt: sgt, seg: seg, smg: smg, suc: suc, sbp: sbp
+            };
+
+            var isInit = false;
+
+            function canInit()
+            {
+                if (gameData.sizeX == undefined
+                        || gameData.sizeY == undefined
+                        || gameData.T == undefined)
+                    return false;
+                return true;
+            }
+
+            socketToServer.onmessage = function (event)
+            {
+                var data = JSON.parse(event.data);
+                //console.log(event.data);
+                //console.log('cmd is [' + data.cmd + '] and functions keys are = ' + Object.keys(functionByCmdName));
+                if (isInit == false)
+                {
+                    if (data.cmd == 'msz')
+                        msz(data);
+                    else if (data.cmd == 'sgt')
+                        sgt(data);
+                    if (canInit() == true)
+                    {
+                        init();
+                        render();
+                        sendMessage(JSON.stringify({cmd: "mct\n"}));
+                        isInit = true;
+                    }
+                    return;
+                }
+                if (functionByCmdName[data.cmd] != undefined)
+                {
+                    (functionByCmdName[data.cmd])(data);
+                }
+                else
+                {
+                    console.log('undefined cmd type, object sent is :');
+                    console.log(data);
+                }
+            };
+        }
+    </script>
+</body>
+</html>
+

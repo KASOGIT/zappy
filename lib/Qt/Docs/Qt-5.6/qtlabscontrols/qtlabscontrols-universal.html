@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qtlabscontrols-universal.qdoc -->
+  <title>Universal Style | Qt Labs Controls 5.6</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    window.onload = function(){document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");};
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="../qtdoc/supported-platforms-and-configurations.html#qt-5-6">Qt 5.6</a></td><td ><a href="qtlabscontrols-index.html">Qt Labs Controls</a></td><td >Universal Style</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Qt 5.6.1 Reference Documentation</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#attached-properties">Attached Properties</a></li>
+<li class="level1"><a href="#detailed-description">Detailed Description</a></li>
+<li class="level2"><a href="#customization">Customization</a></li>
+<li class="level1"><a href="#attached-property-documentation">Attached Property Documentation</a></li>
+<li class="level1"><a href="#related-information">Related Information</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Universal Style</h1>
+<span class="subtitle"></span>
+<!-- $$$qtlabscontrols-universal.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>The Universal Style is based on the Microsoft Universal Design Guidelines. <a href="qtlabscontrols-universal.html#detailed-description">More..&#x2e;</a></p>
+<table class="alignedsummary"><tbody><tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import Qt.labs.controls.universal 1.0</td></tr></tbody></table><a name="attached-properties"></a>
+<h2 id="attached-properties">Attached Properties</h2>
+<ul>
+<li><a href="qtlabscontrols-universal.html#accent-attached-prop"><b>accent</b></a> : color</li>
+<li><a href="qtlabscontrols-universal.html#theme-attached-prop"><b>theme</b></a> : enumeration</li>
+</ul>
+<a name="detailed-description"></a>
+<h2 id="detailed-description">Detailed Description</h2>
+<p>The Universal style is a device-agnostic style based on the <a href="https://dev.windows.com/design">Microsoft Universal Design Guidelines</a>. The Universal style has been designed to look good on all devices, from phones and tablets to PCs.</p>
+<p class="centerAlign"><img src="images/qtlabscontrols-universal.png" alt="" /></p><p class="figCaption">The Universal style in light and dark themes</p>
+<p><b>Note: </b>The Universal style is not a native Windows 10 style. The Universal style is a 100% cross-platform Qt Labs Controls style implementation that follows the Microsoft Universal Design Guidelines. The style runs on any platform, and looks more or less identical everywhere. Minor differences may occur due to differences in available system fonts and font rendering engines.</p><a name="customization"></a>
+<h3 >Customization</h3>
+<p>The Universal style allows customizing two attributes, <a href="qtlabscontrols-universal.html#theme-attached-prop">theme</a> and <a href="qtlabscontrols-universal.html#accent-attached-prop">accent</a>. The following example illustrates how to create a red <i>stop</i> button with light text:</p>
+<div class="table"><table class="generic">
+ <tr valign="top" class="odd"><td ><pre class="qml">
+
+  import QtQuick 2.0
+  import Qt.labs.controls 1.0
+  import Qt.labs.controls.universal 1.0
+
+  <span class="type"><a href="qml-qt-labs-controls-button.html">Button</a></span> {
+      <span class="name">text</span>: <span class="string">&quot;Stop&quot;</span>
+      <span class="name">highlighted</span>: <span class="number">true</span>
+
+      <span class="name">Universal</span>.accent: <span class="name">Universal</span>.<span class="name">Red</span>
+      <span class="name">Universal</span>.theme: <span class="name">Universal</span>.<span class="name">Dark</span>
+  }
+
+</pre>
+</td><td ><p class="centerAlign"><img src="images/qtlabscontrols-universal-button.png" alt="" /></p></td></tr>
+</table></div>
+<p>Both attributes can be specified for any window or item, and they automatically propagate to children in the same manner as <a href="qml-qt-labs-controls-control.html#font-prop">fonts</a>. In the following example, the window and all three radio buttons appear in the dark theme using a violet accent color:</p>
+<div class="table"><table class="generic">
+ <tr valign="top" class="odd"><td ><pre class="qml">
+
+  import QtQuick 2.0
+  import Qt.labs.controls 1.0
+  import Qt.labs.controls.universal 1.0
+
+  <span class="type"><a href="qml-qt-labs-controls-applicationwindow.html">ApplicationWindow</a></span> {
+      <span class="name">visible</span>: <span class="number">true</span>
+
+      <span class="name">Universal</span>.theme: <span class="name">Universal</span>.<span class="name">Dark</span>
+      <span class="name">Universal</span>.accent: <span class="name">Universal</span>.<span class="name">Violet</span>
+
+      <span class="type"><a href="../qtquick/qml-qtquick-column.html">Column</a></span> {
+          <span class="name">anchors</span>.centerIn: <span class="name">parent</span>
+
+          <span class="type"><a href="qml-qt-labs-controls-radiobutton.html">RadioButton</a></span> { <span class="name">text</span>: <span class="name">qsTr</span>(<span class="string">&quot;Small&quot;</span>) }
+          <span class="type"><a href="qml-qt-labs-controls-radiobutton.html">RadioButton</a></span> { <span class="name">text</span>: <span class="name">qsTr</span>(<span class="string">&quot;Medium&quot;</span>);  <span class="name">checked</span>: <span class="number">true</span> }
+          <span class="type"><a href="qml-qt-labs-controls-radiobutton.html">RadioButton</a></span> { <span class="name">text</span>: <span class="name">qsTr</span>(<span class="string">&quot;Large&quot;</span>) }
+      }
+  }
+
+</pre>
+</td><td ><p class="centerAlign"><img src="images/qtlabscontrols-universal-dark.png" alt="" /></p></td></tr>
+</table></div>
+<p><b>Note: </b>The Universal style must be separately imported to gain access to these style-specific attributes. It should be noted that regardless of the references to the Universal style, the same application code runs with any other style. The Universal style-specific attributes only have an effect when the application is run with the Universal style. Furthermore, in case of explicit Universal style-specific references, the Universal style must be deployed with the application.</p><p><b>Note: </b><i>Types in the Qt.labs module are not guaranteed to remain compatible in future versions.</i></p><a name="attached-property-documentation"></a>
+<h2 id="attached-property-documentation">Attached Property Documentation</h2>
+<div class="qmlproto"><table class="qmlname"><tbody><tr valign="top" class="odd" id="accent-attached-prop"><td class="tblQmlPropNode"><p><span class="name">Universal.accent</span> : <span class="type">color</span></p></td></tr></tbody></table></div><a name="accent-attached-prop"></a><p>This attached property holds the accent color of the theme. The property can be attached to any window or item. The value is propagated to children.</p>
+<p>Even though the accent can be any <a href="../qtquick/qml-color.html#colorbasictypedocs">color</a>, it is recommended to use one of the pre-defined accents that have been designed to work well with the rest of the Universal style palette:</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="even"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Universal.Lime</code></td><td class="topAlign">Lime (#A4C400)</td></tr>
+<tr><td class="topAlign"><code>Universal.Green</code></td><td class="topAlign">Green (#60A917)</td></tr>
+<tr><td class="topAlign"><code>Universal.Emerald</code></td><td class="topAlign">Emerald (#008A00)</td></tr>
+<tr><td class="topAlign"><code>Universal.Teal</code></td><td class="topAlign">Teal (#00ABA9)</td></tr>
+<tr><td class="topAlign"><code>Universal.Cyan</code></td><td class="topAlign">Cyan (#1BA1E2)</td></tr>
+<tr><td class="topAlign"><code>Universal.Cobalt</code></td><td class="topAlign">Cobalt (#3E65FF, default)</td></tr>
+<tr><td class="topAlign"><code>Universal.Indigo</code></td><td class="topAlign">Indigo (#6A00FF)</td></tr>
+<tr><td class="topAlign"><code>Universal.Violet</code></td><td class="topAlign">Violet (#AA00FF)</td></tr>
+<tr><td class="topAlign"><code>Universal.Pink</code></td><td class="topAlign">Pink (#F472D0)</td></tr>
+<tr><td class="topAlign"><code>Universal.Magenta</code></td><td class="topAlign">Magenta (#D80073)</td></tr>
+<tr><td class="topAlign"><code>Universal.Crimson</code></td><td class="topAlign">Crimson (#A20025)</td></tr>
+<tr><td class="topAlign"><code>Universal.Red</code></td><td class="topAlign">Red (#E51400)</td></tr>
+<tr><td class="topAlign"><code>Universal.Orange</code></td><td class="topAlign">Orange (#FA6800)</td></tr>
+<tr><td class="topAlign"><code>Universal.Amber</code></td><td class="topAlign">Amber (#F0A30A)</td></tr>
+<tr><td class="topAlign"><code>Universal.Yellow</code></td><td class="topAlign">Yellow (#E3C800)</td></tr>
+<tr><td class="topAlign"><code>Universal.Brown</code></td><td class="topAlign">Brown (#825A2C)</td></tr>
+<tr><td class="topAlign"><code>Universal.Olive</code></td><td class="topAlign">Olive (#6D8764)</td></tr>
+<tr><td class="topAlign"><code>Universal.Steel</code></td><td class="topAlign">Steel (#647687)</td></tr>
+<tr><td class="topAlign"><code>Universal.Mauve</code></td><td class="topAlign">Mauve (#76608A)</td></tr>
+<tr><td class="topAlign"><code>Universal.Taupe</code></td><td class="topAlign">Taupe (#87794E)</td></tr>
+</table></div>
+<p><br />
+</p>
+<div class="qmlproto"><table class="qmlname"><tbody><tr valign="top" class="odd" id="theme-attached-prop"><td class="tblQmlPropNode"><p><span class="name">Universal.theme</span> : <span class="type">enumeration</span></p></td></tr></tbody></table></div><a name="theme-attached-prop"></a><p>This attached property holds whether the theme is light or dark. The property can be attached to any window or item. The value is propagated to children.</p>
+<p>Available themes:</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Universal.Light</code></td><td class="topAlign">Light theme (default)</td></tr>
+<tr><td class="topAlign"><code>Universal.Dark</code></td><td class="topAlign">Dark theme</td></tr>
+</table></div>
+<p><br />
+</p>
+<a name="related-information"></a>
+<h2 id="related-information">Related Information</h2>
+<ul>
+<li><a href="qtlabscontrols-styles.html">Styling Qt Labs Controls</a></li>
+</ul>
+</div>
+<!-- @@@qtlabscontrols-universal.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2016 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

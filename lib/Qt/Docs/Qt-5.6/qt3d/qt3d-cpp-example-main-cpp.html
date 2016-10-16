@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>main.cpp Example File | Qt 3D 5.6</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    window.onload = function(){document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");};
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="../qtdoc/supported-platforms-and-configurations.html#qt-5-6">Qt 5.6</a></td><td ><a href="qt3d-index.html">Qt 3D</a></td><td ><a href="qt3d-cpp-example-example.html">Qt 3D: C++ Example</a></td><td >main.cpp Example File</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Qt 5.6.1 Reference Documentation</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">main.cpp Example File</h1>
+<span class="subtitle">cpp_example/main.cpp</span>
+<!-- $$$cpp_example/main.cpp-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="cpp">
+
+  <span class="comment">/****************************************************************************
+  **
+  ** Copyright (C) 2014 Klaralvdalens Datakonsult AB (KDAB).
+  ** Contact: http://www.qt-project.org/legal
+  **
+  ** This file is part of the Qt3D module of the Qt Toolkit.
+  **
+  ** $QT_BEGIN_LICENSE:LGPL3$
+  ** Commercial License Usage
+  ** Licensees holding valid commercial Qt licenses may use this file in
+  ** accordance with the commercial license agreement provided with the
+  ** Software or, alternatively, in accordance with the terms contained in
+  ** a written agreement between you and The Qt Company. For licensing terms
+  ** and conditions see http://www.qt.io/terms-conditions. For further
+  ** information use the contact form at http://www.qt.io/contact-us.
+  **
+  ** GNU Lesser General Public License Usage
+  ** Alternatively, this file may be used under the terms of the GNU Lesser
+  ** General Public License version 3 as published by the Free Software
+  ** Foundation and appearing in the file LICENSE.LGPLv3 included in the
+  ** packaging of this file. Please review the following information to
+  ** ensure the GNU Lesser General Public License version 3 requirements
+  ** will be met: https://www.gnu.org/licenses/lgpl.html.
+  **
+  ** GNU General Public License Usage
+  ** Alternatively, this file may be used under the terms of the GNU
+  ** General Public License version 2.0 or later as published by the Free
+  ** Software Foundation and appearing in the file LICENSE.GPL included in
+  ** the packaging of this file. Please review the following information to
+  ** ensure the GNU General Public License version 2.0 requirements will be
+  ** met: http://www.gnu.org/licenses/gpl-2.0.html.
+  **
+  ** $QT_END_LICENSE$
+  **
+  ****************************************************************************/</span>
+
+  <span class="preprocessor">#include &lt;QGuiApplication&gt;</span>
+
+  <span class="preprocessor">#include &lt;window.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DCore/qcamera.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DCore/qentity.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DCore/qcameralens.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DCore/qaspectengine.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DCore/qtransform.h&gt;</span>
+
+  <span class="preprocessor">#include &lt;Qt3DInput/QInputAspect&gt;</span>
+
+  <span class="preprocessor">#include &lt;Qt3DRender/qtorusmesh.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DRender/qmesh.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DRender/qtechnique.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DRender/qmaterial.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DRender/qeffect.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DRender/qtexture.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DRender/qrenderpass.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DRender/qsceneloader.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DRender/qcameraselector.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DRender/qrenderpassfilter.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DRender/qtechniquefilter.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DRender/qviewport.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DRender/qrenderaspect.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DRender/qframegraph.h&gt;</span>
+  <span class="preprocessor">#include &lt;Qt3DRender/qclearbuffer.h&gt;</span>
+
+  <span class="type">int</span> main(<span class="type">int</span> ac<span class="operator">,</span> <span class="type">char</span> <span class="operator">*</span><span class="operator">*</span>av)
+  {
+      <span class="type"><a href="../qtgui/qguiapplication.html">QGuiApplication</a></span> app(ac<span class="operator">,</span> av);
+
+      Window view;
+      <span class="type"><a href="qt3dcore-module.html">Qt3DCore</a></span><span class="operator">::</span><span class="type">QAspectEngine</span> engine;
+      engine<span class="operator">.</span>registerAspect(<span class="keyword">new</span> <span class="type"><a href="qt3drender-module.html">Qt3DRender</a></span><span class="operator">::</span><span class="type">QRenderAspect</span>());
+      <span class="type"><a href="qt3dinput-module.html">Qt3DInput</a></span><span class="operator">::</span><span class="type">QInputAspect</span> <span class="operator">*</span>input <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="qt3dinput-module.html">Qt3DInput</a></span><span class="operator">::</span><span class="type">QInputAspect</span>;
+      engine<span class="operator">.</span>registerAspect(input);
+      <span class="type"><a href="../qtcore/qvariant.html#QVariantMap-typedef">QVariantMap</a></span> data;
+      data<span class="operator">.</span>insert(<span class="type"><a href="../qtcore/qstring.html#QStringLiteral">QStringLiteral</a></span>(<span class="string">&quot;surface&quot;</span>)<span class="operator">,</span> <span class="type"><a href="../qtcore/qvariant.html">QVariant</a></span><span class="operator">::</span>fromValue(<span class="keyword">static_cast</span><span class="operator">&lt;</span><span class="type"><a href="../qtgui/qsurface.html">QSurface</a></span> <span class="operator">*</span><span class="operator">&gt;</span>(<span class="operator">&amp;</span>view)));
+      data<span class="operator">.</span>insert(<span class="type"><a href="../qtcore/qstring.html#QStringLiteral">QStringLiteral</a></span>(<span class="string">&quot;eventSource&quot;</span>)<span class="operator">,</span> <span class="type"><a href="../qtcore/qvariant.html">QVariant</a></span><span class="operator">::</span>fromValue(<span class="operator">&amp;</span>view));
+      engine<span class="operator">.</span>setData(data);
+
+      <span class="comment">// Root entity</span>
+      <span class="type"><a href="qt3dcore-module.html">Qt3DCore</a></span><span class="operator">::</span><span class="type">QEntity</span> <span class="operator">*</span>rootEntity <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="qt3dcore-module.html">Qt3DCore</a></span><span class="operator">::</span><span class="type">QEntity</span>();
+      rootEntity<span class="operator">-</span><span class="operator">&gt;</span>setObjectName(<span class="type"><a href="../qtcore/qstring.html#QStringLiteral">QStringLiteral</a></span>(<span class="string">&quot;rootEntity&quot;</span>));
+      <span class="comment">// Torus</span>
+      <span class="type"><a href="qt3dcore-module.html">Qt3DCore</a></span><span class="operator">::</span><span class="type">QEntity</span> <span class="operator">*</span>torusEntity <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="qt3dcore-module.html">Qt3DCore</a></span><span class="operator">::</span><span class="type">QEntity</span>(rootEntity);
+
+      <span class="comment">// Torus shape data</span>
+      <span class="type"><a href="qt3drender-module.html">Qt3DRender</a></span><span class="operator">::</span><span class="type">QTorusMesh</span> <span class="operator">*</span>torus <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="qt3drender-module.html">Qt3DRender</a></span><span class="operator">::</span><span class="type">QTorusMesh</span>();
+      torus<span class="operator">-</span><span class="operator">&gt;</span>setRadius(<span class="number">40</span>);
+      torus<span class="operator">-</span><span class="operator">&gt;</span>setMinorRadius(<span class="number">15</span>);
+
+      torusEntity<span class="operator">-</span><span class="operator">&gt;</span>addComponent(torus);
+
+      <span class="comment">// TorusMesh Transform</span>
+      <span class="type"><a href="qt3dcore-module.html">Qt3DCore</a></span><span class="operator">::</span><span class="type"><a href="../qtgui/qtransform.html">QTransform</a></span> <span class="operator">*</span>torusTransforms <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="qt3dcore-module.html">Qt3DCore</a></span><span class="operator">::</span><span class="type"><a href="../qtgui/qtransform.html">QTransform</a></span>();
+      torusTransforms<span class="operator">-</span><span class="operator">&gt;</span>setTranslation(QVector3D(<span class="operator">-</span><span class="number">5.0f</span><span class="operator">,</span> <span class="number">3.5f</span><span class="operator">,</span> <span class="number">2.0f</span>));
+      torusTransforms<span class="operator">-</span><span class="operator">&gt;</span>setRotation(<span class="type"><a href="../qtgui/qquaternion.html">QQuaternion</a></span><span class="operator">::</span>fromAxisAndAngle(QVector3D(<span class="number">1</span><span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> <span class="number">0</span>)<span class="operator">,</span> <span class="number">35.0f</span>));
+      torusEntity<span class="operator">-</span><span class="operator">&gt;</span>addComponent(torusTransforms);
+
+      <span class="comment">// Scene file</span>
+      <span class="type"><a href="qt3dcore-module.html">Qt3DCore</a></span><span class="operator">::</span><span class="type">QEntity</span> <span class="operator">*</span>sceneEntity <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="qt3dcore-module.html">Qt3DCore</a></span><span class="operator">::</span><span class="type">QEntity</span>(rootEntity);
+      <span class="type"><a href="qt3drender-module.html">Qt3DRender</a></span><span class="operator">::</span><span class="type">QSceneLoader</span> <span class="operator">*</span>scene <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="qt3drender-module.html">Qt3DRender</a></span><span class="operator">::</span><span class="type">QSceneLoader</span>();
+      scene<span class="operator">-</span><span class="operator">&gt;</span>setObjectName(<span class="type"><a href="../qtcore/qstring.html#QStringLiteral">QStringLiteral</a></span>(<span class="string">&quot;scene&quot;</span>));
+      <span class="type"><a href="qt3dcore-module.html">Qt3DCore</a></span><span class="operator">::</span><span class="type"><a href="../qtgui/qtransform.html">QTransform</a></span> <span class="operator">*</span>sceneTransform <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="qt3dcore-module.html">Qt3DCore</a></span><span class="operator">::</span><span class="type"><a href="../qtgui/qtransform.html">QTransform</a></span>();
+      sceneTransform<span class="operator">-</span><span class="operator">&gt;</span>setTranslation(QVector3D(<span class="number">2.5f</span><span class="operator">,</span> <span class="number">0.5f</span><span class="operator">,</span> <span class="operator">-</span><span class="number">10.0f</span>));
+      sceneEntity<span class="operator">-</span><span class="operator">&gt;</span>addComponent(sceneTransform);
+      scene<span class="operator">-</span><span class="operator">&gt;</span>setSource(<span class="type"><a href="../qtcore/qurl.html">QUrl</a></span>(<span class="string">&quot;qrc:/assets/test_scene.dae&quot;</span>));
+      sceneEntity<span class="operator">-</span><span class="operator">&gt;</span>addComponent(scene);
+
+      <span class="comment">// Camera</span>
+      <span class="type"><a href="qt3dcore-module.html">Qt3DCore</a></span><span class="operator">::</span><span class="type">QCamera</span> <span class="operator">*</span>cameraEntity <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="qt3dcore-module.html">Qt3DCore</a></span><span class="operator">::</span><span class="type">QCamera</span>(rootEntity);
+      cameraEntity<span class="operator">-</span><span class="operator">&gt;</span>setObjectName(<span class="type"><a href="../qtcore/qstring.html#QStringLiteral">QStringLiteral</a></span>(<span class="string">&quot;cameraEntity&quot;</span>));
+      cameraEntity<span class="operator">-</span><span class="operator">&gt;</span>lens()<span class="operator">-</span><span class="operator">&gt;</span>setPerspectiveProjection(<span class="number">60.0f</span><span class="operator">,</span> <span class="number">16.0f</span><span class="operator">/</span><span class="number">9.0f</span><span class="operator">,</span> <span class="number">0.1f</span><span class="operator">,</span> <span class="number">1000.0f</span>);
+      cameraEntity<span class="operator">-</span><span class="operator">&gt;</span>setPosition(QVector3D(<span class="operator">-</span><span class="number">5</span><span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> <span class="operator">-</span><span class="number">20.0f</span>));
+      cameraEntity<span class="operator">-</span><span class="operator">&gt;</span>setViewCenter(QVector3D(<span class="number">11</span><span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> <span class="number">5</span>));
+      cameraEntity<span class="operator">-</span><span class="operator">&gt;</span>setUpVector(QVector3D(<span class="number">0</span><span class="operator">,</span> <span class="number">1</span><span class="operator">,</span> <span class="number">0</span>));
+      input<span class="operator">-</span><span class="operator">&gt;</span>setCamera(cameraEntity);
+
+      <span class="comment">// FrameGraph</span>
+      <span class="type"><a href="qt3drender-module.html">Qt3DRender</a></span><span class="operator">::</span><span class="type">QFrameGraph</span> <span class="operator">*</span>frameGraph <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="qt3drender-module.html">Qt3DRender</a></span><span class="operator">::</span><span class="type">QFrameGraph</span>();
+      <span class="type"><a href="qt3drender-module.html">Qt3DRender</a></span><span class="operator">::</span><span class="type">QTechniqueFilter</span> <span class="operator">*</span>techniqueFilter <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="qt3drender-module.html">Qt3DRender</a></span><span class="operator">::</span><span class="type">QTechniqueFilter</span>();
+      <span class="type"><a href="qt3drender-module.html">Qt3DRender</a></span><span class="operator">::</span><span class="type">QViewport</span> <span class="operator">*</span>viewport <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="qt3drender-module.html">Qt3DRender</a></span><span class="operator">::</span><span class="type">QViewport</span>(techniqueFilter);
+      <span class="type"><a href="qt3drender-module.html">Qt3DRender</a></span><span class="operator">::</span><span class="type">QClearBuffer</span> <span class="operator">*</span>clearBuffer <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="qt3drender-module.html">Qt3DRender</a></span><span class="operator">::</span><span class="type">QClearBuffer</span>(viewport);
+      <span class="type"><a href="qt3drender-module.html">Qt3DRender</a></span><span class="operator">::</span><span class="type">QCameraSelector</span> <span class="operator">*</span>cameraSelector <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="qt3drender-module.html">Qt3DRender</a></span><span class="operator">::</span><span class="type">QCameraSelector</span>(clearBuffer);
+      (<span class="type">void</span>) <span class="keyword">new</span> <span class="type"><a href="qt3drender-module.html">Qt3DRender</a></span><span class="operator">::</span><span class="type">QRenderPassFilter</span>(cameraSelector);
+
+      <span class="comment">// TechiqueFilter and renderPassFilter are not implement yet</span>
+      viewport<span class="operator">-</span><span class="operator">&gt;</span>setRect(<span class="type"><a href="../qtcore/qrectf.html">QRectF</a></span>(<span class="number">0</span><span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> <span class="number">1</span><span class="operator">,</span> <span class="number">1</span>));
+      clearBuffer<span class="operator">-</span><span class="operator">&gt;</span>setBuffers(<span class="type"><a href="qt3drender-module.html">Qt3DRender</a></span><span class="operator">::</span><span class="type">QClearBuffer</span><span class="operator">::</span>ColorDepthBuffer);
+      cameraSelector<span class="operator">-</span><span class="operator">&gt;</span>setCamera(cameraEntity);
+      frameGraph<span class="operator">-</span><span class="operator">&gt;</span>setActiveFrameGraph(techniqueFilter);
+
+      <span class="comment">// Setting the FrameGraph</span>
+      rootEntity<span class="operator">-</span><span class="operator">&gt;</span>addComponent(frameGraph);
+
+      <span class="comment">// Set root object of the scene</span>
+      engine<span class="operator">.</span>setRootEntity(rootEntity);
+      <span class="comment">// Show window</span>
+      view<span class="operator">.</span>show();
+
+      <span class="keyword">return</span> app<span class="operator">.</span>exec();
+  }
+
+</pre>
+</div>
+<!-- @@@cpp_example/main.cpp -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2016 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

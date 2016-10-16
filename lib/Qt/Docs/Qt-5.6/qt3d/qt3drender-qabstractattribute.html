@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qabstractattribute.cpp -->
+  <title>QAbstractAttribute Class | Qt 3D 5.6</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    window.onload = function(){document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");};
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="../qtdoc/supported-platforms-and-configurations.html#qt-5-6">Qt 5.6</a></td><td ><a href="qt3d-index.html">Qt 3D</a></td><td ><a href="qt3d-cpp.html">C++ Classes</a></td><td >QAbstractAttribute</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Qt 5.6.1 Reference Documentation</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#related-non-members">Related Non-Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QAbstractAttribute Class</h1>
+<span class="small-subtitle">(<a href="qt3drender-qabstractattribute.html">Qt3DRender::QAbstractAttribute</a>)<br/></span>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;QAbstractAttribute&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += 3drender</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Instantiated By:</td><td class="memItemRight bottomAlign"> <a href="qml-qt3d-render-abstractattribute.html">AbstractAttribute</a></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="qt3dcore-qnode.html">Qt3DCore::QNode</a></td></tr></table></div><ul>
+<li><a href="qt3drender-qabstractattribute-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#AttributeType-enum">AttributeType</a></b> { VertexAttribute, IndexAttribute }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#DataType-enum">DataType</a></b> { Byte, UnsignedByte, Short, UnsignedShort, ..., Double }</td></tr>
+</table></div>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<div class="table"><table class="propsummary">
+<tr><td class="topAlign"><ul>
+<li class="fn"><b><a href="qt3drender-qabstractattribute.html#attributeType-prop">attributeType</a></b> : AttributeType</li>
+<li class="fn"><b><a href="qt3drender-qabstractattribute.html#buffer-prop">buffer</a></b> : Qt3DRender::QAbstractBuffer *</li>
+<li class="fn"><b><a href="qt3drender-qabstractattribute.html#byteOffset-prop">byteOffset</a></b> : uint</li>
+<li class="fn"><b><a href="qt3drender-qabstractattribute.html#byteStride-prop">byteStride</a></b> : uint</li>
+<li class="fn"><b><a href="qt3drender-qabstractattribute.html#count-prop">count</a></b> : uint</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn"><b><a href="qt3drender-qabstractattribute.html#dataSize-prop">dataSize</a></b> : uint</li>
+<li class="fn"><b><a href="qt3drender-qabstractattribute.html#dataType-prop">dataType</a></b> : DataType</li>
+<li class="fn"><b><a href="qt3drender-qabstractattribute.html#divisor-prop">divisor</a></b> : uint</li>
+<li class="fn"><b><a href="qt3drender-qabstractattribute.html#name-prop">name</a></b> : QString</li>
+</ul>
+</td></tr>
+</table></div>
+<ul>
+<li class="fn">2 properties inherited from <a href="qt3dcore-qnode.html#properties">Qt3DCore::QNode</a></li>
+<li class="fn">1 property inherited from <a href="../qtcore/qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#QAbstractAttribute">QAbstractAttribute</a></b>(QNode *<i>parent</i> = Q_NULLPTR)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#QAbstractAttribute-1">QAbstractAttribute</a></b>(QAbstractBuffer *<i>buf</i>, DataType <i>type</i>, uint <i>dataSize</i>, uint <i>count</i>, uint <i>offset</i> = 0, uint <i>stride</i> = 0, QNode *<i>parent</i> = Q_NULLPTR)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#dtor.QAbstractAttribute">~QAbstractAttribute</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QVector&lt;QVector2D&gt; </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#asVector2D">asVector2D</a></b>() const = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QVector&lt;QVector3D&gt; </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#asVector3D">asVector3D</a></b>() const = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QVector&lt;QVector4D&gt; </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#asVector4D">asVector4D</a></b>() const = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> AttributeType </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#attributeType-prop">attributeType</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QAbstractBuffer *</td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#buffer-prop">buffer</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> uint </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#byteOffset-prop">byteOffset</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> uint </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#byteStride-prop">byteStride</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> uint </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#count-prop">count</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> uint </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#dataSize-prop">dataSize</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> DataType </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#dataType-prop">dataType</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> uint </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#divisor-prop">divisor</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#dump">dump</a></b>(int <i>count</i>) = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#name-prop">name</a></b>() const</td></tr>
+</table></div>
+<ul>
+<li class="fn">6 public functions inherited from <a href="qt3dcore-qnode.html#public-functions">Qt3DCore::QNode</a></li>
+<li class="fn">31 public functions inherited from <a href="../qtcore/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#attributeType-prop">setAttributeType</a></b>(AttributeType <i>attributeType</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#buffer-prop">setBuffer</a></b>(QAbstractBuffer *<i>buffer</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#byteOffset-prop">setByteOffset</a></b>(uint <i>byteOffset</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#byteStride-prop">setByteStride</a></b>(uint <i>byteStride</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#count-prop">setCount</a></b>(uint <i>count</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#dataSize-prop">setDataSize</a></b>(uint <i>size</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#dataType-prop">setDataType</a></b>(DataType <i>type</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#divisor-prop">setDivisor</a></b>(uint <i>divisor</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#name-prop">setName</a></b>(const QString &amp;<i>name</i>)</td></tr>
+</table></div>
+<ul>
+<li class="fn">2 public slots inherited from <a href="qt3dcore-qnode.html#public-slots">Qt3DCore::QNode</a></li>
+<li class="fn">1 public slot inherited from <a href="../qtcore/qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#attributeType-prop">attributeTypeChanged</a></b>(AttributeType <i>attributeType</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#buffer-prop">bufferChanged</a></b>(QAbstractBuffer *<i>buffer</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#byteOffset-prop">byteOffsetChanged</a></b>(uint <i>byteOffset</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#byteStride-prop">byteStrideChanged</a></b>(uint <i>byteStride</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#count-prop">countChanged</a></b>(uint <i>count</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#dataSize-prop">dataSizeChanged</a></b>(uint <i>dataSize</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#dataType-prop">dataTypeChanged</a></b>(DataType <i>dataType</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#divisor-prop">divisorChanged</a></b>(uint <i>divisor</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#name-prop">nameChanged</a></b>(const QString &amp;<i>name</i>)</td></tr>
+</table></div>
+<ul>
+<li class="fn">2 signals inherited from <a href="qt3dcore-qnode.html#signals">Qt3DCore::QNode</a></li>
+<li class="fn">2 signals inherited from <a href="../qtcore/qobject.html#signals">QObject</a></li>
+</ul>
+<a name="related-non-members"></a>
+<h2 id="related-non-members">Related Non-Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> typedef </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qabstractattribute.html#QAbstractBufferPtr-typedef">QAbstractBufferPtr</a></b></td></tr>
+</table></div>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 public variable inherited from <a href="../qtcore/qobject.html#public-variables">QObject</a></li>
+<li class="fn">10 static public members inherited from <a href="../qtcore/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">3 protected functions inherited from <a href="qt3dcore-qnode.html#protected-functions">Qt3DCore::QNode</a></li>
+<li class="fn">9 protected functions inherited from <a href="../qtcore/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="../qtcore/qobject.html#protected-variables">QObject</a></li>
+<li class="fn">1 static protected member inherited from <a href="qt3dcore-qnode.html#static-protected-members">Qt3DCore::QNode</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QAbstractAttribute-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>Abstract class.</p>
+</div>
+<!-- @@@QAbstractAttribute -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$AttributeType$$$VertexAttribute$$$IndexAttribute -->
+<h3 class="fn" id="AttributeType-enum"><a name="AttributeType-enum"></a>enum QAbstractAttribute::<span class="name">AttributeType</span></h3>
+<p>The type of the attribute.</p>
+<div class="table"><table class="valuelist"><tr><th class="tblConst">Constant</th><th class="tblVal">Value</th></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QAbstractAttribute::VertexAttribute</code></td><td class="topAlign tblval"><code>0</code></td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QAbstractAttribute::IndexAttribute</code></td><td class="topAlign tblval"><code>1</code></td></tr>
+</table></div>
+<!-- @@@AttributeType -->
+<!-- $$$DataType$$$Byte$$$UnsignedByte$$$Short$$$UnsignedShort$$$Int$$$UnsignedInt$$$HalfFloat$$$Float$$$Double -->
+<h3 class="fn" id="DataType-enum"><a name="DataType-enum"></a>enum QAbstractAttribute::<span class="name">DataType</span></h3>
+<p>The type of the data.</p>
+<div class="table"><table class="valuelist"><tr><th class="tblConst">Constant</th><th class="tblVal">Value</th></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QAbstractAttribute::Byte</code></td><td class="topAlign tblval"><code>0</code></td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QAbstractAttribute::UnsignedByte</code></td><td class="topAlign tblval"><code>1</code></td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QAbstractAttribute::Short</code></td><td class="topAlign tblval"><code>2</code></td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QAbstractAttribute::UnsignedShort</code></td><td class="topAlign tblval"><code>3</code></td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QAbstractAttribute::Int</code></td><td class="topAlign tblval"><code>4</code></td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QAbstractAttribute::UnsignedInt</code></td><td class="topAlign tblval"><code>5</code></td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QAbstractAttribute::HalfFloat</code></td><td class="topAlign tblval"><code>6</code></td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QAbstractAttribute::Float</code></td><td class="topAlign tblval"><code>7</code></td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QAbstractAttribute::Double</code></td><td class="topAlign tblval"><code>8</code></td></tr>
+</table></div>
+<!-- @@@DataType -->
+</div>
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$attributeType-prop$$$attributeType$$$setAttributeTypeAttributeType$$$attributeTypeChangedAttributeType -->
+<h3 class="fn" id="attributeType-prop"><a name="attributeType-prop"></a><span class="name">attributeType</span> : <span class="type"><a href="qt3drender-qabstractattribute.html#AttributeType-enum">AttributeType</a></span></h3>
+<p>Holds the attribute type.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> AttributeType </td><td class="memItemRight bottomAlign"><span class="name"><b>attributeType</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAttributeType</b></span>(AttributeType <i>attributeType</i>)</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>attributeTypeChanged</b></span>(AttributeType <i>attributeType</i>)</td></tr>
+</table></div>
+<!-- @@@attributeType -->
+<!-- $$$buffer-prop$$$buffer$$$setBufferQAbstractBuffer*$$$bufferChangedQAbstractBuffer* -->
+<h3 class="fn" id="buffer-prop"><a name="buffer-prop"></a><span class="name">buffer</span> : <span class="type">Qt3DRender::QAbstractBuffer</span> *</h3>
+<p>Holds the buffer.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QAbstractBuffer *</td><td class="memItemRight bottomAlign"><span class="name"><b>buffer</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setBuffer</b></span>(QAbstractBuffer *<i>buffer</i>)</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>bufferChanged</b></span>(QAbstractBuffer *<i>buffer</i>)</td></tr>
+</table></div>
+<!-- @@@buffer -->
+<!-- $$$byteOffset-prop$$$byteOffset$$$setByteOffsetuint$$$byteOffsetChangeduint -->
+<h3 class="fn" id="byteOffset-prop"><a name="byteOffset-prop"></a><span class="name">byteOffset</span> : <span class="type"><a href="../qtcore/qtglobal.html#uint-typedef">uint</a></span></h3>
+<p>Holds the byte offset.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> uint </td><td class="memItemRight bottomAlign"><span class="name"><b>byteOffset</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setByteOffset</b></span>(uint <i>byteOffset</i>)</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>byteOffsetChanged</b></span>(uint <i>byteOffset</i>)</td></tr>
+</table></div>
+<!-- @@@byteOffset -->
+<!-- $$$byteStride-prop$$$byteStride$$$setByteStrideuint$$$byteStrideChangeduint -->
+<h3 class="fn" id="byteStride-prop"><a name="byteStride-prop"></a><span class="name">byteStride</span> : <span class="type"><a href="../qtcore/qtglobal.html#uint-typedef">uint</a></span></h3>
+<p>Holds the byte stride.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> uint </td><td class="memItemRight bottomAlign"><span class="name"><b>byteStride</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setByteStride</b></span>(uint <i>byteStride</i>)</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>byteStrideChanged</b></span>(uint <i>byteStride</i>)</td></tr>
+</table></div>
+<!-- @@@byteStride -->
+<!-- $$$count-prop$$$count$$$setCountuint$$$countChangeduint -->
+<h3 class="fn" id="count-prop"><a name="count-prop"></a><span class="name">count</span> : <span class="type"><a href="../qtcore/qtglobal.html#uint-typedef">uint</a></span></h3>
+<p>Holds the count.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> uint </td><td class="memItemRight bottomAlign"><span class="name"><b>count</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setCount</b></span>(uint <i>count</i>)</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>countChanged</b></span>(uint <i>count</i>)</td></tr>
+</table></div>
+<!-- @@@count -->
+<!-- $$$dataSize-prop$$$dataSize$$$setDataSizeuint$$$dataSizeChangeduint -->
+<h3 class="fn" id="dataSize-prop"><a name="dataSize-prop"></a><span class="name">dataSize</span> : <span class="type"><a href="../qtcore/qtglobal.html#uint-typedef">uint</a></span></h3>
+<p>Holds the data size.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> uint </td><td class="memItemRight bottomAlign"><span class="name"><b>dataSize</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setDataSize</b></span>(uint <i>size</i>)</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>dataSizeChanged</b></span>(uint <i>dataSize</i>)</td></tr>
+</table></div>
+<!-- @@@dataSize -->
+<!-- $$$dataType-prop$$$dataType$$$setDataTypeDataType$$$dataTypeChangedDataType -->
+<h3 class="fn" id="dataType-prop"><a name="dataType-prop"></a><span class="name">dataType</span> : <span class="type"><a href="qt3drender-qabstractattribute.html#DataType-enum">DataType</a></span></h3>
+<p>Holds the data type.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> DataType </td><td class="memItemRight bottomAlign"><span class="name"><b>dataType</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setDataType</b></span>(DataType <i>type</i>)</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>dataTypeChanged</b></span>(DataType <i>dataType</i>)</td></tr>
+</table></div>
+<!-- @@@dataType -->
+<!-- $$$divisor-prop$$$divisor$$$setDivisoruint$$$divisorChangeduint -->
+<h3 class="fn" id="divisor-prop"><a name="divisor-prop"></a><span class="name">divisor</span> : <span class="type"><a href="../qtcore/qtglobal.html#uint-typedef">uint</a></span></h3>
+<p>Holds the divisor.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> uint </td><td class="memItemRight bottomAlign"><span class="name"><b>divisor</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setDivisor</b></span>(uint <i>divisor</i>)</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>divisorChanged</b></span>(uint <i>divisor</i>)</td></tr>
+</table></div>
+<!-- @@@divisor -->
+<!-- $$$name-prop$$$name$$$setNameconstQString&$$$nameChangedconstQString& -->
+<h3 class="fn" id="name-prop"><a name="name-prop"></a><span class="name">name</span> : <span class="type"><a href="../qtcore/qstring.html">QString</a></span></h3>
+<p>Holds the name.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>name</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setName</b></span>(const QString &amp;<i>name</i>)</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>nameChanged</b></span>(const QString &amp;<i>name</i>)</td></tr>
+</table></div>
+<!-- @@@name -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QAbstractAttribute[overload1]$$$QAbstractAttributeQNode* -->
+<h3 class="fn" id="QAbstractAttribute"><a name="QAbstractAttribute"></a>QAbstractAttribute::<span class="name">QAbstractAttribute</span>(<span class="type"><a href="qt3dcore-qnode.html#QNode">QNode</a></span> *<i>parent</i> = Q_NULLPTR)</h3>
+<p>Constructs a new <a href="qt3drender-qabstractattribute.html">QAbstractAttribute</a> with <i>parent</i>.</p>
+<!-- @@@QAbstractAttribute -->
+<!-- $$$QAbstractAttribute$$$QAbstractAttributeQAbstractBuffer*DataTypeuintuintuintuintQNode* -->
+<h3 class="fn" id="QAbstractAttribute-1"><a name="QAbstractAttribute-1"></a>QAbstractAttribute::<span class="name">QAbstractAttribute</span>(<span class="type"><a href="qt3drender-qabstractbuffer.html">QAbstractBuffer</a></span> *<i>buf</i>, <span class="type"><a href="qt3drender-qabstractattribute.html#DataType-enum">DataType</a></span> <i>type</i>, <span class="type"><a href="../qtcore/qtglobal.html#uint-typedef">uint</a></span> <i>dataSize</i>, <span class="type"><a href="../qtcore/qtglobal.html#uint-typedef">uint</a></span> <i>count</i>, <span class="type"><a href="../qtcore/qtglobal.html#uint-typedef">uint</a></span> <i>offset</i> = 0, <span class="type"><a href="../qtcore/qtglobal.html#uint-typedef">uint</a></span> <i>stride</i> = 0, <span class="type"><a href="qt3dcore-qnode.html#QNode">QNode</a></span> *<i>parent</i> = Q_NULLPTR)</h3>
+<p>Constructs a new <a href="qt3drender-qabstractattribute.html">QAbstractAttribute</a> from <i>buf</i> of <i>type</i>, <i>dataSize</i>, <i>count</i>, <i>offset</i>, and <i>stride</i> with <i>parent</i>.</p>
+<!-- @@@QAbstractAttribute -->
+<!-- $$$~QAbstractAttribute[overload1]$$$~QAbstractAttribute -->
+<h3 class="fn" id="dtor.QAbstractAttribute"><a name="dtor.QAbstractAttribute"></a>QAbstractAttribute::<span class="name">~QAbstractAttribute</span>()</h3>
+<p>Destroys the abstract attribute.</p>
+<!-- @@@~QAbstractAttribute -->
+<!-- $$$asVector2D[overload1]$$$asVector2D -->
+<h3 class="fn" id="asVector2D"><a name="asVector2D"></a><code>[pure virtual] </code><span class="type"><a href="../qtcore/qvector.html">QVector</a></span>&lt;<span class="type"><a href="../qtgui/qvector2d.html">QVector2D</a></span>&gt; QAbstractAttribute::<span class="name">asVector2D</span>() const</h3>
+<!-- @@@asVector2D -->
+<!-- $$$asVector3D[overload1]$$$asVector3D -->
+<h3 class="fn" id="asVector3D"><a name="asVector3D"></a><code>[pure virtual] </code><span class="type"><a href="../qtcore/qvector.html">QVector</a></span>&lt;<span class="type"><a href="../qtgui/qvector3d.html">QVector3D</a></span>&gt; QAbstractAttribute::<span class="name">asVector3D</span>() const</h3>
+<!-- @@@asVector3D -->
+<!-- $$$asVector4D[overload1]$$$asVector4D -->
+<h3 class="fn" id="asVector4D"><a name="asVector4D"></a><code>[pure virtual] </code><span class="type"><a href="../qtcore/qvector.html">QVector</a></span>&lt;<span class="type"><a href="../qtgui/qvector4d.html">QVector4D</a></span>&gt; QAbstractAttribute::<span class="name">asVector4D</span>() const</h3>
+<!-- @@@asVector4D -->
+<!-- $$$dump[overload1]$$$dumpint -->
+<h3 class="fn" id="dump"><a name="dump"></a><code>[pure virtual] </code><span class="type">void</span> QAbstractAttribute::<span class="name">dump</span>(<span class="type">int</span> <i>count</i>)</h3>
+<p><i>count</i></p>
+<!-- @@@dump -->
+</div>
+<div class="relnonmem">
+<h2>Related Non-Members</h2>
+<!-- $$$QAbstractBufferPtr -->
+<h3 class="fn" id="QAbstractBufferPtr-typedef"><a name="QAbstractBufferPtr-typedef"></a>typedef Qt3DRender::<span class="name">QAbstractBufferPtr</span></h3>
+<!-- @@@QAbstractBufferPtr -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2016 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

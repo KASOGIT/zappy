@@ -1,0 +1,12 @@
+# Blender MTL File: 'Best lighting.blend'
+# Material Count: 1
+
+newmtl it0081_00.png
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.817239 0.911704 0.902587
+Ks 1.000000 1.000000 1.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Textures\\it0081_00.png

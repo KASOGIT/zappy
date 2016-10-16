@@ -1,0 +1,1134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qtlabscontrols-customize.qdoc -->
+  <title>Customizing Qt Labs Controls | Qt Labs Controls 5.6</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    window.onload = function(){document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");};
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="../qtdoc/supported-platforms-and-configurations.html#qt-5-6">Qt 5.6</a></td><td ><a href="qtlabscontrols-index.html">Qt Labs Controls</a></td><td >Customizing Qt Labs Controls</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Qt 5.6.1 Reference Documentation</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#customizing-busyindicator">Customizing BusyIndicator</a></li>
+<li class="level1"><a href="#customizing-button">Customizing Button</a></li>
+<li class="level1"><a href="#customizing-checkbox">Customizing CheckBox</a></li>
+<li class="level1"><a href="#customizing-combobox">Customizing ComboBox</a></li>
+<li class="level1"><a href="#customizing-dial">Customizing Dial</a></li>
+<li class="level1"><a href="#customizing-drawer">Customizing Drawer</a></li>
+<li class="level1"><a href="#customizing-frame">Customizing Frame</a></li>
+<li class="level1"><a href="#customizing-groupbox">Customizing GroupBox</a></li>
+<li class="level1"><a href="#customizing-itemdelegate">Customizing ItemDelegate</a></li>
+<li class="level1"><a href="#customizing-label">Customizing Label</a></li>
+<li class="level1"><a href="#customizing-menu">Customizing Menu</a></li>
+<li class="level1"><a href="#customizing-menuitem">Customizing MenuItem</a></li>
+<li class="level1"><a href="#customizing-pageindicator">Customizing PageIndicator</a></li>
+<li class="level1"><a href="#customizing-pane">Customizing Pane</a></li>
+<li class="level1"><a href="#customizing-progressbar">Customizing ProgressBar</a></li>
+<li class="level1"><a href="#customizing-radiobutton">Customizing RadioButton</a></li>
+<li class="level1"><a href="#customizing-rangeslider">Customizing RangeSlider</a></li>
+<li class="level1"><a href="#customizing-scrollbar">Customizing ScrollBar</a></li>
+<li class="level1"><a href="#customizing-scrollindicator">Customizing ScrollIndicator</a></li>
+<li class="level1"><a href="#customizing-slider">Customizing Slider</a></li>
+<li class="level1"><a href="#customizing-spinbox">Customizing SpinBox</a></li>
+<li class="level1"><a href="#customizing-stackview">Customizing StackView</a></li>
+<li class="level1"><a href="#customizing-swipeview">Customizing SwipeView</a></li>
+<li class="level1"><a href="#customizing-switch">Customizing Switch</a></li>
+<li class="level1"><a href="#customizing-tabbar">Customizing TabBar</a></li>
+<li class="level1"><a href="#customizing-tabbutton">Customizing TabButton</a></li>
+<li class="level1"><a href="#customizing-textarea">Customizing TextArea</a></li>
+<li class="level1"><a href="#customizing-textfield">Customizing TextField</a></li>
+<li class="level1"><a href="#customizing-toolbar">Customizing ToolBar</a></li>
+<li class="level1"><a href="#customizing-toolbutton">Customizing ToolButton</a></li>
+<li class="level1"><a href="#customizing-tumbler">Customizing Tumbler</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Customizing Qt Labs Controls</h1>
+<span class="subtitle"></span>
+<!-- $$$qtlabscontrols-customize.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>Qt Labs Controls consist of a hierarchy (tree) of items. In order to provide a custom look and feel, the default QML implementation of each item can be replaced with a custom one. The following snippets present the default implementations of various items. These can be used as a starting point to implement a custom look and feel.</p>
+<a name="customizing-busyindicator"></a>
+<h2 id="customizing-busyindicator">Customizing BusyIndicator</h2>
+<p><a href="qml-qt-labs-controls-busyindicator.html">BusyIndicator</a> consists of two visual items: <a href="qml-qt-labs-controls-control.html#background-prop">background</a> and <a href="qml-qt-labs-controls-control.html#contentItem-prop">contentItem</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-busyindicator-background.png" alt="" /></p><p><a href="qml-qt-labs-controls-busyindicator.html">BusyIndicator</a> has no background item by default.</p>
+<a name="content-item"></a>
+<h4 >Content item</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-busyindicator-contentItem.png" alt="" /></p><pre class="qml">
+
+  <span class="name">contentItem</span>: <span class="name">BusyRing</span> {
+      <span class="name">id</span>: <span class="name">ring</span>
+      <span class="name">implicitWidth</span>: <span class="number">48</span>
+      <span class="name">implicitHeight</span>: <span class="number">48</span>
+      <span class="name">opacity</span>: <span class="name">control</span>.<span class="name">running</span> ? <span class="number">1</span> : <span class="number">0</span>
+
+      Behavior on <span class="name">opacity</span> { <span class="type"><a href="../qtquick/qml-qtquick-opacityanimator.html">OpacityAnimator</a></span> { <span class="name">duration</span>: <span class="number">250</span> } }
+
+      <span class="type">BusyRingAnimator</span> {
+          <span class="name">target</span>: <span class="name">ring</span>
+          <span class="name">running</span>: <span class="name">control</span>.<span class="name">visible</span> <span class="operator">&amp;&amp;</span> <span class="name">control</span>.<span class="name">running</span>
+      }
+  }
+
+</pre>
+<a name="customizing-button"></a>
+<h2 id="customizing-button">Customizing Button</h2>
+<p>Button consists of two visual items: <a href="qml-qt-labs-controls-control.html#background-prop">background</a> and <a href="qml-qt-labs-controls-abstractbutton.html#label-prop">label</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-button-background.png" alt="" /></p><pre class="qml">
+
+  <span class="name">background</span>: <span class="name">Rectangle</span> {
+      <span class="name">implicitWidth</span>: <span class="number">100</span>
+      <span class="name">implicitHeight</span>: <span class="number">40</span>
+      <span class="name">opacity</span>: <span class="name">enabled</span> ? <span class="number">1</span> : <span class="number">0.3</span>
+      <span class="name">color</span>: <span class="name">control</span>.<span class="name">pressed</span> ? (<span class="name">control</span>.<span class="name">highlighted</span> ? <span class="string">&quot;#585a5c&quot;</span> : <span class="string">&quot;#e4e4e4&quot;</span>) : (<span class="name">control</span>.<span class="name">highlighted</span> ? <span class="string">&quot;#353637&quot;</span> : <span class="string">&quot;#f6f6f6&quot;</span>)
+      <span class="name">border</span>.color: <span class="name">control</span>.<span class="name">pressed</span> ? <span class="string">&quot;#26282a&quot;</span> : <span class="string">&quot;#353637&quot;</span>
+  }
+
+</pre>
+<a name="label"></a>
+<h4 >Label</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-button-label.png" alt="" /></p><pre class="qml">
+
+  <span class="name">label</span>: <span class="name">Text</span> {
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">leftPadding</span>
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span>
+      <span class="name">width</span>: <span class="name">control</span>.<span class="name">availableWidth</span>
+      <span class="name">height</span>: <span class="name">control</span>.<span class="name">availableHeight</span>
+      <span class="name">text</span>: <span class="name">control</span>.<span class="name">text</span>
+      <span class="name">font</span>: <span class="name">control</span>.<span class="name">font</span>
+      <span class="name">opacity</span>: <span class="name">enabled</span> <span class="operator">||</span> <span class="name">highlighted</span> ? <span class="number">1</span> : <span class="number">0.3</span>
+      <span class="name">color</span>: <span class="name">control</span>.<span class="name">highlighted</span> ? <span class="string">&quot;#ffffff&quot;</span> : (<span class="name">control</span>.<span class="name">pressed</span> ? <span class="string">&quot;#26282a&quot;</span> : <span class="string">&quot;#353637&quot;</span>)
+      <span class="name">horizontalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignHCenter</span>
+      <span class="name">verticalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignVCenter</span>
+      <span class="name">elide</span>: <span class="name">Text</span>.<span class="name">ElideRight</span>
+  }
+
+</pre>
+<a name="customizing-checkbox"></a>
+<h2 id="customizing-checkbox">Customizing CheckBox</h2>
+<p><a href="qml-qt-labs-controls-checkbox.html">CheckBox</a> consists of three visual items: <a href="qml-qt-labs-controls-control.html#background-prop">background</a>, <a href="qml-qt-labs-controls-abstractbutton.html#label-prop">label</a> and <a href="qml-qt-labs-controls-abstractbutton.html#indicator-prop">indicator</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-checkbox-background.png" alt="" /></p><p><a href="qml-qt-labs-controls-checkbox.html">CheckBox</a> has no background item by default.</p>
+<a name="label"></a>
+<h4 >Label</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-checkbox-label.png" alt="" /></p><pre class="qml">
+
+  <span class="name">label</span>: <span class="name">Text</span> {
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">mirrored</span> ? <span class="name">control</span>.<span class="name">leftPadding</span> : (<span class="name">indicator</span>.<span class="name">x</span> <span class="operator">+</span> <span class="name">indicator</span>.<span class="name">width</span> <span class="operator">+</span> <span class="name">control</span>.<span class="name">spacing</span>)
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span>
+      <span class="name">width</span>: <span class="name">control</span>.<span class="name">availableWidth</span> <span class="operator">-</span> <span class="name">indicator</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">control</span>.<span class="name">spacing</span>
+      <span class="name">height</span>: <span class="name">control</span>.<span class="name">availableHeight</span>
+
+      <span class="name">text</span>: <span class="name">control</span>.<span class="name">text</span>
+      <span class="name">font</span>: <span class="name">control</span>.<span class="name">font</span>
+      <span class="name">color</span>: <span class="name">control</span>.<span class="name">pressed</span> ? <span class="string">&quot;#26282a&quot;</span> : <span class="string">&quot;#353637&quot;</span>
+      <span class="name">elide</span>: <span class="name">Text</span>.<span class="name">ElideRight</span>
+      <span class="name">visible</span>: <span class="name">control</span>.<span class="name">text</span>
+      <span class="name">horizontalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignLeft</span>
+      <span class="name">verticalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignVCenter</span>
+  }
+
+</pre>
+<a name="indicator"></a>
+<h4 >Indicator</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-checkbox-indicator.png" alt="" /></p><pre class="qml">
+
+  <span class="name">indicator</span>: <span class="name">Rectangle</span> {
+      <span class="name">implicitWidth</span>: <span class="number">28</span>
+      <span class="name">implicitHeight</span>: <span class="number">28</span>
+      <span class="name">x</span>: <span class="name">text</span> ? (<span class="name">control</span>.<span class="name">mirrored</span> ? <span class="name">control</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">width</span> <span class="operator">-</span> <span class="name">control</span>.<span class="name">rightPadding</span> : <span class="name">control</span>.<span class="name">leftPadding</span>) : <span class="name">control</span>.<span class="name">leftPadding</span> <span class="operator">+</span> (<span class="name">control</span>.<span class="name">availableWidth</span> <span class="operator">-</span> <span class="name">width</span>) <span class="operator">/</span> <span class="number">2</span>
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span> <span class="operator">+</span> (<span class="name">control</span>.<span class="name">availableHeight</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span>
+
+      <span class="name">color</span>: <span class="name">control</span>.<span class="name">enabled</span> ? (<span class="name">control</span>.<span class="name">pressed</span> ? <span class="string">&quot;#e4e4e4&quot;</span> : <span class="string">&quot;#f6f6f6&quot;</span>) : <span class="string">&quot;#353637&quot;</span>
+      <span class="name">border</span>.color: <span class="name">control</span>.<span class="name">enabled</span> ? (<span class="name">control</span>.<span class="name">pressed</span> ? <span class="string">&quot;#26282a&quot;</span> : <span class="string">&quot;#353637&quot;</span>) : <span class="string">&quot;transparent&quot;</span>
+
+      <span class="type"><a href="../qtquick/qml-qtquick-image.html">Image</a></span> {
+          <span class="name">x</span>: (<span class="name">parent</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">width</span>) <span class="operator">/</span> <span class="number">2</span>
+          <span class="name">y</span>: (<span class="name">parent</span>.<span class="name">height</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span>
+          <span class="name">source</span>: <span class="string">&quot;qrc:/qt-project.org/imports/Qt/labs/controls/images/check.png&quot;</span>
+          <span class="name">visible</span>: <span class="name">control</span>.<span class="name">checkState</span> <span class="operator">===</span> <span class="name">Qt</span>.<span class="name">Checked</span>
+      }
+
+      <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+          <span class="name">x</span>: (<span class="name">parent</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">width</span>) <span class="operator">/</span> <span class="number">2</span>
+          <span class="name">y</span>: (<span class="name">parent</span>.<span class="name">height</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span>
+          <span class="name">width</span>: <span class="number">16</span>
+          <span class="name">height</span>: <span class="number">3</span>
+          <span class="name">color</span>: <span class="string">&quot;#353637&quot;</span>
+          <span class="name">visible</span>: <span class="name">control</span>.<span class="name">checkState</span> <span class="operator">===</span> <span class="name">Qt</span>.<span class="name">PartiallyChecked</span>
+      }
+  }
+
+</pre>
+<a name="customizing-combobox"></a>
+<h2 id="customizing-combobox">Customizing ComboBox</h2>
+<p><a href="qml-qt-labs-controls-combobox.html">ComboBox</a> consists of <a href="qml-qt-labs-controls-control.html#background-prop">background</a>, <a href="qml-qt-labs-controls-control.html#contentItem-prop">content item</a>, <a href="qml-qt-labs-controls-combobox.html#popup-prop">popup</a>, and <a href="qml-qt-labs-controls-combobox.html#delegate-prop">delegate</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-combobox-background.png" alt="" /></p><pre class="qml">
+
+  <span class="name">background</span>: <span class="name">Item</span> {
+      <span class="name">implicitWidth</span>: <span class="number">120</span>
+      <span class="name">implicitHeight</span>: <span class="number">40</span>
+
+      <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+          <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+          <span class="name">height</span>: <span class="name">parent</span>.<span class="name">height</span>
+          <span class="name">opacity</span>: <span class="name">control</span>.<span class="name">enabled</span> ? <span class="number">1.0</span> : <span class="number">0.2</span>
+          <span class="name">color</span>: <span class="name">control</span>.<span class="name">pressed</span> <span class="operator">||</span> <span class="name">popup</span>.<span class="name">visible</span> ? <span class="string">&quot;#585A5C&quot;</span> : <span class="string">&quot;#353637&quot;</span>
+      }
+
+      <span class="type"><a href="../qtquick/qml-qtquick-image.html">Image</a></span> {
+          <span class="name">x</span>: <span class="name">parent</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">width</span> <span class="operator">-</span> <span class="name">control</span>.<span class="name">rightPadding</span>
+          <span class="name">y</span>: (<span class="name">parent</span>.<span class="name">height</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span>
+          <span class="name">source</span>: <span class="string">&quot;qrc:/qt-project.org/imports/Qt/labs/controls/images/drop-indicator.png&quot;</span>
+      }
+  }
+
+</pre>
+<a name="content-item"></a>
+<h4 >Content item</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-combobox-contentItem.png" alt="" /></p><pre class="qml">
+
+  <span class="name">contentItem</span>: <span class="name">Text</span> {
+      <span class="name">text</span>: <span class="name">control</span>.<span class="name">displayText</span>
+      <span class="name">font</span>: <span class="name">control</span>.<span class="name">font</span>
+      <span class="name">color</span>: <span class="string">&quot;#ffffff&quot;</span>
+      <span class="name">horizontalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignLeft</span>
+      <span class="name">verticalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignVCenter</span>
+      <span class="name">elide</span>: <span class="name">Text</span>.<span class="name">ElideRight</span>
+      <span class="name">rightPadding</span>: <span class="number">18</span> <span class="operator">+</span> <span class="name">control</span>.<span class="name">spacing</span>
+  }
+
+</pre>
+<a name="popup"></a>
+<h4 >Popup</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-combobox-popup.png" alt="" /></p><pre class="qml">
+
+  <span class="name">popup</span>: <span class="name">T</span>.Popup {
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">height</span> <span class="operator">-</span> <span class="number">1</span>
+      <span class="name">implicitWidth</span>: <span class="name">control</span>.<span class="name">width</span>
+      <span class="name">implicitHeight</span>: <span class="name">listview</span>.<span class="name">contentHeight</span>
+      <span class="name">topMargin</span>: <span class="number">6</span>
+      <span class="name">bottomMargin</span>: <span class="number">6</span>
+
+      <span class="name">contentItem</span>: <span class="name">ListView</span> {
+          <span class="name">id</span>: <span class="name">listview</span>
+          <span class="name">clip</span>: <span class="number">true</span>
+          <span class="name">model</span>: <span class="name">control</span>.<span class="name">popup</span>.<span class="name">visible</span> ? <span class="name">control</span>.<span class="name">delegateModel</span> : <span class="number">null</span>
+          <span class="name">currentIndex</span>: <span class="name">control</span>.<span class="name">highlightedIndex</span>
+
+          <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+              <span class="name">z</span>: <span class="number">10</span>
+              <span class="name">parent</span>: <span class="name">listview</span>
+              <span class="name">width</span>: <span class="name">listview</span>.<span class="name">width</span>
+              <span class="name">height</span>: <span class="name">listview</span>.<span class="name">height</span>
+              <span class="name">border</span>.color: <span class="string">&quot;#353637&quot;</span>
+              <span class="name">color</span>: <span class="string">&quot;transparent&quot;</span>
+          }
+
+          <span class="name">T</span>.ScrollIndicator.vertical: <span class="name">ScrollIndicator</span> { }
+      }
+
+      <span class="name">background</span>: <span class="name">Rectangle</span> { }
+  }
+
+</pre>
+<a name="delegate"></a>
+<h4 >Delegate</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-combobox-delegate.png" alt="" /></p><pre class="qml">
+
+  <span class="name">delegate</span>: <span class="name">ItemDelegate</span> {
+      <span class="name">width</span>: <span class="name">control</span>.<span class="name">width</span>
+      <span class="name">text</span>: <span class="name">control</span>.<span class="name">textRole</span> ? (<span class="name">Array</span>.<span class="name">isArray</span>(<span class="name">control</span>.<span class="name">model</span>) ? <span class="name">modelData</span>[<span class="name">control</span>.<span class="name">textRole</span>] : <span class="name">model</span>[<span class="name">control</span>.<span class="name">textRole</span>]) : <span class="name">modelData</span>
+      <span class="name">checkable</span>: <span class="number">true</span>
+      <span class="name">autoExclusive</span>: <span class="number">true</span>
+      <span class="name">checked</span>: <span class="name">control</span>.<span class="name">currentIndex</span> <span class="operator">===</span> <span class="name">index</span>
+      <span class="name">highlighted</span>: <span class="name">control</span>.<span class="name">highlightedIndex</span> <span class="operator">===</span> <span class="name">index</span>
+      <span class="name">pressed</span>: <span class="name">highlighted</span> <span class="operator">&amp;&amp;</span> <span class="name">control</span>.<span class="name">pressed</span>
+  }
+
+</pre>
+<a name="customizing-dial"></a>
+<h2 id="customizing-dial">Customizing Dial</h2>
+<p>Dial consists of two visual items: <a href="qml-qt-labs-controls-control.html#background-prop">background</a> and <a href="qml-qt-labs-controls-dial.html#handle-prop">handle</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-dial-background.png" alt="" /></p><pre class="qml">
+
+  <span class="name">background</span>: <span class="name">Rectangle</span> {
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">width</span> <span class="operator">/</span> <span class="number">2</span> <span class="operator">-</span> <span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">height</span> <span class="operator">/</span> <span class="number">2</span> <span class="operator">-</span> <span class="name">height</span> <span class="operator">/</span> <span class="number">2</span>
+      <span class="name">width</span>: <span class="name">Math</span>.<span class="name">max</span>(<span class="number">64</span>, <span class="name">Math</span>.<span class="name">min</span>(<span class="name">control</span>.<span class="name">width</span>, <span class="name">control</span>.<span class="name">height</span>))
+      <span class="name">height</span>: <span class="name">Math</span>.<span class="name">max</span>(<span class="number">64</span>, <span class="name">Math</span>.<span class="name">min</span>(<span class="name">control</span>.<span class="name">width</span>, <span class="name">control</span>.<span class="name">height</span>))
+      <span class="name">radius</span>: <span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>
+      <span class="name">border</span>.color: <span class="string">&quot;#353637&quot;</span>
+  }
+
+</pre>
+<a name="indicator"></a>
+<h4 >Indicator</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-dial-handle.png" alt="" /></p><pre class="qml">
+
+  <span class="name">handle</span>: <span class="name">Image</span> {
+      <span class="name">id</span>: <span class="name">handleItem</span>
+      <span class="name">x</span>: <span class="name">background</span>.<span class="name">x</span> <span class="operator">+</span> <span class="name">background</span>.<span class="name">width</span> <span class="operator">/</span> <span class="number">2</span> <span class="operator">-</span> <span class="name">handle</span>.<span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>
+      <span class="name">y</span>: <span class="name">background</span>.<span class="name">y</span> <span class="operator">+</span> <span class="name">background</span>.<span class="name">height</span> <span class="operator">/</span> <span class="number">2</span> <span class="operator">-</span> <span class="name">handle</span>.<span class="name">height</span> <span class="operator">/</span> <span class="number">2</span>
+      <span class="name">width</span>: <span class="number">14</span>
+      <span class="name">height</span>: <span class="number">10</span>
+      <span class="name">source</span>: <span class="string">&quot;qrc:/qt-project.org/imports/Qt/labs/controls/images/dial-indicator.png&quot;</span>
+      <span class="name">antialiasing</span>: <span class="number">true</span>
+      <span class="name">transform</span>: [
+          <span class="type"><a href="../qtquick/qml-qtquick-translate.html">Translate</a></span> {
+              <span class="name">y</span>: -<span class="name">background</span>.<span class="name">height</span> <span class="operator">*</span> <span class="number">0.4</span> <span class="operator">+</span> <span class="name">handle</span>.<span class="name">height</span> <span class="operator">/</span> <span class="number">2</span>
+          },
+          <span class="type"><a href="../qtquick/qml-qtquick-rotation.html">Rotation</a></span> {
+              <span class="name">angle</span>: <span class="name">control</span>.<span class="name">angle</span>
+              <span class="name">origin</span>.x: <span class="name">handle</span>.<span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>
+              <span class="name">origin</span>.y: <span class="name">handle</span>.<span class="name">height</span> <span class="operator">/</span> <span class="number">2</span>
+          }
+      ]
+  }
+
+</pre>
+<a name="customizing-drawer"></a>
+<h2 id="customizing-drawer">Customizing Drawer</h2>
+<p>Drawer can have a visual <a href="qml-qt-labs-controls-control.html#background-prop">background</a> item. The navigation is implemented by the <a href="qml-qt-labs-controls-control.html#contentItem-prop">content item</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<pre class="qml">
+
+
+
+</pre>
+<a name="content-item"></a>
+<h4 >Content item</h4>
+<p>Drawer has no content item by default.</p>
+<a name="customizing-frame"></a>
+<h2 id="customizing-frame">Customizing Frame</h2>
+<p>Frame consists of two visual items: <a href="qml-qt-labs-controls-control.html#background-prop">background</a> and <a href="qml-qt-labs-controls-frame.html#frame-prop">frame</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-frame-background.png" alt="" /></p><p>Frame has no background item by default.</p>
+<a name="frame"></a>
+<h4 >Frame</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-frame-frame.png" alt="" /></p><pre class="qml">
+
+  <span class="name">frame</span>: <span class="name">Rectangle</span> {
+      <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+      <span class="name">height</span>: <span class="name">parent</span>.<span class="name">height</span>
+
+      <span class="name">color</span>: <span class="string">&quot;transparent&quot;</span>
+      <span class="name">border</span>.color: <span class="string">&quot;#bdbebf&quot;</span>
+  }
+
+</pre>
+<a name="customizing-groupbox"></a>
+<h2 id="customizing-groupbox">Customizing GroupBox</h2>
+<p><a href="qml-qt-labs-controls-groupbox.html">GroupBox</a> consists of three visual items: <a href="qml-qt-labs-controls-control.html#background-prop">background</a>, <a href="qml-qt-labs-controls-frame.html#frame-prop">frame</a> and <a href="qml-qt-labs-controls-groupbox.html#label-prop">label</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-groupbox-background.png" alt="" /></p><p><a href="qml-qt-labs-controls-groupbox.html">GroupBox</a> has no background item by default.</p>
+<a name="frame"></a>
+<h4 >Frame</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-groupbox-frame.png" alt="" /></p><pre class="qml">
+
+  <span class="name">frame</span>: <span class="name">Rectangle</span> {
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span> <span class="operator">-</span> <span class="name">control</span>.<span class="name">padding</span>
+      <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+      <span class="name">height</span>: <span class="name">parent</span>.<span class="name">height</span> <span class="operator">-</span> <span class="name">control</span>.<span class="name">topPadding</span> <span class="operator">+</span> <span class="name">control</span>.<span class="name">padding</span>
+
+      <span class="name">color</span>: <span class="string">&quot;transparent&quot;</span>
+      <span class="name">border</span>.color: <span class="string">&quot;#bdbebf&quot;</span>
+  }
+
+</pre>
+<a name="label"></a>
+<h4 >Label</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-groupbox-label.png" alt="" /></p><pre class="qml">
+
+  <span class="name">label</span>: <span class="name">Text</span> {
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">leftPadding</span>
+      <span class="name">width</span>: <span class="name">control</span>.<span class="name">availableWidth</span>
+
+      <span class="name">text</span>: <span class="name">control</span>.<span class="name">title</span>
+      <span class="name">font</span>: <span class="name">control</span>.<span class="name">font</span>
+      <span class="name">color</span>: <span class="name">control</span>.<span class="name">enabled</span> ? <span class="string">&quot;#353637&quot;</span> : <span class="string">&quot;#bdbebf&quot;</span>
+      <span class="name">elide</span>: <span class="name">Text</span>.<span class="name">ElideRight</span>
+      <span class="name">horizontalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignLeft</span>
+      <span class="name">verticalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignVCenter</span>
+  }
+
+</pre>
+<a name="customizing-itemdelegate"></a>
+<h2 id="customizing-itemdelegate">Customizing ItemDelegate</h2>
+<p><a href="qml-qt-labs-controls-itemdelegate.html">ItemDelegate</a> consists of three visual items: <a href="qml-qt-labs-controls-control.html#background-prop">background</a>, <a href="qml-qt-labs-controls-abstractbutton.html#label-prop">label</a> and <a href="qml-qt-labs-controls-abstractbutton.html#indicator-prop">indicator</a>. The indicator is only visible for <a href="qml-qt-labs-controls-abstractbutton.html#checkable-prop">checkable</a> items.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-itemdelegate-background.png" alt="" /></p><pre class="qml">
+
+  <span class="name">background</span>: <span class="name">Rectangle</span> {
+      <span class="name">implicitWidth</span>: <span class="number">100</span>
+      <span class="name">implicitHeight</span>: <span class="number">40</span>
+      <span class="name">visible</span>: <span class="name">control</span>.<span class="name">pressed</span> <span class="operator">||</span> <span class="name">control</span>.<span class="name">highlighted</span>
+      <span class="name">color</span>: <span class="name">control</span>.<span class="name">pressed</span> ? <span class="string">&quot;#bdbebf&quot;</span> : <span class="string">&quot;#eeeeee&quot;</span>
+  }
+
+</pre>
+<a name="label"></a>
+<h4 >Label</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-itemdelegate-label.png" alt="" /></p><pre class="qml">
+
+  <span class="name">label</span>: <span class="name">Text</span> {
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">mirrored</span> ? <span class="name">control</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">width</span> <span class="operator">-</span> <span class="name">control</span>.<span class="name">rightPadding</span> : <span class="name">control</span>.<span class="name">leftPadding</span>
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span>
+      <span class="name">width</span>: <span class="name">control</span>.<span class="name">availableWidth</span> <span class="operator">-</span> (<span class="name">control</span>.<span class="name">checkable</span> ? <span class="name">indicator</span>.<span class="name">width</span> <span class="operator">+</span> <span class="name">control</span>.<span class="name">spacing</span> : <span class="number">0</span>)
+      <span class="name">height</span>: <span class="name">control</span>.<span class="name">availableHeight</span>
+
+      <span class="name">text</span>: <span class="name">control</span>.<span class="name">text</span>
+      <span class="name">font</span>: <span class="name">control</span>.<span class="name">font</span>
+      <span class="name">color</span>: <span class="name">control</span>.<span class="name">enabled</span> ? <span class="string">&quot;#26282a&quot;</span> : <span class="string">&quot;#bdbebf&quot;</span>
+      <span class="name">elide</span>: <span class="name">Text</span>.<span class="name">ElideRight</span>
+      <span class="name">visible</span>: <span class="name">control</span>.<span class="name">text</span>
+      <span class="name">horizontalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignLeft</span>
+      <span class="name">verticalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignVCenter</span>
+  }
+
+</pre>
+<a name="indicator"></a>
+<h4 >Indicator</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-itemdelegate-indicator.png" alt="" /></p><pre class="qml">
+
+  <span class="name">indicator</span>: <span class="name">Image</span> {
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">mirrored</span> ? <span class="name">control</span>.<span class="name">leftPadding</span> : <span class="name">control</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">width</span> <span class="operator">-</span> <span class="name">control</span>.<span class="name">rightPadding</span>
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span> <span class="operator">+</span> (<span class="name">control</span>.<span class="name">availableHeight</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span>
+
+      <span class="name">visible</span>: <span class="name">control</span>.<span class="name">checked</span>
+      <span class="name">source</span>: <span class="name">control</span>.<span class="name">checkable</span> ? <span class="string">&quot;qrc:/qt-project.org/imports/Qt/labs/controls/images/check.png&quot;</span> : <span class="string">&quot;&quot;</span>
+  }
+
+</pre>
+<a name="customizing-label"></a>
+<h2 id="customizing-label">Customizing Label</h2>
+<p>Label can have a visual <a href="qml-qt-labs-controls-label.html#background-prop">background</a> item.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-label-background.png" alt="" /></p><p>Label has no background item by default.</p>
+<a name="customizing-menu"></a>
+<h2 id="customizing-menu">Customizing Menu</h2>
+<p>Menu consists of a <a href="qml-qt-labs-controls-popup.html#contentItem-prop">contentItem</a>.</p>
+<a name="content-item"></a>
+<h4 >Content item</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-menu-contentItem.png" alt="" /></p><pre class="qml">
+
+  <span class="name">contentItem</span>: <span class="name">ListView</span> {
+      <span class="name">implicitHeight</span>: <span class="name">contentHeight</span>
+      <span class="name">model</span>: <span class="name">control</span>.<span class="name">contentModel</span>
+      <span class="comment">// TODO: improve this?</span>
+      <span class="name">interactive</span>: <span class="name">ApplicationWindow</span>.<span class="name">window</span> ? <span class="name">contentHeight</span> <span class="operator">&gt;</span> <span class="name">ApplicationWindow</span>.<span class="name">window</span>.<span class="name">height</span> : <span class="number">false</span>
+      <span class="name">clip</span>: <span class="number">true</span>
+      <span class="name">keyNavigationWraps</span>: <span class="number">false</span>
+      <span class="name">currentIndex</span>: -<span class="number">1</span>
+
+      <span class="name">ScrollIndicator</span>.vertical: <span class="name">ScrollIndicator</span> {}
+  }
+
+</pre>
+<a name="customizing-menuitem"></a>
+<h2 id="customizing-menuitem">Customizing MenuItem</h2>
+<p><a href="qml-qt-labs-controls-menuitem.html">MenuItem</a> can be customized in the same manner as <a href="qtlabscontrols-customize.html#customizing-button">Button</a>.</p>
+<a name="customizing-pageindicator"></a>
+<h2 id="customizing-pageindicator">Customizing PageIndicator</h2>
+<p>TODO</p>
+<a name="customizing-pane"></a>
+<h2 id="customizing-pane">Customizing Pane</h2>
+<p>Pane consists of a <a href="qml-qt-labs-controls-control.html#background-prop">background</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-pane-background.png" alt="" /></p><pre class="qml">
+
+  <span class="name">background</span>: <span class="name">Rectangle</span> {
+      <span class="name">color</span>: <span class="string">&quot;#ffffff&quot;</span>
+  }
+
+</pre>
+<a name="customizing-progressbar"></a>
+<h2 id="customizing-progressbar">Customizing ProgressBar</h2>
+<p><a href="qml-qt-labs-controls-progressbar.html">ProgressBar</a> consists of two visual items: <a href="qml-qt-labs-controls-control.html#background-prop">background</a> and <a href="qml-qt-labs-controls-progressbar.html#indicator-prop">indicator</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-progressbar-background.png" alt="" /></p><pre class="qml">
+
+  <span class="name">background</span>: <span class="name">Rectangle</span> {
+      <span class="name">implicitWidth</span>: <span class="number">200</span>
+      <span class="name">implicitHeight</span>: <span class="number">6</span>
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">leftPadding</span>
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span> <span class="operator">+</span> (<span class="name">control</span>.<span class="name">availableHeight</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span>
+      <span class="name">width</span>: <span class="name">control</span>.<span class="name">availableWidth</span>
+      <span class="name">height</span>: <span class="number">6</span>
+
+      <span class="name">color</span>: <span class="string">&quot;#e4e4e4&quot;</span>
+  }
+
+</pre>
+<a name="indicator"></a>
+<h4 >Indicator</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-progressbar-indicator.png" alt="" /></p><pre class="qml">
+
+  <span class="name">indicator</span>: <span class="name">ProgressStrip</span> {
+      <span class="name">id</span>: <span class="name">strip</span>
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">leftPadding</span>
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span> <span class="operator">+</span> (<span class="name">control</span>.<span class="name">availableHeight</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span>
+      <span class="name">width</span>: <span class="name">control</span>.<span class="name">availableWidth</span>
+      <span class="name">height</span>: <span class="number">6</span>
+      <span class="name">scale</span>: <span class="name">control</span>.<span class="name">mirrored</span> ? -<span class="number">1</span> : <span class="number">1</span>
+      <span class="name">progress</span>: <span class="name">control</span>.<span class="name">position</span>
+      <span class="name">indeterminate</span>: <span class="name">control</span>.<span class="name">indeterminate</span>
+
+      <span class="type">ProgressStripAnimator</span> {
+          <span class="name">target</span>: <span class="name">strip</span>
+          <span class="name">running</span>: <span class="name">control</span>.<span class="name">visible</span> <span class="operator">&amp;&amp;</span> <span class="name">control</span>.<span class="name">indeterminate</span>
+      }
+  }
+
+</pre>
+<a name="customizing-radiobutton"></a>
+<h2 id="customizing-radiobutton">Customizing RadioButton</h2>
+<p><a href="qml-qt-labs-controls-radiobutton.html">RadioButton</a> consists of three visual items: <a href="qml-qt-labs-controls-control.html#background-prop">background</a>, <a href="qml-qt-labs-controls-abstractbutton.html#label-prop">label</a> and <a href="qml-qt-labs-controls-abstractbutton.html#indicator-prop">indicator</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-radiobutton-background.png" alt="" /></p><p><a href="qml-qt-labs-controls-radiobutton.html">RadioButton</a> has no background item by default.</p>
+<a name="label"></a>
+<h4 >Label</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-radiobutton-label.png" alt="" /></p><pre class="qml">
+
+  <span class="name">label</span>: <span class="name">Text</span> {
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">mirrored</span> ? <span class="name">control</span>.<span class="name">leftPadding</span> : (<span class="name">indicator</span>.<span class="name">x</span> <span class="operator">+</span> <span class="name">indicator</span>.<span class="name">width</span> <span class="operator">+</span> <span class="name">control</span>.<span class="name">spacing</span>)
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span>
+      <span class="name">width</span>: <span class="name">control</span>.<span class="name">availableWidth</span> <span class="operator">-</span> <span class="name">indicator</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">control</span>.<span class="name">spacing</span>
+      <span class="name">height</span>: <span class="name">control</span>.<span class="name">availableHeight</span>
+
+      <span class="name">text</span>: <span class="name">control</span>.<span class="name">text</span>
+      <span class="name">font</span>: <span class="name">control</span>.<span class="name">font</span>
+      <span class="name">color</span>: <span class="name">control</span>.<span class="name">pressed</span> ? <span class="string">&quot;#26282a&quot;</span> : <span class="string">&quot;#353637&quot;</span>
+      <span class="name">elide</span>: <span class="name">Text</span>.<span class="name">ElideRight</span>
+      <span class="name">visible</span>: <span class="name">control</span>.<span class="name">text</span>
+      <span class="name">horizontalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignLeft</span>
+      <span class="name">verticalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignVCenter</span>
+  }
+
+</pre>
+<a name="indicator"></a>
+<h4 >Indicator</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-radiobutton-indicator.png" alt="" /></p><pre class="qml">
+
+  <span class="name">indicator</span>: <span class="name">Rectangle</span> {
+      <span class="name">implicitWidth</span>: <span class="number">28</span>
+      <span class="name">implicitHeight</span>: <span class="number">28</span>
+      <span class="name">x</span>: <span class="name">text</span> ? (<span class="name">control</span>.<span class="name">mirrored</span> ? <span class="name">control</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">width</span> <span class="operator">-</span> <span class="name">control</span>.<span class="name">rightPadding</span> : <span class="name">control</span>.<span class="name">leftPadding</span>) : <span class="name">control</span>.<span class="name">leftPadding</span> <span class="operator">+</span> (<span class="name">control</span>.<span class="name">availableWidth</span> <span class="operator">-</span> <span class="name">width</span>) <span class="operator">/</span> <span class="number">2</span>
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span> <span class="operator">+</span> (<span class="name">control</span>.<span class="name">availableHeight</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span>
+
+      <span class="name">radius</span>: <span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>
+      <span class="name">border</span>.width: <span class="number">1</span>
+      <span class="name">border</span>.color: (<span class="name">control</span>.<span class="name">pressed</span> ? <span class="string">&quot;#26282a&quot;</span> : <span class="string">&quot;#353637&quot;</span>)
+      <span class="name">color</span>: <span class="name">control</span>.<span class="name">pressed</span> ? <span class="string">&quot;#e4e4e4&quot;</span> : <span class="string">&quot;#f6f6f6&quot;</span>
+
+      <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+          <span class="name">x</span>: (<span class="name">parent</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">width</span>) <span class="operator">/</span> <span class="number">2</span>
+          <span class="name">y</span>: (<span class="name">parent</span>.<span class="name">height</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span>
+          <span class="name">width</span>: <span class="number">20</span>
+          <span class="name">height</span>: <span class="number">20</span>
+          <span class="name">radius</span>: <span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>
+          <span class="name">color</span>: <span class="name">control</span>.<span class="name">pressed</span> ? <span class="string">&quot;#26282a&quot;</span> : <span class="string">&quot;#353637&quot;</span>
+          <span class="name">visible</span>: <span class="name">control</span>.<span class="name">checked</span>
+      }
+  }
+
+</pre>
+<a name="customizing-rangeslider"></a>
+<h2 id="customizing-rangeslider">Customizing RangeSlider</h2>
+<p><a href="qml-qt-labs-controls-rangeslider.html">RangeSlider</a> consists of four visual items: <a href="qml-qt-labs-controls-control.html#background-prop">background</a>, <a href="qml-qt-labs-controls-rangeslider.html#track-prop">track</a>, <a href="qml-qt-labs-controls-rangeslider.html#first-prop">first.handle</a> and <a href="qml-qt-labs-controls-rangeslider.html#second.handle-prop">second.handle</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-rangeslider-background.png" alt="" /></p><p><a href="qml-qt-labs-controls-rangeslider.html">RangeSlider</a> has no background item by default.</p>
+<a name="track"></a>
+<h4 >Track</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-rangeslider-track.png" alt="" /></p><pre class="qml">
+
+  <span class="name">track</span>: <span class="name">Rectangle</span> {
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">leftPadding</span> <span class="operator">+</span> (<span class="name">horizontal</span> ? <span class="number">0</span> : (<span class="name">control</span>.<span class="name">availableWidth</span> <span class="operator">-</span> <span class="name">width</span>) <span class="operator">/</span> <span class="number">2</span>)
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span> <span class="operator">+</span> (<span class="name">horizontal</span> ? (<span class="name">control</span>.<span class="name">availableHeight</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span> : <span class="number">0</span>)
+      <span class="name">implicitWidth</span>: <span class="name">horizontal</span> ? <span class="number">200</span> : <span class="number">6</span>
+      <span class="name">implicitHeight</span>: <span class="name">horizontal</span> ? <span class="number">6</span> : <span class="number">200</span>
+      <span class="name">width</span>: <span class="name">horizontal</span> ? <span class="name">control</span>.<span class="name">availableWidth</span> : <span class="name">implicitWidth</span>
+      <span class="name">height</span>: <span class="name">horizontal</span> ? <span class="name">implicitHeight</span> : <span class="name">control</span>.<span class="name">availableHeight</span>
+      <span class="name">radius</span>: <span class="number">3</span>
+      <span class="name">border</span>.color: <span class="string">&quot;#353637&quot;</span>
+      <span class="name">color</span>: <span class="string">&quot;#ffffff&quot;</span>
+      <span class="name">scale</span>: <span class="name">horizontal</span> <span class="operator">&amp;&amp;</span> <span class="name">control</span>.<span class="name">mirrored</span> ? -<span class="number">1</span> : <span class="number">1</span>
+
+      readonly property <span class="type">bool</span> <span class="name">horizontal</span>: <span class="name">control</span>.<span class="name">orientation</span> <span class="operator">===</span> <span class="name">Qt</span>.<span class="name">Horizontal</span>
+  }
+
+</pre>
+<a name="first-handle"></a>
+<h4 >First Handle</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-rangeslider-first-handle.png" alt="" /></p><pre class="qml">
+
+  <span class="name">first</span>.handle: <span class="name">Rectangle</span> {
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">leftPadding</span> <span class="operator">+</span> (<span class="name">horizontal</span> ? <span class="name">control</span>.<span class="name">first</span>.<span class="name">visualPosition</span> <span class="operator">*</span> (<span class="name">control</span>.<span class="name">availableWidth</span> <span class="operator">-</span> <span class="name">width</span>) : (<span class="name">control</span>.<span class="name">availableWidth</span> <span class="operator">-</span> <span class="name">width</span>) <span class="operator">/</span> <span class="number">2</span>)
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span> <span class="operator">+</span> (<span class="name">horizontal</span> ? (<span class="name">control</span>.<span class="name">availableHeight</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span> : <span class="name">control</span>.<span class="name">first</span>.<span class="name">visualPosition</span> <span class="operator">*</span> (<span class="name">control</span>.<span class="name">availableHeight</span> <span class="operator">-</span> <span class="name">height</span>))
+      <span class="name">implicitWidth</span>: <span class="number">28</span>
+      <span class="name">implicitHeight</span>: <span class="number">28</span>
+      <span class="name">radius</span>: <span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>
+      <span class="name">border</span>.width: <span class="name">activeFocus</span> ? <span class="number">2</span> : <span class="number">1</span>
+      <span class="name">border</span>.color: <span class="string">&quot;#353637&quot;</span>
+      <span class="name">color</span>: <span class="name">first</span>.<span class="name">pressed</span> ? <span class="string">&quot;#bdbebf&quot;</span> : <span class="string">&quot;#ffffff&quot;</span>
+
+      readonly property <span class="type">bool</span> <span class="name">horizontal</span>: <span class="name">control</span>.<span class="name">orientation</span> <span class="operator">===</span> <span class="name">Qt</span>.<span class="name">Horizontal</span>
+  }
+
+</pre>
+<a name="second-handle"></a>
+<h4 >Second Handle</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-rangeslider-second-handle.png" alt="" /></p><pre class="qml">
+
+  <span class="name">second</span>.handle: <span class="name">Rectangle</span> {
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">leftPadding</span> <span class="operator">+</span> (<span class="name">horizontal</span> ? <span class="name">control</span>.<span class="name">second</span>.<span class="name">visualPosition</span> <span class="operator">*</span> (<span class="name">control</span>.<span class="name">availableWidth</span> <span class="operator">-</span> <span class="name">width</span>) : (<span class="name">control</span>.<span class="name">availableWidth</span> <span class="operator">-</span> <span class="name">width</span>) <span class="operator">/</span> <span class="number">2</span>)
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span> <span class="operator">+</span> (<span class="name">horizontal</span> ? (<span class="name">control</span>.<span class="name">availableHeight</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span> : <span class="name">control</span>.<span class="name">second</span>.<span class="name">visualPosition</span> <span class="operator">*</span> (<span class="name">control</span>.<span class="name">availableHeight</span> <span class="operator">-</span> <span class="name">height</span>))
+      <span class="name">implicitWidth</span>: <span class="number">28</span>
+      <span class="name">implicitHeight</span>: <span class="number">28</span>
+      <span class="name">radius</span>: <span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>
+      <span class="name">border</span>.width: <span class="name">activeFocus</span> ? <span class="number">2</span> : <span class="number">1</span>
+      <span class="name">border</span>.color: <span class="string">&quot;#353637&quot;</span>
+      <span class="name">color</span>: <span class="name">second</span>.<span class="name">pressed</span> ? <span class="string">&quot;#bdbebf&quot;</span> : <span class="string">&quot;#ffffff&quot;</span>
+
+      readonly property <span class="type">bool</span> <span class="name">horizontal</span>: <span class="name">control</span>.<span class="name">orientation</span> <span class="operator">===</span> <span class="name">Qt</span>.<span class="name">Horizontal</span>
+  }
+
+</pre>
+<a name="customizing-scrollbar"></a>
+<h2 id="customizing-scrollbar">Customizing ScrollBar</h2>
+<p><a href="qml-qt-labs-controls-scrollbar.html">ScrollBar</a> consists of two visual items: <a href="qml-qt-labs-controls-control.html#background-prop">background</a> and <a href="qml-qt-labs-controls-scrollbar.html#handle-prop">handle</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-scrollbar-background.png" alt="" /></p><p><a href="qml-qt-labs-controls-scrollbar.html">ScrollBar</a> has no background item by default.</p>
+<a name="handle"></a>
+<h4 >Handle</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-scrollbar-handle.png" alt="" /></p><pre class="qml">
+
+  <span class="name">handle</span>: <span class="name">Rectangle</span> {
+      <span class="name">id</span>: <span class="name">handle</span>
+
+      <span class="name">implicitWidth</span>: <span class="number">6</span>
+      <span class="name">implicitHeight</span>: <span class="number">6</span>
+
+      <span class="name">radius</span>: <span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>
+      <span class="name">color</span>: <span class="name">control</span>.<span class="name">pressed</span> ? <span class="string">&quot;#28282a&quot;</span> : <span class="string">&quot;#bdbebf&quot;</span>
+      <span class="name">visible</span>: <span class="name">control</span>.<span class="name">size</span> <span class="operator">&lt;</span> <span class="number">1.0</span>
+      <span class="name">opacity</span>: <span class="number">0.0</span>
+
+      readonly property <span class="type">bool</span> <span class="name">horizontal</span>: <span class="name">control</span>.<span class="name">orientation</span> <span class="operator">===</span> <span class="name">Qt</span>.<span class="name">Horizontal</span>
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">leftPadding</span> <span class="operator">+</span> (<span class="name">horizontal</span> ? <span class="name">control</span>.<span class="name">position</span> <span class="operator">*</span> <span class="name">control</span>.<span class="name">availableWidth</span> : <span class="number">0</span>)
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span> <span class="operator">+</span> (<span class="name">horizontal</span> ? <span class="number">0</span> : <span class="name">control</span>.<span class="name">position</span> <span class="operator">*</span> <span class="name">control</span>.<span class="name">availableHeight</span>)
+      <span class="name">width</span>: <span class="name">horizontal</span> ? <span class="name">control</span>.<span class="name">size</span> <span class="operator">*</span> <span class="name">control</span>.<span class="name">availableWidth</span> : <span class="name">implicitWidth</span>
+      <span class="name">height</span>: <span class="name">horizontal</span> ? <span class="name">implicitHeight</span> : <span class="name">control</span>.<span class="name">size</span> <span class="operator">*</span> <span class="name">control</span>.<span class="name">availableHeight</span>
+
+      <span class="name">states</span>: <span class="name">State</span> {
+          <span class="name">name</span>: <span class="string">&quot;active&quot;</span>
+          <span class="name">when</span>: <span class="name">control</span>.<span class="name">active</span>
+          <span class="type"><a href="../qtquick/qml-qtquick-propertychanges.html">PropertyChanges</a></span> { <span class="name">target</span>: <span class="name">handle</span>; <span class="name">opacity</span>: <span class="number">0.75</span> }
+      }
+
+      <span class="name">transitions</span>: <span class="name">Transition</span> {
+          <span class="name">from</span>: <span class="string">&quot;active&quot;</span>
+          <span class="type"><a href="../qtquick/qml-qtquick-sequentialanimation.html">SequentialAnimation</a></span> {
+              <span class="type"><a href="../qtquick/qml-qtquick-pauseanimation.html">PauseAnimation</a></span> { <span class="name">duration</span>: <span class="number">450</span> }
+              <span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span> { <span class="name">target</span>: <span class="name">handle</span>; <span class="name">duration</span>: <span class="number">200</span>; <span class="name">property</span>: <span class="string">&quot;opacity&quot;</span>; <span class="name">to</span>: <span class="number">0.0</span> }
+          }
+      }
+  }
+
+</pre>
+<a name="customizing-scrollindicator"></a>
+<h2 id="customizing-scrollindicator">Customizing ScrollIndicator</h2>
+<p><a href="qml-qt-labs-controls-scrollindicator.html">ScrollIndicator</a> consists of two visual items: <a href="qml-qt-labs-controls-control.html#background-prop">background</a> and <a href="qml-qt-labs-controls-scrollindicator.html#indicator-prop">indicator</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-scrollindicator-background.png" alt="" /></p><p><a href="qml-qt-labs-controls-scrollindicator.html">ScrollIndicator</a> has no background item by default.</p>
+<a name="indicator"></a>
+<h4 >Indicator</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-scrollindicator-indicator.png" alt="" /></p><pre class="qml">
+
+  <span class="name">indicator</span>: <span class="name">Rectangle</span> {
+      <span class="name">id</span>: <span class="name">indicator</span>
+
+      <span class="name">implicitWidth</span>: <span class="number">2</span>
+      <span class="name">implicitHeight</span>: <span class="number">2</span>
+
+      <span class="name">color</span>: <span class="string">&quot;#bdbebf&quot;</span>
+      <span class="name">visible</span>: <span class="name">control</span>.<span class="name">size</span> <span class="operator">&lt;</span> <span class="number">1.0</span>
+      <span class="name">opacity</span>: <span class="number">0.0</span>
+
+      readonly property <span class="type">bool</span> <span class="name">horizontal</span>: <span class="name">control</span>.<span class="name">orientation</span> <span class="operator">===</span> <span class="name">Qt</span>.<span class="name">Horizontal</span>
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">leftPadding</span> <span class="operator">+</span> (<span class="name">horizontal</span> ? <span class="name">control</span>.<span class="name">position</span> <span class="operator">*</span> <span class="name">control</span>.<span class="name">width</span> : <span class="number">0</span>)
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span> <span class="operator">+</span> (<span class="name">horizontal</span> ? <span class="number">0</span> : <span class="name">control</span>.<span class="name">position</span> <span class="operator">*</span> <span class="name">control</span>.<span class="name">height</span>)
+      <span class="name">width</span>: <span class="name">horizontal</span> ? <span class="name">control</span>.<span class="name">size</span> <span class="operator">*</span> <span class="name">control</span>.<span class="name">availableWidth</span> : <span class="name">implicitWidth</span>
+      <span class="name">height</span>: <span class="name">horizontal</span> ? <span class="name">implicitHeight</span> : <span class="name">control</span>.<span class="name">size</span> <span class="operator">*</span> <span class="name">control</span>.<span class="name">availableHeight</span>
+
+      <span class="name">states</span>: <span class="name">State</span> {
+          <span class="name">name</span>: <span class="string">&quot;active&quot;</span>
+          <span class="name">when</span>: <span class="name">control</span>.<span class="name">active</span>
+          <span class="type"><a href="../qtquick/qml-qtquick-propertychanges.html">PropertyChanges</a></span> { <span class="name">target</span>: <span class="name">indicator</span>; <span class="name">opacity</span>: <span class="number">0.75</span> }
+      }
+
+      <span class="name">transitions</span>: [
+          <span class="type"><a href="../qtquick/qml-qtquick-transition.html">Transition</a></span> {
+              <span class="name">from</span>: <span class="string">&quot;active&quot;</span>
+              <span class="type"><a href="../qtquick/qml-qtquick-sequentialanimation.html">SequentialAnimation</a></span> {
+                  <span class="type"><a href="../qtquick/qml-qtquick-pauseanimation.html">PauseAnimation</a></span> { <span class="name">duration</span>: <span class="number">450</span> }
+                  <span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span> { <span class="name">target</span>: <span class="name">indicator</span>; <span class="name">duration</span>: <span class="number">200</span>; <span class="name">property</span>: <span class="string">&quot;opacity&quot;</span>; <span class="name">to</span>: <span class="number">0.0</span> }
+              }
+          }
+      ]
+  }
+
+</pre>
+<a name="customizing-slider"></a>
+<h2 id="customizing-slider">Customizing Slider</h2>
+<p>Slider consists of three visual items: <a href="qml-qt-labs-controls-control.html#background-prop">background</a>, <a href="qml-qt-labs-controls-slider.html#track-prop">track</a> and <a href="qml-qt-labs-controls-slider.html#handle-prop">handle</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-slider-background.png" alt="" /></p><p>Slider has no background item by default.</p>
+<a name="track"></a>
+<h4 >Track</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-slider-track.png" alt="" /></p><pre class="qml">
+
+  <span class="name">track</span>: <span class="name">Rectangle</span> {
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">leftPadding</span> <span class="operator">+</span> (<span class="name">horizontal</span> ? <span class="number">0</span> : (<span class="name">control</span>.<span class="name">availableWidth</span> <span class="operator">-</span> <span class="name">width</span>) <span class="operator">/</span> <span class="number">2</span>)
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span> <span class="operator">+</span> (<span class="name">horizontal</span> ? (<span class="name">control</span>.<span class="name">availableHeight</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span> : <span class="number">0</span>)
+      <span class="name">implicitWidth</span>: <span class="name">horizontal</span> ? <span class="number">200</span> : <span class="number">6</span>
+      <span class="name">implicitHeight</span>: <span class="name">horizontal</span> ? <span class="number">6</span> : <span class="number">200</span>
+      <span class="name">width</span>: <span class="name">horizontal</span> ? <span class="name">control</span>.<span class="name">availableWidth</span> : <span class="name">implicitWidth</span>
+      <span class="name">height</span>: <span class="name">horizontal</span> ? <span class="name">implicitHeight</span> : <span class="name">control</span>.<span class="name">availableHeight</span>
+      <span class="name">radius</span>: <span class="number">3</span>
+      <span class="name">border</span>.color: <span class="string">&quot;#353637&quot;</span>
+      <span class="name">color</span>: <span class="string">&quot;#ffffff&quot;</span>
+      <span class="name">scale</span>: <span class="name">horizontal</span> <span class="operator">&amp;&amp;</span> <span class="name">control</span>.<span class="name">mirrored</span> ? -<span class="number">1</span> : <span class="number">1</span>
+
+      readonly property <span class="type">bool</span> <span class="name">horizontal</span>: <span class="name">control</span>.<span class="name">orientation</span> <span class="operator">===</span> <span class="name">Qt</span>.<span class="name">Horizontal</span>
+  }
+
+</pre>
+<a name="handle"></a>
+<h4 >Handle</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-slider-handle.png" alt="" /></p><pre class="qml">
+
+  <span class="name">handle</span>: <span class="name">Rectangle</span> {
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">leftPadding</span> <span class="operator">+</span> (<span class="name">horizontal</span> ? <span class="name">control</span>.<span class="name">visualPosition</span> <span class="operator">*</span> (<span class="name">control</span>.<span class="name">availableWidth</span> <span class="operator">-</span> <span class="name">width</span>) : (<span class="name">control</span>.<span class="name">availableWidth</span> <span class="operator">-</span> <span class="name">width</span>) <span class="operator">/</span> <span class="number">2</span>)
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span> <span class="operator">+</span> (<span class="name">horizontal</span> ? (<span class="name">control</span>.<span class="name">availableHeight</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span> : <span class="name">control</span>.<span class="name">visualPosition</span> <span class="operator">*</span> (<span class="name">control</span>.<span class="name">availableHeight</span> <span class="operator">-</span> <span class="name">height</span>))
+      <span class="name">implicitWidth</span>: <span class="number">28</span>
+      <span class="name">implicitHeight</span>: <span class="number">28</span>
+      <span class="name">radius</span>: <span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>
+      <span class="name">border</span>.color: <span class="string">&quot;#353637&quot;</span>
+      <span class="name">color</span>: <span class="name">control</span>.<span class="name">pressed</span> ? <span class="string">&quot;#bdbebf&quot;</span> : <span class="string">&quot;#f6f6f6&quot;</span>
+
+      readonly property <span class="type">bool</span> <span class="name">horizontal</span>: <span class="name">control</span>.<span class="name">orientation</span> <span class="operator">===</span> <span class="name">Qt</span>.<span class="name">Horizontal</span>
+  }
+
+</pre>
+<a name="customizing-spinbox"></a>
+<h2 id="customizing-spinbox">Customizing SpinBox</h2>
+<p><a href="qml-qt-labs-controls-spinbox.html">SpinBox</a> consists of four visual items: <a href="qml-qt-labs-controls-control.html#background-prop">background</a>, <a href="qml-qt-labs-controls-control.html#contentItem-prop">contentItem</a>, <a href="qml-qt-labs-controls-spinbox.html#up.indicator-prop">up indicator</a>, and <a href="qml-qt-labs-controls-spinbox.html#down.indicator-prop">down indicator</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-spinbox-background.png" alt="" /></p><pre class="qml">
+
+  <span class="name">background</span>: <span class="name">Rectangle</span> {
+      <span class="name">implicitWidth</span>: <span class="number">140</span>
+      <span class="name">border</span>.color: <span class="string">&quot;#bdbebf&quot;</span>
+  }
+
+</pre>
+<a name="content-item"></a>
+<h4 >Content item</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-spinbox-contentItem.png" alt="" /></p><pre class="qml">
+
+  <span class="name">contentItem</span>: <span class="name">TextInput</span> {
+      <span class="name">text</span>: <span class="name">control</span>.<span class="name">textFromValue</span>(<span class="name">control</span>.<span class="name">value</span>, <span class="name">control</span>.<span class="name">locale</span>)
+
+      <span class="name">font</span>: <span class="name">control</span>.<span class="name">font</span>
+      <span class="name">color</span>: <span class="string">&quot;#353637&quot;</span>
+      <span class="name">selectionColor</span>: <span class="string">&quot;#fddd5c&quot;</span>
+      <span class="name">selectedTextColor</span>: <span class="name">color</span>
+      <span class="name">horizontalAlignment</span>: <span class="name">Qt</span>.<span class="name">AlignHCenter</span>
+      <span class="name">verticalAlignment</span>: <span class="name">Qt</span>.<span class="name">AlignVCenter</span>
+
+      <span class="name">validator</span>: <span class="name">control</span>.<span class="name">validator</span>
+      <span class="name">inputMethodHints</span>: <span class="name">Qt</span>.<span class="name">ImhFormattedNumbersOnly</span>
+  }
+
+</pre>
+<a name="down-indicator"></a>
+<h4 >Down indicator</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-spinbox-down.png" alt="" /></p><pre class="qml">
+
+  <span class="name">down</span>.indicator: <span class="name">Rectangle</span> {
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">mirrored</span> ? <span class="name">parent</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">width</span> : <span class="number">0</span>
+      <span class="name">height</span>: <span class="name">parent</span>.<span class="name">height</span>
+      <span class="name">implicitWidth</span>: <span class="number">40</span>
+      <span class="name">implicitHeight</span>: <span class="number">40</span>
+      <span class="name">color</span>: <span class="name">down</span>.<span class="name">pressed</span> ? <span class="string">&quot;#e4e4e4&quot;</span> : <span class="string">&quot;#f6f6f6&quot;</span>
+      <span class="name">border</span>.color: <span class="name">control</span>.<span class="name">enabled</span> ? <span class="string">&quot;#353637&quot;</span> : <span class="string">&quot;#bdbebf&quot;</span>
+
+      <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+          <span class="name">x</span>: (<span class="name">parent</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">width</span>) <span class="operator">/</span> <span class="number">2</span>
+          <span class="name">y</span>: (<span class="name">parent</span>.<span class="name">height</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span>
+          <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span> <span class="operator">/</span> <span class="number">3</span>
+          <span class="name">height</span>: <span class="number">2</span>
+          <span class="name">color</span>: <span class="name">control</span>.<span class="name">enabled</span> ? <span class="string">&quot;#353637&quot;</span> : <span class="string">&quot;#bdbebf&quot;</span>
+      }
+  }
+
+</pre>
+<a name="up-indicator"></a>
+<h4 >Up indicator</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-spinbox-up.png" alt="" /></p><pre class="qml">
+
+  <span class="name">up</span>.indicator: <span class="name">Rectangle</span> {
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">mirrored</span> ? <span class="number">0</span> : <span class="name">parent</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">width</span>
+      <span class="name">height</span>: <span class="name">parent</span>.<span class="name">height</span>
+      <span class="name">implicitWidth</span>: <span class="number">40</span>
+      <span class="name">implicitHeight</span>: <span class="number">40</span>
+      <span class="name">color</span>: <span class="name">up</span>.<span class="name">pressed</span> ? <span class="string">&quot;#e4e4e4&quot;</span> : <span class="string">&quot;#f6f6f6&quot;</span>
+      <span class="name">border</span>.color: <span class="name">control</span>.<span class="name">enabled</span> ? <span class="string">&quot;#353637&quot;</span> : <span class="string">&quot;#bdbebf&quot;</span>
+
+      <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+          <span class="name">x</span>: (<span class="name">parent</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">width</span>) <span class="operator">/</span> <span class="number">2</span>
+          <span class="name">y</span>: (<span class="name">parent</span>.<span class="name">height</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span>
+          <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span> <span class="operator">/</span> <span class="number">3</span>
+          <span class="name">height</span>: <span class="number">2</span>
+          <span class="name">color</span>: <span class="name">control</span>.<span class="name">enabled</span> ? <span class="string">&quot;#353637&quot;</span> : <span class="string">&quot;#bdbebf&quot;</span>
+      }
+      <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+          <span class="name">x</span>: (<span class="name">parent</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">width</span>) <span class="operator">/</span> <span class="number">2</span>
+          <span class="name">y</span>: (<span class="name">parent</span>.<span class="name">height</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span>
+          <span class="name">width</span>: <span class="number">2</span>
+          <span class="name">height</span>: <span class="name">parent</span>.<span class="name">width</span> <span class="operator">/</span> <span class="number">3</span>
+          <span class="name">color</span>: <span class="name">control</span>.<span class="name">enabled</span> ? <span class="string">&quot;#353637&quot;</span> : <span class="string">&quot;#bdbebf&quot;</span>
+      }
+  }
+
+</pre>
+<a name="customizing-stackview"></a>
+<h2 id="customizing-stackview">Customizing StackView</h2>
+<p><a href="qml-qt-labs-controls-stackview.html">StackView</a> can have a visual <a href="qml-qt-labs-controls-control.html#background-prop">background</a> item, and it allows customizing the transitions that are used for push, pop, and replace operations.</p>
+<a name="push-enter"></a>
+<h4 >Push enter</h4>
+<pre class="qml">
+
+  <span class="name">pushEnter</span>: <span class="name">Transition</span> {
+      <span class="type"><a href="../qtquick/qml-qtquick-xanimator.html">XAnimator</a></span> { <span class="name">from</span>: (<span class="name">root</span>.<span class="name">mirrored</span> ? -<span class="number">1</span> : <span class="number">1</span>) <span class="operator">*</span> <span class="name">root</span>.<span class="name">width</span>; <span class="name">to</span>: <span class="number">0</span>; <span class="name">duration</span>: <span class="number">400</span>; <span class="name">easing</span>.type: <span class="name">Easing</span>.<span class="name">OutCubic</span> }
+  }
+
+</pre>
+<a name="push-exit"></a>
+<h4 >Push exit</h4>
+<pre class="qml">
+
+  <span class="name">pushExit</span>: <span class="name">Transition</span> {
+      <span class="type"><a href="../qtquick/qml-qtquick-xanimator.html">XAnimator</a></span> { <span class="name">from</span>: <span class="number">0</span>; <span class="name">to</span>: (<span class="name">root</span>.<span class="name">mirrored</span> ? -<span class="number">1</span> : <span class="number">1</span>) <span class="operator">*</span> -<span class="name">root</span>.<span class="name">width</span>; <span class="name">duration</span>: <span class="number">400</span>; <span class="name">easing</span>.type: <span class="name">Easing</span>.<span class="name">OutCubic</span> }
+  }
+
+</pre>
+<a name="pop-enter"></a>
+<h4 >Pop enter</h4>
+<pre class="qml">
+
+  <span class="name">popEnter</span>: <span class="name">Transition</span> {
+      <span class="type"><a href="../qtquick/qml-qtquick-xanimator.html">XAnimator</a></span> { <span class="name">from</span>: (<span class="name">root</span>.<span class="name">mirrored</span> ? -<span class="number">1</span> : <span class="number">1</span>) <span class="operator">*</span> -<span class="name">root</span>.<span class="name">width</span>; <span class="name">to</span>: <span class="number">0</span>; <span class="name">duration</span>: <span class="number">400</span>; <span class="name">easing</span>.type: <span class="name">Easing</span>.<span class="name">OutCubic</span> }
+  }
+
+</pre>
+<a name="pop-exit"></a>
+<h4 >Pop exit</h4>
+<pre class="qml">
+
+  <span class="name">popExit</span>: <span class="name">Transition</span> {
+      <span class="type"><a href="../qtquick/qml-qtquick-xanimator.html">XAnimator</a></span> { <span class="name">from</span>: <span class="number">0</span>; <span class="name">to</span>: (<span class="name">root</span>.<span class="name">mirrored</span> ? -<span class="number">1</span> : <span class="number">1</span>) <span class="operator">*</span> <span class="name">root</span>.<span class="name">width</span>; <span class="name">duration</span>: <span class="number">400</span>; <span class="name">easing</span>.type: <span class="name">Easing</span>.<span class="name">OutCubic</span> }
+  }
+
+</pre>
+<a name="replace-enter"></a>
+<h4 >Replace enter</h4>
+<pre class="qml">
+
+  <span class="name">replaceEnter</span>: <span class="name">Transition</span> {
+      <span class="type"><a href="../qtquick/qml-qtquick-xanimator.html">XAnimator</a></span> { <span class="name">from</span>: (<span class="name">root</span>.<span class="name">mirrored</span> ? -<span class="number">1</span> : <span class="number">1</span>) <span class="operator">*</span> <span class="name">root</span>.<span class="name">width</span>; <span class="name">to</span>: <span class="number">0</span>; <span class="name">duration</span>: <span class="number">400</span>; <span class="name">easing</span>.type: <span class="name">Easing</span>.<span class="name">OutCubic</span> }
+  }
+
+</pre>
+<a name="replace-exit"></a>
+<h4 >Replace exit</h4>
+<pre class="qml">
+
+  <span class="name">replaceExit</span>: <span class="name">Transition</span> {
+      <span class="type"><a href="../qtquick/qml-qtquick-xanimator.html">XAnimator</a></span> { <span class="name">from</span>: <span class="number">0</span>; <span class="name">to</span>: (<span class="name">root</span>.<span class="name">mirrored</span> ? -<span class="number">1</span> : <span class="number">1</span>) <span class="operator">*</span> -<span class="name">root</span>.<span class="name">width</span>; <span class="name">duration</span>: <span class="number">400</span>; <span class="name">easing</span>.type: <span class="name">Easing</span>.<span class="name">OutCubic</span> }
+  }
+
+</pre>
+<a name="customizing-swipeview"></a>
+<h2 id="customizing-swipeview">Customizing SwipeView</h2>
+<p><a href="qml-qt-labs-controls-swipeview.html">SwipeView</a> can have a visual <a href="qml-qt-labs-controls-control.html#background-prop">background</a> item. The navigation is implemented by the <a href="qml-qt-labs-controls-control.html#contentItem-prop">content item</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p><a href="qml-qt-labs-controls-swipeview.html">SwipeView</a> has no background item by default.</p>
+<a name="content-item"></a>
+<h4 >Content item</h4>
+<pre class="qml">
+
+  <span class="name">contentItem</span>: <span class="name">ListView</span> {
+      <span class="name">model</span>: <span class="name">control</span>.<span class="name">contentModel</span>
+      <span class="name">currentIndex</span>: <span class="name">control</span>.<span class="name">currentIndex</span>
+
+      <span class="name">spacing</span>: <span class="name">control</span>.<span class="name">spacing</span>
+      <span class="name">orientation</span>: <span class="name">Qt</span>.<span class="name">Horizontal</span>
+      <span class="name">snapMode</span>: <span class="name">ListView</span>.<span class="name">SnapOneItem</span>
+      <span class="name">boundsBehavior</span>: <span class="name">Flickable</span>.<span class="name">StopAtBounds</span>
+
+      <span class="name">highlightRangeMode</span>: <span class="name">ListView</span>.<span class="name">StrictlyEnforceRange</span>
+      <span class="name">preferredHighlightBegin</span>: <span class="number">0</span>
+      <span class="name">preferredHighlightEnd</span>: <span class="number">0</span>
+      <span class="name">highlightMoveDuration</span>: <span class="number">250</span>
+  }
+
+</pre>
+<a name="customizing-switch"></a>
+<h2 id="customizing-switch">Customizing Switch</h2>
+<p>Switch consists of three visual items: <a href="qml-qt-labs-controls-control.html#background-prop">background</a>, <a href="qml-qt-labs-controls-abstractbutton.html#label-prop">label</a> and <a href="qml-qt-labs-controls-abstractbutton.html#indicator-prop">indicator</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-switch-background.png" alt="" /></p><p>Switch has no background item by default.</p>
+<a name="label"></a>
+<h4 >Label</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-switch-label.png" alt="" /></p><pre class="qml">
+
+  <span class="name">label</span>: <span class="name">Text</span> {
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">mirrored</span> ? <span class="name">control</span>.<span class="name">leftPadding</span> : (<span class="name">indicator</span>.<span class="name">x</span> <span class="operator">+</span> <span class="name">indicator</span>.<span class="name">width</span> <span class="operator">+</span> <span class="name">control</span>.<span class="name">spacing</span>)
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span>
+      <span class="name">width</span>: <span class="name">control</span>.<span class="name">availableWidth</span> <span class="operator">-</span> <span class="name">indicator</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">control</span>.<span class="name">spacing</span>
+      <span class="name">height</span>: <span class="name">control</span>.<span class="name">availableHeight</span>
+
+      <span class="name">text</span>: <span class="name">control</span>.<span class="name">text</span>
+      <span class="name">font</span>: <span class="name">control</span>.<span class="name">font</span>
+      <span class="name">color</span>: <span class="name">control</span>.<span class="name">enabled</span> ? <span class="string">&quot;#26282a&quot;</span> : <span class="string">&quot;#bdbebf&quot;</span>
+      <span class="name">elide</span>: <span class="name">Text</span>.<span class="name">ElideRight</span>
+      <span class="name">visible</span>: <span class="name">control</span>.<span class="name">text</span>
+      <span class="name">horizontalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignLeft</span>
+      <span class="name">verticalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignVCenter</span>
+  }
+
+</pre>
+<a name="indicator"></a>
+<h4 >Indicator</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-switch-indicator.png" alt="" /></p><pre class="qml">
+
+  <span class="name">indicator</span>: <span class="name">Item</span> {
+      <span class="name">x</span>: <span class="name">text</span> ? (<span class="name">control</span>.<span class="name">mirrored</span> ? <span class="name">control</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">width</span> <span class="operator">-</span> <span class="name">control</span>.<span class="name">rightPadding</span> : <span class="name">control</span>.<span class="name">leftPadding</span>) : <span class="name">control</span>.<span class="name">leftPadding</span> <span class="operator">+</span> (<span class="name">control</span>.<span class="name">availableWidth</span> <span class="operator">-</span> <span class="name">width</span>) <span class="operator">/</span> <span class="number">2</span>
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span> <span class="operator">+</span> (<span class="name">control</span>.<span class="name">availableHeight</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span>
+      <span class="name">implicitWidth</span>: <span class="number">56</span>
+      <span class="name">implicitHeight</span>: <span class="number">28</span>
+
+      <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+          <span class="name">y</span>: <span class="name">parent</span>.<span class="name">height</span> <span class="operator">/</span> <span class="number">2</span> <span class="operator">-</span> <span class="name">height</span> <span class="operator">/</span> <span class="number">2</span>
+          <span class="name">width</span>: <span class="number">56</span>
+          <span class="name">height</span>: <span class="number">16</span>
+          <span class="name">radius</span>: <span class="number">8</span>
+          <span class="name">border</span>.width: <span class="number">1</span>
+          <span class="name">color</span>: <span class="name">control</span>.<span class="name">checked</span> ? <span class="string">&quot;#353637&quot;</span> : <span class="string">&quot;transparent&quot;</span>
+          <span class="name">border</span>.color: <span class="name">control</span>.<span class="name">checked</span> ? <span class="string">&quot;transparent&quot;</span> : <span class="string">&quot;#353637&quot;</span>
+      }
+
+      <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+          <span class="name">x</span>: <span class="name">Math</span>.<span class="name">max</span>(<span class="number">0</span>, <span class="name">Math</span>.<span class="name">min</span>(<span class="name">parent</span>.<span class="name">width</span> <span class="operator">-</span> <span class="name">width</span>, <span class="name">control</span>.<span class="name">visualPosition</span> <span class="operator">*</span> <span class="name">parent</span>.<span class="name">width</span> <span class="operator">-</span> (<span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>)))
+          <span class="name">y</span>: (<span class="name">parent</span>.<span class="name">height</span> <span class="operator">-</span> <span class="name">height</span>) <span class="operator">/</span> <span class="number">2</span>
+          <span class="name">width</span>: <span class="number">28</span>
+          <span class="name">height</span>: <span class="number">28</span>
+          <span class="name">radius</span>: <span class="number">16</span>
+          <span class="name">color</span>: <span class="name">control</span>.<span class="name">pressed</span> ? <span class="string">&quot;#e4e4e4&quot;</span> : <span class="string">&quot;#f6f6f6&quot;</span>
+          <span class="name">border</span>.width: <span class="number">1</span>
+          <span class="name">border</span>.color: <span class="name">control</span>.<span class="name">pressed</span> ? <span class="string">&quot;#26282a&quot;</span> : <span class="string">&quot;#353637&quot;</span>
+
+          Behavior on <span class="name">x</span> {
+              <span class="name">enabled</span>: !<span class="name">control</span>.<span class="name">pressed</span>
+              <span class="type"><a href="../qtquick/qml-qtquick-smoothedanimation.html">SmoothedAnimation</a></span> { <span class="name">velocity</span>: <span class="number">200</span> }
+          }
+      }
+  }
+
+</pre>
+<a name="customizing-tabbar"></a>
+<h2 id="customizing-tabbar">Customizing TabBar</h2>
+<p>TODO</p>
+<a name="customizing-tabbutton"></a>
+<h2 id="customizing-tabbutton">Customizing TabButton</h2>
+<p>TODO</p>
+<a name="customizing-textarea"></a>
+<h2 id="customizing-textarea">Customizing TextArea</h2>
+<p>TODO</p>
+<a name="customizing-textfield"></a>
+<h2 id="customizing-textfield">Customizing TextField</h2>
+<p><a href="qml-qt-labs-controls-textfield.html">TextField</a> offers a customizable <a href="qml-qt-labs-controls-textfield.html#background-prop">background</a> item.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-textfield-background.png" alt="" /></p><pre class="qml">
+
+  <span class="name">background</span>: <span class="name">Rectangle</span> {
+      <span class="name">implicitWidth</span>: <span class="number">200</span>
+      <span class="name">implicitHeight</span>: <span class="number">40</span>
+  <span class="comment">//        border.width: control.activeFocus ? 2 : 1</span>
+      <span class="name">color</span>: <span class="name">control</span>.<span class="name">enabled</span> ? <span class="string">&quot;transparent&quot;</span> : <span class="string">&quot;#353637&quot;</span>
+      <span class="name">border</span>.color: <span class="name">control</span>.<span class="name">enabled</span> ? <span class="string">&quot;#bdbebf&quot;</span> : <span class="string">&quot;transparent&quot;</span>
+  }
+
+</pre>
+<a name="customizing-toolbar"></a>
+<h2 id="customizing-toolbar">Customizing ToolBar</h2>
+<p><a href="qml-qt-labs-controls-toolbar.html">ToolBar</a> consists of two visual items: <a href="qml-qt-labs-controls-control.html#background-prop">background</a> and <a href="qml-qt-labs-controls-frame.html#frame-prop">frame</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-toolbar-background.png" alt="" /></p><pre class="qml">
+
+  <span class="name">background</span>: <span class="name">Rectangle</span> {
+      <span class="name">implicitHeight</span>: <span class="number">40</span>
+      <span class="name">color</span>: <span class="string">&quot;#eeeeee&quot;</span>
+  }
+
+</pre>
+<a name="frame"></a>
+<h4 >Frame</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-toolbar-frame.png" alt="" /></p><p><a href="qml-qt-labs-controls-toolbar.html">ToolBar</a> has no frame item by default.</p>
+<a name="customizing-toolbutton"></a>
+<h2 id="customizing-toolbutton">Customizing ToolButton</h2>
+<p><a href="qml-qt-labs-controls-toolbutton.html">ToolButton</a> consists of two visual items: <a href="qml-qt-labs-controls-control.html#background-prop">background</a> and <a href="qml-qt-labs-controls-abstractbutton.html#label-prop">label</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-toolbutton-background.png" alt="" /></p><pre class="qml">
+
+  <span class="name">background</span>: <span class="name">Rectangle</span> {
+      <span class="name">implicitWidth</span>: <span class="number">40</span>
+      <span class="name">implicitHeight</span>: <span class="number">40</span>
+
+      <span class="name">color</span>: <span class="name">Qt</span>.<span class="name">darker</span>(<span class="string">&quot;#33333333&quot;</span>, <span class="name">control</span>.<span class="name">enabled</span> <span class="operator">&amp;&amp;</span> (<span class="name">control</span>.<span class="name">checked</span> <span class="operator">||</span> <span class="name">control</span>.<span class="name">highlighted</span>) ? <span class="number">1.5</span> : <span class="number">1.0</span>)
+      <span class="name">opacity</span>: <span class="name">control</span>.<span class="name">pressed</span> ? <span class="number">1.0</span> : <span class="name">control</span>.<span class="name">enabled</span> <span class="operator">&amp;&amp;</span> (<span class="name">control</span>.<span class="name">checked</span> <span class="operator">||</span> <span class="name">control</span>.<span class="name">highlighted</span>) ? <span class="number">0.5</span> : <span class="number">0</span>
+      <span class="name">visible</span>: <span class="name">control</span>.<span class="name">pressed</span> <span class="operator">||</span> (<span class="name">control</span>.<span class="name">enabled</span> <span class="operator">&amp;&amp;</span> (<span class="name">control</span>.<span class="name">checked</span> <span class="operator">||</span> <span class="name">control</span>.<span class="name">highlighted</span>))
+  }
+
+</pre>
+<a name="label"></a>
+<h4 >Label</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-toolbutton-label.png" alt="" /></p><pre class="qml">
+
+  <span class="name">label</span>: <span class="name">Text</span> {
+      <span class="name">x</span>: <span class="name">control</span>.<span class="name">leftPadding</span>
+      <span class="name">y</span>: <span class="name">control</span>.<span class="name">topPadding</span>
+      <span class="name">width</span>: <span class="name">control</span>.<span class="name">availableWidth</span>
+      <span class="name">height</span>: <span class="name">control</span>.<span class="name">availableHeight</span>
+
+      <span class="name">text</span>: <span class="name">control</span>.<span class="name">text</span>
+      <span class="name">font</span>: <span class="name">control</span>.<span class="name">font</span>
+      <span class="name">color</span>: <span class="name">control</span>.<span class="name">enabled</span> ? <span class="string">&quot;#26282a&quot;</span> : <span class="string">&quot;#c2c2c2&quot;</span>
+      <span class="name">elide</span>: <span class="name">Text</span>.<span class="name">ElideRight</span>
+      <span class="name">horizontalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignHCenter</span>
+      <span class="name">verticalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignVCenter</span>
+  }
+
+</pre>
+<a name="customizing-tumbler"></a>
+<h2 id="customizing-tumbler">Customizing Tumbler</h2>
+<p>Tumbler consists of three visual items: <a href="qml-qt-labs-controls-control.html#background-prop">background</a>, <a href="qml-qt-labs-controls-control.html#contentItem-prop">contentItem</a>, and <a href="qml-qt-labs-controls-tumbler.html#delegate-prop">delegate</a>.</p>
+<a name="background"></a>
+<h4 >Background</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-tumbler-background.png" alt="" /></p><p>Tumbler has no background item by default.</p>
+<a name="content-item"></a>
+<h4 >Content Item</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-tumbler-contentItem.png" alt="" /></p><pre class="qml">
+
+  <span class="name">contentItem</span>: <span class="name">PathView</span> {
+      <span class="name">id</span>: <span class="name">pathView</span>
+      <span class="name">model</span>: <span class="name">control</span>.<span class="name">model</span>
+      <span class="name">delegate</span>: <span class="name">control</span>.<span class="name">delegate</span>
+      <span class="name">clip</span>: <span class="number">true</span>
+      <span class="name">pathItemCount</span>: <span class="name">control</span>.<span class="name">visibleItemCount</span> <span class="operator">+</span> <span class="number">1</span>
+      <span class="name">preferredHighlightBegin</span>: <span class="number">0.5</span>
+      <span class="name">preferredHighlightEnd</span>: <span class="number">0.5</span>
+      <span class="name">dragMargin</span>: <span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>
+
+      <span class="name">path</span>: <span class="name">Path</span> {
+          <span class="name">startX</span>: <span class="name">pathView</span>.<span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>
+          <span class="name">startY</span>: -<span class="name">pathView</span>.<span class="name">delegateHeight</span> <span class="operator">/</span> <span class="number">2</span>
+          <span class="type"><a href="../qtquick/qml-qtquick-pathline.html">PathLine</a></span> {
+              <span class="name">x</span>: <span class="name">pathView</span>.<span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>
+              <span class="name">y</span>: <span class="name">pathView</span>.<span class="name">pathItemCount</span> <span class="operator">*</span> <span class="name">pathView</span>.<span class="name">delegateHeight</span> <span class="operator">-</span> <span class="name">pathView</span>.<span class="name">delegateHeight</span> <span class="operator">/</span> <span class="number">2</span>
+          }
+      }
+
+      property <span class="type">real</span> <span class="name">delegateHeight</span>: <span class="name">control</span>.<span class="name">availableHeight</span> <span class="operator">/</span> <span class="name">control</span>.<span class="name">visibleItemCount</span>
+  }
+
+</pre>
+<a name="delegate"></a>
+<h4 >Delegate</h4>
+<p class="centerAlign"><img src="images/qtlabscontrols-tumbler-delegate.png" alt="" /></p><pre class="qml">
+
+  <span class="name">delegate</span>: <span class="name">Text</span> {
+      <span class="name">id</span>: <span class="name">label</span>
+      <span class="name">text</span>: <span class="name">modelData</span>
+      <span class="name">color</span>: <span class="string">&quot;#666666&quot;</span>
+      <span class="name">font</span>: <span class="name">control</span>.<span class="name">font</span>
+      <span class="name">opacity</span>: <span class="number">0.4</span> <span class="operator">+</span> <span class="name">Math</span>.<span class="name">max</span>(<span class="number">0</span>, <span class="number">1</span> <span class="operator">-</span> <span class="name">Math</span>.<span class="name">abs</span>(<span class="name">Tumbler</span>.<span class="name">displacement</span>)) <span class="operator">*</span> <span class="number">0.6</span>
+      <span class="name">horizontalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignHCenter</span>
+      <span class="name">verticalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignVCenter</span>
+  }
+
+</pre>
+</div>
+<!-- @@@qtlabscontrols-customize.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2016 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

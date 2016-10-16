@@ -1,0 +1,51 @@
+body {
+  overflow: hidden;
+}
+
+.maxHeight {
+  height: 100%;
+}
+
+.score {
+  height: 15%;
+  overflow: auto;
+}
+
+.inventory {
+  max-height: 40%;
+  overflow: auto;
+}
+
+.canvas {
+  padding: 0;
+  border: solid black 3px;
+}
+
+.zappy-info {
+  background: center;
+  background-image: url(../images/cloud.jpg);
+  border: solid black 3px;
+}
+
+.char-info {
+  background: white;
+  border: solid black 2px;
+  text-align: center;
+}
+
+.zappy-title {
+  text-align: center;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.zappy-win-title {
+  color: green;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.text-bold {
+  font-weight: bold;
+}

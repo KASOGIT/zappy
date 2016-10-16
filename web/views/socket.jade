@@ -1,0 +1,37 @@
+script.
+    if ("WebSocket" in window) {
+        var         socketToServer = new WebSocket("ws://" + window.location.hostname + ":" + window.location.port + "/");
+
+        socketToServer.onopen = function (event) {
+            console.log("websocket opened, sending port...");
+            this.send(JSON.stringify({port : 4242}));
+        };
+
+        socketToServer.onmessage = function (event) {
+            console.log(event.data);
+        };
+
+        socketToServer.send(JSON.stringify({cmd : "tna\n"}));
+    }
+
+//    var ajaxCall = function (port) {
+//        this.port = port;
+//        this.sendCmd = function (obj) {
+//            $.ajax({
+//                url : '/ajax/tcpsocket',
+//                type : 'POST',
+//                data : JSON.stringify(obj),
+//                contentType : "application/json",
+//                success : function (data) {
+//                    console.log(data);
+//                }
+//            });
+//        };
+//        this.sendCmd({port : port});
+//    };
+//
+//    var clientSocket = new ajaxCall(4242);
+//
+//    clientSocket.sendCmd({cmd : "GRAPHIC\n"});
+//    clientSocket.sendCmd({cmd : "mct\n"});
+

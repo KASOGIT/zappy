@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qquickframe.cpp -->
+  <title>Frame QML Type | Qt Labs Controls 5.6</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    window.onload = function(){document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");};
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="../qtdoc/supported-platforms-and-configurations.html#qt-5-6">Qt 5.6</a></td><td ><a href="qtlabscontrols-index.html">Qt Labs Controls</a></td><td ><a href="qt-labs-controls-qmlmodule.html">QML Types</a></td><td >Frame QML Type</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Qt 5.6.1 Reference Documentation</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Frame QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$Frame-brief -->
+<p>A frame control. <a href="#details">More...</a></p>
+<!-- @@@Frame -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import Qt.labs.controls 1.0</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="qml-qt-labs-controls-pane.html">Pane</a></p>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherited By:</td><td class="memItemRight bottomAlign"> <p><a href="qml-qt-labs-controls-groupbox.html">GroupBox</a> and <a href="qml-qt-labs-controls-toolbar.html">ToolBar</a></p>
+</td></tr></table></div><ul>
+<li><a href="qml-qt-labs-controls-frame-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qt-labs-controls-frame.html#frame-prop">frame</a></b></b> : Item</li>
+</ul>
+<!-- $$$Frame-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+</p>
+<p>Frame is used to layout a logical group of controls together, within a visual frame. Frame does not provide a layout of its own, but requires you to position its contents, for instance by creating a <a href="../qtquicklayouts/qml-qtquick-layouts-rowlayout.html">RowLayout</a> or a <a href="../qtquicklayouts/qml-qtquick-layouts-columnlayout.html">ColumnLayout</a>.</p>
+<p>If only a single item is used within a Frame, it will resize to fit the implicit size of its contained item. This makes it particularly suitable for use together with layouts.</p>
+<p class="centerAlign"><img src="images/qtlabscontrols-frame.png" alt="" /></p><pre class="qml">
+
+  <span class="type"><a href="qml-qt-labs-controls-frame.html">Frame</a></span> {
+      <span class="type"><a href="../qtquicklayouts/qml-qtquick-layouts-columnlayout.html">ColumnLayout</a></span> {
+          <span class="name">anchors</span>.fill: <span class="name">parent</span>
+          <span class="type"><a href="qml-qt-labs-controls-checkbox.html">CheckBox</a></span> { <span class="name">text</span>: <span class="name">qsTr</span>(<span class="string">&quot;E-mail&quot;</span>) }
+          <span class="type"><a href="qml-qt-labs-controls-checkbox.html">CheckBox</a></span> { <span class="name">text</span>: <span class="name">qsTr</span>(<span class="string">&quot;Calendar&quot;</span>) }
+          <span class="type"><a href="qml-qt-labs-controls-checkbox.html">CheckBox</a></span> { <span class="name">text</span>: <span class="name">qsTr</span>(<span class="string">&quot;Contacts&quot;</span>) }
+      }
+  }
+
+</pre>
+<p><b>Note: </b><i>Types in the Qt.labs module are not guaranteed to remain compatible in future versions.</i></p><p><b>See also </b><a href="qtlabscontrols-customize.html#customizing-frame">Customizing Frame</a> and <a href="qtlabscontrols-containers.html">Container Controls</a>.</p>
+<!-- @@@Frame -->
+<h2>Property Documentation</h2>
+<!-- $$$frame -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="frame-prop">
+<td class="tblQmlPropNode"><p>
+<a name="frame-prop"></a><span class="name">frame</span> : <span class="type"><a href="../qtquick/qml-qtquick-item.html">Item</a></span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This property holds the visual frame item.</p>
+<p><b>See also </b><a href="qtlabscontrols-customize.html#customizing-frame">Customizing Frame</a>.</p>
+</div></div><!-- @@@frame -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2016 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

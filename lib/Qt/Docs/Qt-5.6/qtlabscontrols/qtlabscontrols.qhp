@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>org.qt-project.qtlabscontrols.561</namespace>
+    <virtualFolder>qtlabscontrols</virtualFolder>
+    <customFilter name="QtLabsControls 5.6.1">
+        <filterAttribute>qtlabscontrols</filterAttribute>
+        <filterAttribute>5.6.1</filterAttribute>
+    </customFilter>
+    <filterSection>
+        <filterAttribute>qtrefdoc</filterAttribute>
+        <filterAttribute>qtlabscontrols</filterAttribute>
+        <filterAttribute>5.6.1</filterAttribute>
+        <toc>
+            <section ref="qtlabscontrols-index.html" title="Qt Labs Controls">
+                <section ref="qt-labs-controls-qmlmodule.html" title="Controls QML Types">
+                    <section ref="qml-qt-labs-calendar-calendar.html" title="Calendar Type Reference">
+                        <section ref="qml-qt-labs-calendar-calendar-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-calendar-calendarmodel.html" title="CalendarModel Type Reference">
+                        <section ref="qml-qt-labs-calendar-calendarmodel-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-calendar-dayofweekrow.html" title="DayOfWeekRow Type Reference">
+                        <section ref="qml-qt-labs-calendar-dayofweekrow-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-calendar-monthgrid.html" title="MonthGrid Type Reference">
+                        <section ref="qml-qt-labs-calendar-monthgrid-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-calendar-weeknumbercolumn.html" title="WeekNumberColumn Type Reference">
+                        <section ref="qml-qt-labs-calendar-weeknumbercolumn-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-abstractbutton.html" title="AbstractButton Type Reference">
+                        <section ref="qml-qt-labs-controls-abstractbutton-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-applicationwindow.html" title="ApplicationWindow Type Reference">
+                        <section ref="qml-qt-labs-controls-applicationwindow-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-busyindicator.html" title="BusyIndicator Type Reference">
+                        <section ref="qml-qt-labs-controls-busyindicator-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-button.html" title="Button Type Reference">
+                        <section ref="qml-qt-labs-controls-button-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-buttongroup.html" title="ButtonGroup Type Reference">
+                        <section ref="qml-qt-labs-controls-buttongroup-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-checkbox.html" title="CheckBox Type Reference">
+                        <section ref="qml-qt-labs-controls-checkbox-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-combobox.html" title="ComboBox Type Reference">
+                        <section ref="qml-qt-labs-controls-combobox-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-container.html" title="Container Type Reference">
+                        <section ref="qml-qt-labs-controls-container-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-control.html" title="Control Type Reference">
+                        <section ref="qml-qt-labs-controls-control-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-dial.html" title="Dial Type Reference">
+                        <section ref="qml-qt-labs-controls-dial-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-drawer.html" title="Drawer Type Reference">
+                        <section ref="qml-qt-labs-controls-drawer-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-frame.html" title="Frame Type Reference">
+                        <section ref="qml-qt-labs-controls-frame-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-groupbox.html" title="GroupBox Type Reference">
+                        <section ref="qml-qt-labs-controls-groupbox-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-itemdelegate.html" title="ItemDelegate Type Reference">
+                        <section ref="qml-qt-labs-controls-itemdelegate-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-label.html" title="Label Type Reference">
+                        <section ref="qml-qt-labs-controls-label-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-menu.html" title="Menu Type Reference">
+                        <section ref="qml-qt-labs-controls-menu-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-menuitem.html" title="MenuItem Type Reference">
+                        <section ref="qml-qt-labs-controls-menuitem-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-page.html" title="Page Type Reference">
+                        <section ref="qml-qt-labs-controls-page-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-pageindicator.html" title="PageIndicator Type Reference">
+                        <section ref="qml-qt-labs-controls-pageindicator-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-pane.html" title="Pane Type Reference">
+                        <section ref="qml-qt-labs-controls-pane-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-popup.html" title="Popup Type Reference">
+                        <section ref="qml-qt-labs-controls-popup-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-progressbar.html" title="ProgressBar Type Reference">
+                        <section ref="qml-qt-labs-controls-progressbar-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-radiobutton.html" title="RadioButton Type Reference">
+                        <section ref="qml-qt-labs-controls-radiobutton-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-rangeslider.html" title="RangeSlider Type Reference">
+                        <section ref="qml-qt-labs-controls-rangeslider-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-scrollbar.html" title="ScrollBar Type Reference">
+                        <section ref="qml-qt-labs-controls-scrollbar-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-scrollindicator.html" title="ScrollIndicator Type Reference">
+                        <section ref="qml-qt-labs-controls-scrollindicator-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-slider.html" title="Slider Type Reference">
+                        <section ref="qml-qt-labs-controls-slider-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-spinbox.html" title="SpinBox Type Reference">
+                        <section ref="qml-qt-labs-controls-spinbox-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-stackview.html" title="StackView Type Reference">
+                        <section ref="qml-qt-labs-controls-stackview-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-swipeview.html" title="SwipeView Type Reference">
+                        <section ref="qml-qt-labs-controls-swipeview-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-switch.html" title="Switch Type Reference">
+                        <section ref="qml-qt-labs-controls-switch-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-tabbar.html" title="TabBar Type Reference">
+                        <section ref="qml-qt-labs-controls-tabbar-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-tabbutton.html" title="TabButton Type Reference">
+                        <section ref="qml-qt-labs-controls-tabbutton-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-textarea.html" title="TextArea Type Reference">
+                        <section ref="qml-qt-labs-controls-textarea-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-textfield.html" title="TextField Type Reference">
+                        <section ref="qml-qt-labs-controls-textfield-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-toolbar.html" title="ToolBar Type Reference">
+                        <section ref="qml-qt-labs-controls-toolbar-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-toolbutton.html" title="ToolButton Type Reference">
+                        <section ref="qml-qt-labs-controls-toolbutton-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qt-labs-controls-tumbler.html" title="Tumbler Type Reference">
+                        <section ref="qml-qt-labs-controls-tumbler-members.html" title="List of all members"/>
+                    </section>
+                </section>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="CalendarModel" id="QML.CalendarModel" ref="qml-qt-labs-calendar-calendarmodel.html"/>
+            <keyword name="to" id="CalendarModel::to" ref="qml-qt-labs-calendar-calendarmodel.html#to-prop"/>
+            <keyword name="indexOf" id="CalendarModel::indexOf" ref="qml-qt-labs-calendar-calendarmodel.html#indexOf-method"/>
+            <keyword name="indexOf" id="CalendarModel::indexOf" ref="qml-qt-labs-calendar-calendarmodel.html#indexOf-method"/>
+            <keyword name="from" id="CalendarModel::from" ref="qml-qt-labs-calendar-calendarmodel.html#from-prop"/>
+            <keyword name="yearAt" id="CalendarModel::yearAt" ref="qml-qt-labs-calendar-calendarmodel.html#yearAt-method"/>
+            <keyword name="monthAt" id="CalendarModel::monthAt" ref="qml-qt-labs-calendar-calendarmodel.html#monthAt-method"/>
+            <keyword name="Qt.labs.templates" id="Qt.labs.templates" ref="qt-labs-templates-qmlmodule.html"/>
+            <keyword name="Qt Labs Calendar" id="Qt Labs Calendar" ref="qtlabscalendar-index.html"/>
+            <keyword name="CheckBox" id="QML.CheckBox" ref="qml-qt-labs-controls-checkbox.html"/>
+            <keyword name="tristate" id="CheckBox::tristate" ref="qml-qt-labs-controls-checkbox.html#tristate-prop"/>
+            <keyword name="checkState" id="CheckBox::checkState" ref="qml-qt-labs-controls-checkbox.html#checkState-prop"/>
+            <keyword name="qtlabscontrols-examples" id="qtlabscontrols-examples" ref="qtlabscontrols-examples.html"/>
+            <keyword name="Indicator Controls" id="Indicator Controls" ref="qtlabscontrols-indicators.html"/>
+            <keyword name="TabBar" id="QML.TabBar" ref="qml-qt-labs-controls-tabbar.html"/>
+            <keyword name="Page" id="QML.Page" ref="qml-qt-labs-controls-page.html"/>
+            <keyword name="header" id="Page::header" ref="qml-qt-labs-controls-page.html#header-prop"/>
+            <keyword name="contentChildren" id="Page::contentChildren" ref="qml-qt-labs-controls-page.html#contentChildren-prop"/>
+            <keyword name="contentData" id="Page::contentData" ref="qml-qt-labs-controls-page.html#contentData-prop"/>
+            <keyword name="footer" id="Page::footer" ref="qml-qt-labs-controls-page.html#footer-prop"/>
+            <keyword name="ApplicationWindow" id="QML.ApplicationWindow" ref="qml-qt-labs-controls-applicationwindow.html"/>
+            <keyword name="contentData" id="ApplicationWindow::contentData" ref="qml-qt-labs-controls-applicationwindow.html#contentData-prop"/>
+            <keyword name="activeFocusControl" id="ApplicationWindow::activeFocusControl" ref="qml-qt-labs-controls-applicationwindow.html#activeFocusControl-attached-prop"/>
+            <keyword name="overlay" id="overlay::overlay" ref="qml-qt-labs-controls-applicationwindow.html#overlay-prop"/>
+            <keyword name="overlay.background" id="overlay::overlay.background" ref="qml-qt-labs-controls-applicationwindow.html#overlay.background-prop"/>
+            <keyword name="overlay" id="ApplicationWindow::overlay" ref="qml-qt-labs-controls-applicationwindow.html#overlay-attached-prop"/>
+            <keyword name="font" id="ApplicationWindow::font" ref="qml-qt-labs-controls-applicationwindow.html#font-prop"/>
+            <keyword name="contentItem" id="ApplicationWindow::contentItem" ref="qml-qt-labs-controls-applicationwindow.html#contentItem-prop"/>
+            <keyword name="contentItem" id="ApplicationWindow::contentItem" ref="qml-qt-labs-controls-applicationwindow.html#contentItem-attached-prop"/>
+            <keyword name="header" id="ApplicationWindow::header" ref="qml-qt-labs-controls-applicationwindow.html#header-prop"/>
+            <keyword name="footer" id="ApplicationWindow::footer" ref="qml-qt-labs-controls-applicationwindow.html#footer-attached-prop"/>
+            <keyword name="activeFocusControl" id="ApplicationWindow::activeFocusControl" ref="qml-qt-labs-controls-applicationwindow.html#activeFocusControl-prop"/>
+            <keyword name="header" id="ApplicationWindow::header" ref="qml-qt-labs-controls-applicationwindow.html#header-attached-prop"/>
+            <keyword name="window" id="ApplicationWindow::window" ref="qml-qt-labs-controls-applicationwindow.html#window-attached-prop"/>
+            <keyword name="footer" id="ApplicationWindow::footer" ref="qml-qt-labs-controls-applicationwindow.html#footer-prop"/>
+            <keyword name="Qt Labs Templates" id="Qt Labs Templates" ref="qtlabstemplates-index.html"/>
+            <keyword name="Container Controls" id="Container Controls" ref="qtlabscontrols-containers.html"/>
+            <keyword name="Qt Labs Controls - Gallery" id="Qt Labs Controls - Gallery" ref="qtlabscontrols-gallery-example.html"/>
+            <keyword name="Label" id="QML.Label" ref="qml-qt-labs-controls-label.html"/>
+            <keyword name="background" id="Label::background" ref="qml-qt-labs-controls-label.html#background-prop"/>
+            <keyword name="Qt.labs.controls" id="Qt.labs.controls" ref="qt-labs-controls-qmlmodule.html"/>
+            <keyword name="Getting Started with Qt Labs Controls" id="Getting Started with Qt Labs Controls" ref="qtlabscontrols-gettingstarted.html"/>
+            <keyword name="Slider" id="QML.Slider" ref="qml-qt-labs-controls-slider.html"/>
+            <keyword name="increase" id="Slider::increase" ref="qml-qt-labs-controls-slider.html#increase-method"/>
+            <keyword name="to" id="Slider::to" ref="qml-qt-labs-controls-slider.html#to-prop"/>
+            <keyword name="decrease" id="Slider::decrease" ref="qml-qt-labs-controls-slider.html#decrease-method"/>
+            <keyword name="stepSize" id="Slider::stepSize" ref="qml-qt-labs-controls-slider.html#stepSize-prop"/>
+            <keyword name="handle" id="Slider::handle" ref="qml-qt-labs-controls-slider.html#handle-prop"/>
+            <keyword name="from" id="Slider::from" ref="qml-qt-labs-controls-slider.html#from-prop"/>
+            <keyword name="visualPosition" id="Slider::visualPosition" ref="qml-qt-labs-controls-slider.html#visualPosition-prop"/>
+            <keyword name="track" id="Slider::track" ref="qml-qt-labs-controls-slider.html#track-prop"/>
+            <keyword name="orientation" id="Slider::orientation" ref="qml-qt-labs-controls-slider.html#orientation-prop"/>
+            <keyword name="position" id="Slider::position" ref="qml-qt-labs-controls-slider.html#position-prop"/>
+            <keyword name="snapMode" id="Slider::snapMode" ref="qml-qt-labs-controls-slider.html#snapMode-prop"/>
+            <keyword name="value" id="Slider::value" ref="qml-qt-labs-controls-slider.html#value-prop"/>
+            <keyword name="pressed" id="Slider::pressed" ref="qml-qt-labs-controls-slider.html#pressed-prop"/>
+            <keyword name="Qt Labs Controls" id="Qt Labs Controls" ref="qtlabscontrols-index.html"/>
+            <keyword name="Menu Controls" id="Menu Controls" ref="qtlabscontrols-menus.html"/>
+            <keyword name="Container" id="QML.Container" ref="qml-qt-labs-controls-container.html"/>
+            <keyword name="removeItem" id="Container::removeItem" ref="qml-qt-labs-controls-container.html#removeItem-method"/>
+            <keyword name="count" id="Container::count" ref="qml-qt-labs-controls-container.html#count-prop"/>
+            <keyword name="itemAt" id="Container::itemAt" ref="qml-qt-labs-controls-container.html#itemAt-method"/>
+            <keyword name="insertItem" id="Container::insertItem" ref="qml-qt-labs-controls-container.html#insertItem-method"/>
+            <keyword name="moveItem" id="Container::moveItem" ref="qml-qt-labs-controls-container.html#moveItem-method"/>
+            <keyword name="addItem" id="Container::addItem" ref="qml-qt-labs-controls-container.html#addItem-method"/>
+            <keyword name="currentIndex" id="Container::currentIndex" ref="qml-qt-labs-controls-container.html#currentIndex-prop"/>
+            <keyword name="contentModel" id="Container::contentModel" ref="qml-qt-labs-controls-container.html#contentModel-prop"/>
+            <keyword name="contentChildren" id="Container::contentChildren" ref="qml-qt-labs-controls-container.html#contentChildren-prop"/>
+            <keyword name="currentItem" id="Container::currentItem" ref="qml-qt-labs-controls-container.html#currentItem-prop"/>
+            <keyword name="contentData" id="Container::contentData" ref="qml-qt-labs-controls-container.html#contentData-prop"/>
+            <keyword name="Button Controls" id="Button Controls" ref="qtlabscontrols-buttons.html"/>
+            <keyword name="Styling Qt Labs Controls" id="Styling Qt Labs Controls" ref="qtlabscontrols-styles.html"/>
+            <keyword name="ToolButton" id="QML.ToolButton" ref="qml-qt-labs-controls-toolbutton.html"/>
+            <keyword name="Drawer" id="QML.Drawer" ref="qml-qt-labs-controls-drawer.html"/>
+            <keyword name="open" id="Drawer::open" ref="qml-qt-labs-controls-drawer.html#open-method"/>
+            <keyword name="close" id="Drawer::close" ref="qml-qt-labs-controls-drawer.html#close-method"/>
+            <keyword name="edge" id="Drawer::edge" ref="qml-qt-labs-controls-drawer.html#edge-prop"/>
+            <keyword name="position" id="Drawer::position" ref="qml-qt-labs-controls-drawer.html#position-prop"/>
+            <keyword name="clicked" id="Drawer::clicked" ref="qml-qt-labs-controls-drawer.html#clicked-signal"/>
+            <keyword name="contentItem" id="Drawer::contentItem" ref="qml-qt-labs-controls-drawer.html#contentItem-prop"/>
+            <keyword name="animation" id="Drawer::animation" ref="qml-qt-labs-controls-drawer.html#animation-prop"/>
+            <keyword name="ScrollIndicator" id="QML.ScrollIndicator" ref="qml-qt-labs-controls-scrollindicator.html"/>
+            <keyword name="active" id="ScrollIndicator::active" ref="qml-qt-labs-controls-scrollindicator.html#active-prop"/>
+            <keyword name="size" id="ScrollIndicator::size" ref="qml-qt-labs-controls-scrollindicator.html#size-prop"/>
+            <keyword name="position" id="ScrollIndicator::position" ref="qml-qt-labs-controls-scrollindicator.html#position-prop"/>
+            <keyword name="indicator" id="ScrollIndicator::indicator" ref="qml-qt-labs-controls-scrollindicator.html#indicator-prop"/>
+            <keyword name="horizontal" id="ScrollIndicator::horizontal" ref="qml-qt-labs-controls-scrollindicator.html#horizontal-attached-prop"/>
+            <keyword name="vertical" id="ScrollIndicator::vertical" ref="qml-qt-labs-controls-scrollindicator.html#vertical-attached-prop"/>
+            <keyword name="orientation" id="ScrollIndicator::orientation" ref="qml-qt-labs-controls-scrollindicator.html#orientation-prop"/>
+            <keyword name="SwipeView" id="QML.SwipeView" ref="qml-qt-labs-controls-swipeview.html"/>
+            <keyword name="view" id="SwipeView::view" ref="qml-qt-labs-controls-swipeview.html#view-attached-prop"/>
+            <keyword name="index" id="SwipeView::index" ref="qml-qt-labs-controls-swipeview.html#index-attached-prop"/>
+            <keyword name="isCurrentItem" id="SwipeView::isCurrentItem" ref="qml-qt-labs-controls-swipeview.html#isCurrentItem-attached-prop"/>
+            <keyword name="PageIndicator" id="QML.PageIndicator" ref="qml-qt-labs-controls-pageindicator.html"/>
+            <keyword name="count" id="PageIndicator::count" ref="qml-qt-labs-controls-pageindicator.html#count-prop"/>
+            <keyword name="currentIndex" id="PageIndicator::currentIndex" ref="qml-qt-labs-controls-pageindicator.html#currentIndex-prop"/>
+            <keyword name="delegate" id="PageIndicator::delegate" ref="qml-qt-labs-controls-pageindicator.html#delegate-prop"/>
+            <keyword name="interactive" id="PageIndicator::interactive" ref="qml-qt-labs-controls-pageindicator.html#interactive-prop"/>
+            <keyword name="RangeSlider" id="QML.RangeSlider" ref="qml-qt-labs-controls-rangeslider.html"/>
+            <keyword name="setValues" id="RangeSlider::setValues" ref="qml-qt-labs-controls-rangeslider.html#setValues-method"/>
+            <keyword name="from" id="RangeSlider::from" ref="qml-qt-labs-controls-rangeslider.html#from-prop"/>
+            <keyword name="second.value" id="second::second.value" ref="qml-qt-labs-controls-rangeslider.html#second.value-prop"/>
+            <keyword name="first.increase" id="RangeSlider::first.increase" ref="qml-qt-labs-controls-rangeslider.html#first.increase-method"/>
+            <keyword name="second.position" id="second::second.position" ref="qml-qt-labs-controls-rangeslider.html#second.position-prop"/>
+            <keyword name="second.increase" id="RangeSlider::second.increase" ref="qml-qt-labs-controls-rangeslider.html#second.increase-method"/>
+            <keyword name="to" id="RangeSlider::to" ref="qml-qt-labs-controls-rangeslider.html#to-prop"/>
+            <keyword name="second.pressed" id="second::second.pressed" ref="qml-qt-labs-controls-rangeslider.html#second.pressed-prop"/>
+            <keyword name="second.visualPosition" id="second::second.visualPosition" ref="qml-qt-labs-controls-rangeslider.html#second.visualPosition-prop"/>
+            <keyword name="orientation" id="RangeSlider::orientation" ref="qml-qt-labs-controls-rangeslider.html#orientation-prop"/>
+            <keyword name="first.decrease" id="RangeSlider::first.decrease" ref="qml-qt-labs-controls-rangeslider.html#first.decrease-method"/>
+            <keyword name="second.decrease" id="RangeSlider::second.decrease" ref="qml-qt-labs-controls-rangeslider.html#second.decrease-method"/>
+            <keyword name="track" id="RangeSlider::track" ref="qml-qt-labs-controls-rangeslider.html#track-prop"/>
+            <keyword name="second.handle" id="second::second.handle" ref="qml-qt-labs-controls-rangeslider.html#second.handle-prop"/>
+            <keyword name="first.value" id="first::first.value" ref="qml-qt-labs-controls-rangeslider.html#first.value-prop"/>
+            <keyword name="first.position" id="first::first.position" ref="qml-qt-labs-controls-rangeslider.html#first.position-prop"/>
+            <keyword name="first.pressed" id="first::first.pressed" ref="qml-qt-labs-controls-rangeslider.html#first.pressed-prop"/>
+            <keyword name="stepSize" id="RangeSlider::stepSize" ref="qml-qt-labs-controls-rangeslider.html#stepSize-prop"/>
+            <keyword name="first.visualPosition" id="first::first.visualPosition" ref="qml-qt-labs-controls-rangeslider.html#first.visualPosition-prop"/>
+            <keyword name="snapMode" id="RangeSlider::snapMode" ref="qml-qt-labs-controls-rangeslider.html#snapMode-prop"/>
+            <keyword name="first.handle" id="first::first.handle" ref="qml-qt-labs-controls-rangeslider.html#first.handle-prop"/>
+            <keyword name="ToolBar" id="QML.ToolBar" ref="qml-qt-labs-controls-toolbar.html"/>
+            <keyword name="ButtonGroup" id="QML.ButtonGroup" ref="qml-qt-labs-controls-buttongroup.html"/>
+            <keyword name="current" id="ButtonGroup::current" ref="qml-qt-labs-controls-buttongroup.html#current-prop"/>
+            <keyword name="group" id="ButtonGroup::group" ref="qml-qt-labs-controls-buttongroup.html#group-attached-prop"/>
+            <keyword name="removeButton" id="ButtonGroup::removeButton" ref="qml-qt-labs-controls-buttongroup.html#removeButton-method"/>
+            <keyword name="buttons" id="ButtonGroup::buttons" ref="qml-qt-labs-controls-buttongroup.html#buttons-prop"/>
+            <keyword name="addButton" id="ButtonGroup::addButton" ref="qml-qt-labs-controls-buttongroup.html#addButton-method"/>
+            <keyword name="Menu" id="QML.Menu" ref="qml-qt-labs-controls-menu.html"/>
+            <keyword name="insertItem" id="Menu::insertItem" ref="qml-qt-labs-controls-menu.html#insertItem-method"/>
+            <keyword name="itemAt" id="Menu::itemAt" ref="qml-qt-labs-controls-menu.html#itemAt-method"/>
+            <keyword name="addItem" id="Menu::addItem" ref="qml-qt-labs-controls-menu.html#addItem-method"/>
+            <keyword name="contentData" id="Menu::contentData" ref="qml-qt-labs-controls-menu.html#contentData-prop"/>
+            <keyword name="removeItem" id="Menu::removeItem" ref="qml-qt-labs-controls-menu.html#removeItem-method"/>
+            <keyword name="moveItem" id="Menu::moveItem" ref="qml-qt-labs-controls-menu.html#moveItem-method"/>
+            <keyword name="contentModel" id="Menu::contentModel" ref="qml-qt-labs-controls-menu.html#contentModel-prop"/>
+            <keyword name="title" id="Menu::title" ref="qml-qt-labs-controls-menu.html#title-prop"/>
+            <keyword name="Tumbler" id="QML.Tumbler" ref="qml-qt-labs-controls-tumbler.html"/>
+            <keyword name="visibleItemCount" id="Tumbler::visibleItemCount" ref="qml-qt-labs-controls-tumbler.html#visibleItemCount-prop"/>
+            <keyword name="currentIndex" id="Tumbler::currentIndex" ref="qml-qt-labs-controls-tumbler.html#currentIndex-prop"/>
+            <keyword name="model" id="Tumbler::model" ref="qml-qt-labs-controls-tumbler.html#model-prop"/>
+            <keyword name="count" id="Tumbler::count" ref="qml-qt-labs-controls-tumbler.html#count-prop"/>
+            <keyword name="delegate" id="Tumbler::delegate" ref="qml-qt-labs-controls-tumbler.html#delegate-prop"/>
+            <keyword name="currentItem" id="Tumbler::currentItem" ref="qml-qt-labs-controls-tumbler.html#currentItem-prop"/>
+            <keyword name="Universal Style" id="Universal Style" ref="qtlabscontrols-universal.html"/>
+            <keyword name="TabButton" id="QML.TabButton" ref="qml-qt-labs-controls-tabbutton.html"/>
+            <keyword name="AbstractButton" id="QML.AbstractButton" ref="qml-qt-labs-controls-abstractbutton.html"/>
+            <keyword name="label" id="AbstractButton::label" ref="qml-qt-labs-controls-abstractbutton.html#label-prop"/>
+            <keyword name="released" id="AbstractButton::released" ref="qml-qt-labs-controls-abstractbutton.html#released-signal"/>
+            <keyword name="pressed" id="AbstractButton::pressed" ref="qml-qt-labs-controls-abstractbutton.html#pressed-prop"/>
+            <keyword name="checkable" id="AbstractButton::checkable" ref="qml-qt-labs-controls-abstractbutton.html#checkable-prop"/>
+            <keyword name="highlighted" id="AbstractButton::highlighted" ref="qml-qt-labs-controls-abstractbutton.html#highlighted-prop"/>
+            <keyword name="clicked" id="AbstractButton::clicked" ref="qml-qt-labs-controls-abstractbutton.html#clicked-signal"/>
+            <keyword name="autoExclusive" id="AbstractButton::autoExclusive" ref="qml-qt-labs-controls-abstractbutton.html#autoExclusive-prop"/>
+            <keyword name="text" id="AbstractButton::text" ref="qml-qt-labs-controls-abstractbutton.html#text-prop"/>
+            <keyword name="pressed" id="AbstractButton::pressed" ref="qml-qt-labs-controls-abstractbutton.html#pressed-signal"/>
+            <keyword name="doubleClicked" id="AbstractButton::doubleClicked" ref="qml-qt-labs-controls-abstractbutton.html#doubleClicked-signal"/>
+            <keyword name="autoRepeat" id="AbstractButton::autoRepeat" ref="qml-qt-labs-controls-abstractbutton.html#autoRepeat-prop"/>
+            <keyword name="canceled" id="AbstractButton::canceled" ref="qml-qt-labs-controls-abstractbutton.html#canceled-signal"/>
+            <keyword name="checked" id="AbstractButton::checked" ref="qml-qt-labs-controls-abstractbutton.html#checked-prop"/>
+            <keyword name="pressAndHold" id="AbstractButton::pressAndHold" ref="qml-qt-labs-controls-abstractbutton.html#pressAndHold-signal"/>
+            <keyword name="indicator" id="AbstractButton::indicator" ref="qml-qt-labs-controls-abstractbutton.html#indicator-prop"/>
+            <keyword name="TextArea" id="QML.TextArea" ref="qml-qt-labs-controls-textarea.html"/>
+            <keyword name="placeholderText" id="TextArea::placeholderText" ref="qml-qt-labs-controls-textarea.html#placeholderText-prop"/>
+            <keyword name="pressAndHold" id="TextArea::pressAndHold" ref="qml-qt-labs-controls-textarea.html#pressAndHold-signal"/>
+            <keyword name="background" id="TextArea::background" ref="qml-qt-labs-controls-textarea.html#background-prop"/>
+            <keyword name="focusReason" id="TextArea::focusReason" ref="qml-qt-labs-controls-textarea.html#focusReason-prop"/>
+            <keyword name="Material Style" id="Material Style" ref="qtlabscontrols-material.html"/>
+            <keyword name="MonthGrid" id="QML.MonthGrid" ref="qml-qt-labs-calendar-monthgrid.html"/>
+            <keyword name="year" id="MonthGrid::year" ref="qml-qt-labs-calendar-monthgrid.html#year-prop"/>
+            <keyword name="month" id="MonthGrid::month" ref="qml-qt-labs-calendar-monthgrid.html#month-prop"/>
+            <keyword name="title" id="MonthGrid::title" ref="qml-qt-labs-calendar-monthgrid.html#title-prop"/>
+            <keyword name="delegate" id="MonthGrid::delegate" ref="qml-qt-labs-calendar-monthgrid.html#delegate-prop"/>
+            <keyword name="SpinBox" id="QML.SpinBox" ref="qml-qt-labs-controls-spinbox.html"/>
+            <keyword name="value" id="SpinBox::value" ref="qml-qt-labs-controls-spinbox.html#value-prop"/>
+            <keyword name="textFromValue" id="SpinBox::textFromValue" ref="qml-qt-labs-controls-spinbox.html#textFromValue-prop"/>
+            <keyword name="to" id="SpinBox::to" ref="qml-qt-labs-controls-spinbox.html#to-prop"/>
+            <keyword name="down.pressed" id="down::down.pressed" ref="qml-qt-labs-controls-spinbox.html#down.pressed-prop"/>
+            <keyword name="increase" id="SpinBox::increase" ref="qml-qt-labs-controls-spinbox.html#increase-method"/>
+            <keyword name="from" id="SpinBox::from" ref="qml-qt-labs-controls-spinbox.html#from-prop"/>
+            <keyword name="up.pressed" id="up::up.pressed" ref="qml-qt-labs-controls-spinbox.html#up.pressed-prop"/>
+            <keyword name="validator" id="SpinBox::validator" ref="qml-qt-labs-controls-spinbox.html#validator-prop"/>
+            <keyword name="up.indicator" id="up::up.indicator" ref="qml-qt-labs-controls-spinbox.html#up.indicator-prop"/>
+            <keyword name="decrease" id="SpinBox::decrease" ref="qml-qt-labs-controls-spinbox.html#decrease-method"/>
+            <keyword name="stepSize" id="SpinBox::stepSize" ref="qml-qt-labs-controls-spinbox.html#stepSize-prop"/>
+            <keyword name="valueFromText" id="SpinBox::valueFromText" ref="qml-qt-labs-controls-spinbox.html#valueFromText-prop"/>
+            <keyword name="down.indicator" id="down::down.indicator" ref="qml-qt-labs-controls-spinbox.html#down.indicator-prop"/>
+            <keyword name="BusyIndicator" id="QML.BusyIndicator" ref="qml-qt-labs-controls-busyindicator.html"/>
+            <keyword name="running" id="BusyIndicator::running" ref="qml-qt-labs-controls-busyindicator.html#running-prop"/>
+            <keyword name="Dial" id="QML.Dial" ref="qml-qt-labs-controls-dial.html"/>
+            <keyword name="increase" id="Dial::increase" ref="qml-qt-labs-controls-dial.html#increase-method"/>
+            <keyword name="position" id="Dial::position" ref="qml-qt-labs-controls-dial.html#position-prop"/>
+            <keyword name="snapMode" id="Dial::snapMode" ref="qml-qt-labs-controls-dial.html#snapMode-prop"/>
+            <keyword name="pressed" id="Dial::pressed" ref="qml-qt-labs-controls-dial.html#pressed-prop"/>
+            <keyword name="from" id="Dial::from" ref="qml-qt-labs-controls-dial.html#from-prop"/>
+            <keyword name="to" id="Dial::to" ref="qml-qt-labs-controls-dial.html#to-prop"/>
+            <keyword name="value" id="Dial::value" ref="qml-qt-labs-controls-dial.html#value-prop"/>
+            <keyword name="handle" id="Dial::handle" ref="qml-qt-labs-controls-dial.html#handle-prop"/>
+            <keyword name="stepSize" id="Dial::stepSize" ref="qml-qt-labs-controls-dial.html#stepSize-prop"/>
+            <keyword name="decrease" id="Dial::decrease" ref="qml-qt-labs-controls-dial.html#decrease-method"/>
+            <keyword name="angle" id="Dial::angle" ref="qml-qt-labs-controls-dial.html#angle-prop"/>
+            <keyword name="WeekNumberColumn" id="QML.WeekNumberColumn" ref="qml-qt-labs-calendar-weeknumbercolumn.html"/>
+            <keyword name="delegate" id="WeekNumberColumn::delegate" ref="qml-qt-labs-calendar-weeknumbercolumn.html#delegate-prop"/>
+            <keyword name="year" id="WeekNumberColumn::year" ref="qml-qt-labs-calendar-weeknumbercolumn.html#year-prop"/>
+            <keyword name="month" id="WeekNumberColumn::month" ref="qml-qt-labs-calendar-weeknumbercolumn.html#month-prop"/>
+            <keyword name="Qt.labs.calendar" id="Qt.labs.calendar" ref="qt-labs-calendar-qmlmodule.html"/>
+            <keyword name="Differences between Qt Quick Controls" id="Differences between Qt Quick Controls" ref="qtlabscontrols-differences.html"/>
+            <keyword name="ProgressBar" id="QML.ProgressBar" ref="qml-qt-labs-controls-progressbar.html"/>
+            <keyword name="position" id="ProgressBar::position" ref="qml-qt-labs-controls-progressbar.html#position-prop"/>
+            <keyword name="to" id="ProgressBar::to" ref="qml-qt-labs-controls-progressbar.html#to-prop"/>
+            <keyword name="value" id="ProgressBar::value" ref="qml-qt-labs-controls-progressbar.html#value-prop"/>
+            <keyword name="indicator" id="ProgressBar::indicator" ref="qml-qt-labs-controls-progressbar.html#indicator-prop"/>
+            <keyword name="indeterminate" id="ProgressBar::indeterminate" ref="qml-qt-labs-controls-progressbar.html#indeterminate-prop"/>
+            <keyword name="from" id="ProgressBar::from" ref="qml-qt-labs-controls-progressbar.html#from-prop"/>
+            <keyword name="visualPosition" id="ProgressBar::visualPosition" ref="qml-qt-labs-controls-progressbar.html#visualPosition-prop"/>
+            <keyword name="TextField" id="QML.TextField" ref="qml-qt-labs-controls-textfield.html"/>
+            <keyword name="focusReason" id="TextField::focusReason" ref="qml-qt-labs-controls-textfield.html#focusReason-prop"/>
+            <keyword name="background" id="TextField::background" ref="qml-qt-labs-controls-textfield.html#background-prop"/>
+            <keyword name="placeholderText" id="TextField::placeholderText" ref="qml-qt-labs-controls-textfield.html#placeholderText-prop"/>
+            <keyword name="pressAndHold" id="TextField::pressAndHold" ref="qml-qt-labs-controls-textfield.html#pressAndHold-signal"/>
+            <keyword name="MenuItem" id="QML.MenuItem" ref="qml-qt-labs-controls-menuitem.html"/>
+            <keyword name="triggered" id="MenuItem::triggered" ref="qml-qt-labs-controls-menuitem.html#triggered-signal"/>
+            <keyword name="High-DPI Support in Qt Labs Controls" id="High-DPI Support in Qt Labs Controls" ref="qtlabscontrols-highdpi.html"/>
+            <keyword name="StackView" id="QML.StackView" ref="qml-qt-labs-controls-stackview.html"/>
+            <keyword name="popEnter" id="StackView::popEnter" ref="qml-qt-labs-controls-stackview.html#popEnter-prop"/>
+            <keyword name="replaceEnter" id="StackView::replaceEnter" ref="qml-qt-labs-controls-stackview.html#replaceEnter-prop"/>
+            <keyword name="depth" id="StackView::depth" ref="qml-qt-labs-controls-stackview.html#depth-prop"/>
+            <keyword name="view" id="StackView::view" ref="qml-qt-labs-controls-stackview.html#view-attached-prop"/>
+            <keyword name="initialItem" id="StackView::initialItem" ref="qml-qt-labs-controls-stackview.html#initialItem-prop"/>
+            <keyword name="pushExit" id="StackView::pushExit" ref="qml-qt-labs-controls-stackview.html#pushExit-prop"/>
+            <keyword name="status" id="StackView::status" ref="qml-qt-labs-controls-stackview.html#status-attached-prop"/>
+            <keyword name="pushEnter" id="StackView::pushEnter" ref="qml-qt-labs-controls-stackview.html#pushEnter-prop"/>
+            <keyword name="busy" id="StackView::busy" ref="qml-qt-labs-controls-stackview.html#busy-prop"/>
+            <keyword name="push" id="StackView::push" ref="qml-qt-labs-controls-stackview.html#push-method"/>
+            <keyword name="replace" id="StackView::replace" ref="qml-qt-labs-controls-stackview.html#replace-method"/>
+            <keyword name="currentItem" id="StackView::currentItem" ref="qml-qt-labs-controls-stackview.html#currentItem-prop"/>
+            <keyword name="replaceExit" id="StackView::replaceExit" ref="qml-qt-labs-controls-stackview.html#replaceExit-prop"/>
+            <keyword name="get" id="StackView::get" ref="qml-qt-labs-controls-stackview.html#get-method"/>
+            <keyword name="pop" id="StackView::pop" ref="qml-qt-labs-controls-stackview.html#pop-method"/>
+            <keyword name="clear" id="StackView::clear" ref="qml-qt-labs-controls-stackview.html#clear-method"/>
+            <keyword name="find" id="StackView::find" ref="qml-qt-labs-controls-stackview.html#find-method"/>
+            <keyword name="popExit" id="StackView::popExit" ref="qml-qt-labs-controls-stackview.html#popExit-prop"/>
+            <keyword name="index" id="StackView::index" ref="qml-qt-labs-controls-stackview.html#index-attached-prop"/>
+            <keyword name="Control" id="QML.Control" ref="qml-qt-labs-controls-control.html"/>
+            <keyword name="rightPadding" id="Control::rightPadding" ref="qml-qt-labs-controls-control.html#rightPadding-prop"/>
+            <keyword name="leftPadding" id="Control::leftPadding" ref="qml-qt-labs-controls-control.html#leftPadding-prop"/>
+            <keyword name="mirrored" id="Control::mirrored" ref="qml-qt-labs-controls-control.html#mirrored-prop"/>
+            <keyword name="bottomPadding" id="Control::bottomPadding" ref="qml-qt-labs-controls-control.html#bottomPadding-prop"/>
+            <keyword name="focusReason" id="Control::focusReason" ref="qml-qt-labs-controls-control.html#focusReason-prop"/>
+            <keyword name="font" id="Control::font" ref="qml-qt-labs-controls-control.html#font-prop"/>
+            <keyword name="availableHeight" id="Control::availableHeight" ref="qml-qt-labs-controls-control.html#availableHeight-prop"/>
+            <keyword name="availableWidth" id="Control::availableWidth" ref="qml-qt-labs-controls-control.html#availableWidth-prop"/>
+            <keyword name="background" id="Control::background" ref="qml-qt-labs-controls-control.html#background-prop"/>
+            <keyword name="locale" id="Control::locale" ref="qml-qt-labs-controls-control.html#locale-prop"/>
+            <keyword name="contentItem" id="Control::contentItem" ref="qml-qt-labs-controls-control.html#contentItem-prop"/>
+            <keyword name="topPadding" id="Control::topPadding" ref="qml-qt-labs-controls-control.html#topPadding-prop"/>
+            <keyword name="spacing" id="Control::spacing" ref="qml-qt-labs-controls-control.html#spacing-prop"/>
+            <keyword name="padding" id="Control::padding" ref="qml-qt-labs-controls-control.html#padding-prop"/>
+            <keyword name="Customizing Qt Labs Controls" id="Customizing Qt Labs Controls" ref="qtlabscontrols-customize.html"/>
+            <keyword name="RadioButton" id="QML.RadioButton" ref="qml-qt-labs-controls-radiobutton.html"/>
+            <keyword name="ScrollBar" id="QML.ScrollBar" ref="qml-qt-labs-controls-scrollbar.html"/>
+            <keyword name="size" id="ScrollBar::size" ref="qml-qt-labs-controls-scrollbar.html#size-prop"/>
+            <keyword name="vertical" id="ScrollBar::vertical" ref="qml-qt-labs-controls-scrollbar.html#vertical-attached-prop"/>
+            <keyword name="position" id="ScrollBar::position" ref="qml-qt-labs-controls-scrollbar.html#position-prop"/>
+            <keyword name="horizontal" id="ScrollBar::horizontal" ref="qml-qt-labs-controls-scrollbar.html#horizontal-attached-prop"/>
+            <keyword name="active" id="ScrollBar::active" ref="qml-qt-labs-controls-scrollbar.html#active-prop"/>
+            <keyword name="handle" id="ScrollBar::handle" ref="qml-qt-labs-controls-scrollbar.html#handle-prop"/>
+            <keyword name="pressed" id="ScrollBar::pressed" ref="qml-qt-labs-controls-scrollbar.html#pressed-prop"/>
+            <keyword name="orientation" id="ScrollBar::orientation" ref="qml-qt-labs-controls-scrollbar.html#orientation-prop"/>
+            <keyword name="Default Style" id="Default Style" ref="qtlabscontrols-default.html"/>
+            <keyword name="Popup" id="QML.Popup" ref="qml-qt-labs-controls-popup.html"/>
+            <keyword name="contentHeight" id="Popup::contentHeight" ref="qml-qt-labs-controls-popup.html#contentHeight-prop"/>
+            <keyword name="leftPadding" id="Popup::leftPadding" ref="qml-qt-labs-controls-popup.html#leftPadding-prop"/>
+            <keyword name="topMargin" id="Popup::topMargin" ref="qml-qt-labs-controls-popup.html#topMargin-prop"/>
+            <keyword name="availableHeight" id="Popup::availableHeight" ref="qml-qt-labs-controls-popup.html#availableHeight-prop"/>
+            <keyword name="activeFocus" id="Popup::activeFocus" ref="qml-qt-labs-controls-popup.html#activeFocus-prop"/>
+            <keyword name="height" id="Popup::height" ref="qml-qt-labs-controls-popup.html#height-prop"/>
+            <keyword name="width" id="Popup::width" ref="qml-qt-labs-controls-popup.html#width-prop"/>
+            <keyword name="contentWidth" id="Popup::contentWidth" ref="qml-qt-labs-controls-popup.html#contentWidth-prop"/>
+            <keyword name="contentChildren" id="Popup::contentChildren" ref="qml-qt-labs-controls-popup.html#contentChildren-prop"/>
+            <keyword name="visible" id="Popup::visible" ref="qml-qt-labs-controls-popup.html#visible-prop"/>
+            <keyword name="exit" id="Popup::exit" ref="qml-qt-labs-controls-popup.html#exit-prop"/>
+            <keyword name="bottomMargin" id="Popup::bottomMargin" ref="qml-qt-labs-controls-popup.html#bottomMargin-prop"/>
+            <keyword name="z" id="Popup::z" ref="qml-qt-labs-controls-popup.html#z-prop"/>
+            <keyword name="parent" id="Popup::parent" ref="qml-qt-labs-controls-popup.html#parent-prop"/>
+            <keyword name="availableWidth" id="Popup::availableWidth" ref="qml-qt-labs-controls-popup.html#availableWidth-prop"/>
+            <keyword name="rightMargin" id="Popup::rightMargin" ref="qml-qt-labs-controls-popup.html#rightMargin-prop"/>
+            <keyword name="margins" id="Popup::margins" ref="qml-qt-labs-controls-popup.html#margins-prop"/>
+            <keyword name="padding" id="Popup::padding" ref="qml-qt-labs-controls-popup.html#padding-prop"/>
+            <keyword name="transformOrigin" id="Popup::transformOrigin" ref="qml-qt-labs-controls-popup.html#transformOrigin-prop"/>
+            <keyword name="focus" id="Popup::focus" ref="qml-qt-labs-controls-popup.html#focus-prop"/>
+            <keyword name="x" id="Popup::x" ref="qml-qt-labs-controls-popup.html#x-prop"/>
+            <keyword name="closePolicy" id="Popup::closePolicy" ref="qml-qt-labs-controls-popup.html#closePolicy-prop"/>
+            <keyword name="implicitHeight" id="Popup::implicitHeight" ref="qml-qt-labs-controls-popup.html#implicitHeight-prop"/>
+            <keyword name="bottomPadding" id="Popup::bottomPadding" ref="qml-qt-labs-controls-popup.html#bottomPadding-prop"/>
+            <keyword name="open" id="Popup::open" ref="qml-qt-labs-controls-popup.html#open-method"/>
+            <keyword name="enter" id="Popup::enter" ref="qml-qt-labs-controls-popup.html#enter-prop"/>
+            <keyword name="implicitWidth" id="Popup::implicitWidth" ref="qml-qt-labs-controls-popup.html#implicitWidth-prop"/>
+            <keyword name="topPadding" id="Popup::topPadding" ref="qml-qt-labs-controls-popup.html#topPadding-prop"/>
+            <keyword name="contentItem" id="Popup::contentItem" ref="qml-qt-labs-controls-popup.html#contentItem-prop"/>
+            <keyword name="data" id="Popup::data" ref="qml-qt-labs-controls-popup.html#data-prop"/>
+            <keyword name="contentData" id="Popup::contentData" ref="qml-qt-labs-controls-popup.html#contentData-prop"/>
+            <keyword name="opacity" id="Popup::opacity" ref="qml-qt-labs-controls-popup.html#opacity-prop"/>
+            <keyword name="clip" id="Popup::clip" ref="qml-qt-labs-controls-popup.html#clip-prop"/>
+            <keyword name="modal" id="Popup::modal" ref="qml-qt-labs-controls-popup.html#modal-prop"/>
+            <keyword name="rightPadding" id="Popup::rightPadding" ref="qml-qt-labs-controls-popup.html#rightPadding-prop"/>
+            <keyword name="scale" id="Popup::scale" ref="qml-qt-labs-controls-popup.html#scale-prop"/>
+            <keyword name="y" id="Popup::y" ref="qml-qt-labs-controls-popup.html#y-prop"/>
+            <keyword name="close" id="Popup::close" ref="qml-qt-labs-controls-popup.html#close-method"/>
+            <keyword name="background" id="Popup::background" ref="qml-qt-labs-controls-popup.html#background-prop"/>
+            <keyword name="leftMargin" id="Popup::leftMargin" ref="qml-qt-labs-controls-popup.html#leftMargin-prop"/>
+            <keyword name="DayOfWeekRow" id="QML.DayOfWeekRow" ref="qml-qt-labs-calendar-dayofweekrow.html"/>
+            <keyword name="delegate" id="DayOfWeekRow::delegate" ref="qml-qt-labs-calendar-dayofweekrow.html#delegate-prop"/>
+            <keyword name="Pane" id="QML.Pane" ref="qml-qt-labs-controls-pane.html"/>
+            <keyword name="contentHeight" id="Pane::contentHeight" ref="qml-qt-labs-controls-pane.html#contentHeight-prop"/>
+            <keyword name="contentData" id="Pane::contentData" ref="qml-qt-labs-controls-pane.html#contentData-prop"/>
+            <keyword name="contentWidth" id="Pane::contentWidth" ref="qml-qt-labs-controls-pane.html#contentWidth-prop"/>
+            <keyword name="contentChildren" id="Pane::contentChildren" ref="qml-qt-labs-controls-pane.html#contentChildren-prop"/>
+            <keyword name="ItemDelegate" id="QML.ItemDelegate" ref="qml-qt-labs-controls-itemdelegate.html"/>
+            <keyword name="Navigation Controls" id="Navigation Controls" ref="qtlabscontrols-navigation.html"/>
+            <keyword name="Frame" id="QML.Frame" ref="qml-qt-labs-controls-frame.html"/>
+            <keyword name="frame" id="Frame::frame" ref="qml-qt-labs-controls-frame.html#frame-prop"/>
+            <keyword name="ComboBox" id="QML.ComboBox" ref="qml-qt-labs-controls-combobox.html"/>
+            <keyword name="count" id="ComboBox::count" ref="qml-qt-labs-controls-combobox.html#count-prop"/>
+            <keyword name="pressed" id="ComboBox::pressed" ref="qml-qt-labs-controls-combobox.html#pressed-prop"/>
+            <keyword name="displayText" id="ComboBox::displayText" ref="qml-qt-labs-controls-combobox.html#displayText-prop"/>
+            <keyword name="textRole" id="ComboBox::textRole" ref="qml-qt-labs-controls-combobox.html#textRole-prop"/>
+            <keyword name="highlightedIndex" id="ComboBox::highlightedIndex" ref="qml-qt-labs-controls-combobox.html#highlightedIndex-prop"/>
+            <keyword name="currentIndex" id="ComboBox::currentIndex" ref="qml-qt-labs-controls-combobox.html#currentIndex-prop"/>
+            <keyword name="currentText" id="ComboBox::currentText" ref="qml-qt-labs-controls-combobox.html#currentText-prop"/>
+            <keyword name="activated" id="ComboBox::activated" ref="qml-qt-labs-controls-combobox.html#activated-signal"/>
+            <keyword name="delegate" id="ComboBox::delegate" ref="qml-qt-labs-controls-combobox.html#delegate-prop"/>
+            <keyword name="textAt" id="ComboBox::textAt" ref="qml-qt-labs-controls-combobox.html#textAt-method"/>
+            <keyword name="find" id="ComboBox::find" ref="qml-qt-labs-controls-combobox.html#find-method"/>
+            <keyword name="model" id="ComboBox::model" ref="qml-qt-labs-controls-combobox.html#model-prop"/>
+            <keyword name="popup" id="ComboBox::popup" ref="qml-qt-labs-controls-combobox.html#popup-prop"/>
+            <keyword name="highlighted" id="ComboBox::highlighted" ref="qml-qt-labs-controls-combobox.html#highlighted-signal"/>
+            <keyword name="Button" id="QML.Button" ref="qml-qt-labs-controls-button.html"/>
+            <keyword name="Calendar" id="QML.Calendar" ref="qml-qt-labs-calendar-calendar.html"/>
+            <keyword name="Switch" id="QML.Switch" ref="qml-qt-labs-controls-switch.html"/>
+            <keyword name="visualPosition" id="Switch::visualPosition" ref="qml-qt-labs-controls-switch.html#visualPosition-prop"/>
+            <keyword name="position" id="Switch::position" ref="qml-qt-labs-controls-switch.html#position-prop"/>
+            <keyword name="Input Controls" id="Input Controls" ref="qtlabscontrols-input.html"/>
+            <keyword name="GroupBox" id="QML.GroupBox" ref="qml-qt-labs-controls-groupbox.html"/>
+            <keyword name="label" id="GroupBox::label" ref="qml-qt-labs-controls-groupbox.html#label-prop"/>
+            <keyword name="title" id="GroupBox::title" ref="qml-qt-labs-controls-groupbox.html#title-prop"/>
+        </keywords>
+        <files>
+            <file>qml-qt-labs-controls-buttongroup-members.html</file>
+            <file>qml-qt-labs-controls-button-members.html</file>
+            <file>images/qtlabscontrols-material-dark.png</file>
+            <file>images/qtlabscontrols-switch-checked.png</file>
+            <file>images/qtlabscontrols-textfield-focused.png</file>
+            <file>qml-qt-labs-controls-busyindicator.html</file>
+            <file>images/qtlabscontrols-slider-disabled.png</file>
+            <file>qml-qt-labs-controls-tumbler.html</file>
+            <file>qml-qt-labs-controls-itemdelegate.html</file>
+            <file>qtlabscontrols-gallery-gallery-qml.html</file>
+            <file>qtlabscontrols-examples.html</file>
+            <file>images/used-in-examples/gallery/images/arrow@2x.png</file>
+            <file>qml-qt-labs-controls-toolbar-members.html</file>
+            <file>images/used-in-examples/gallery/images/drawer@2x.png</file>
+            <file>qtlabstemplates-index.html</file>
+            <file>qml-qt-labs-calendar-calendar-members.html</file>
+            <file>qml-qt-labs-controls-swipeview.html</file>
+            <file>images/ico_note_attention.png</file>
+            <file>qml-qt-labs-controls-tabbutton.html</file>
+            <file>images/used-in-examples/gallery/images/menu@3x.png</file>
+            <file>qml-qt-labs-controls-groupbox.html</file>
+            <file>images/qtlabscontrols-scrollbar-handle.png</file>
+            <file>qtlabscontrols-gettingstarted.html</file>
+            <file>qtlabscontrols-gallery-pages-swipeviewpage-qml.html</file>
+            <file>qml-qt-labs-calendar-monthgrid-members.html</file>
+            <file>qml-qt-labs-controls-pageindicator-members.html</file>
+            <file>images/qtlabscontrols-switch-normal.png</file>
+            <file>qml-qt-labs-controls-slider.html</file>
+            <file>images/bgrContent.png</file>
+            <file>qtlabscontrols-gallery-pages-stackviewpage-qml.html</file>
+            <file>qtlabscontrols-gallery-pages-tabbarpage-qml.html</file>
+            <file>images/qtlabscontrols-scrollbar.png</file>
+            <file>qml-qt-labs-controls-applicationwindow-members.html</file>
+            <file>qtlabscontrols-gallery-gallery-qrc.html</file>
+            <file>qtlabscontrols-gallery-pages-spinboxpage-qml.html</file>
+            <file>images/qtlabscontrols-material.png</file>
+            <file>images/qtlabscontrols-menu-contentItem.png</file>
+            <file>qml-qt-labs-controls-radiobutton.html</file>
+            <file>images/used-in-examples/gallery/images/qt-logo@3x.png</file>
+            <file>qtlabscontrols-gallery-pages-framepage-qml.html</file>
+            <file>qml-qt-labs-controls-abstractbutton.html</file>
+            <file>images/qtlabscontrols-slider-focused.png</file>
+            <file>images/qtlabscontrols-universal-dark.png</file>
+            <file>images/qtlabscontrols-combobox-popup.png</file>
+            <file>qtlabscontrols-gallery-pages-dialpage-qml.html</file>
+            <file>images/qtlabscontrols-popup-transformorigin.png</file>
+            <file>images/qtlabscontrols-radiobutton-checked.png</file>
+            <file>images/arrow_bc.png</file>
+            <file>images/bullet_dn.png</file>
+            <file>images/qtlabscontrols-progressbar-indicator.png</file>
+            <file>images/qtlabscontrols-dial-handle.png</file>
+            <file>qml-qt-labs-controls-pane.html</file>
+            <file>qtlabscontrols-navigation.html</file>
+            <file>qml-qt-labs-controls-menuitem.html</file>
+            <file>images/qtlabscontrols-tumbler-delegate.png</file>
+            <file>qtlabscontrols-gallery-pages-menupage-qml.html</file>
+            <file>images/qtlabscontrols-progressbar-background.png</file>
+            <file>images/qtlabscontrols-busyindicator-contentItem.png</file>
+            <file>qtlabscontrols-gallery-pages-comboboxpage-qml.html</file>
+            <file>qtlabscontrols-gallery-pages-checkboxpage-qml.html</file>
+            <file>images/used-in-examples/gallery/images/drawer.png</file>
+            <file>qml-qt-labs-controls-label.html</file>
+            <file>qml-qt-labs-controls-popup.html</file>
+            <file>qml-qt-labs-controls-textarea-members.html</file>
+            <file>images/qtlabscontrols-checkbox-label.png</file>
+            <file>images/qtlabscontrols-combobox-background.png</file>
+            <file>images/qtlabscontrols-material-button.png</file>
+            <file>images/qtlabscontrols-rangeslider-disabled.png</file>
+            <file>images/ico_out.png</file>
+            <file>qml-qt-labs-controls-progressbar-members.html</file>
+            <file>qml-qt-labs-controls-tabbar-members.html</file>
+            <file>qtlabscontrols-styles.html</file>
+            <file>images/qtlabscontrols-itemdelegate-background.png</file>
+            <file>qml-qt-labs-controls-itemdelegate-members.html</file>
+            <file>images/qtlabscontrols-toolbar-background.png</file>
+            <file>images/qtlabscontrols-rangeslider.png</file>
+            <file>qml-qt-labs-controls-menuitem-members.html</file>
+            <file>images/qtlabscontrols-frame.png</file>
+            <file>qml-qt-labs-controls-toolbar.html</file>
+            <file>images/qtlabscontrols-toolbar-frame.png</file>
+            <file>images/qtlabscontrols-progressbar-disabled.png</file>
+            <file>images/qtlabscontrols-groupbox.png</file>
+            <file>images/used-in-examples/gallery/images/arrows@3x.png</file>
+            <file>images/qtlabscontrols-toolbutton-label.png</file>
+            <file>qtlabscontrols-universal.html</file>
+            <file>images/qtlabscontrols-tumbler-contentItem.png</file>
+            <file>qtlabscontrols-customize.html</file>
+            <file>qml-qt-labs-controls-frame.html</file>
+            <file>qtlabscontrols-gallery-pages-busyindicatorpage-qml.html</file>
+            <file>qtlabscontrols-gallery-pages-switchpage-qml.html</file>
+            <file>qml-qt-labs-controls-popup-members.html</file>
+            <file>images/qtlabscontrols-checkbox-indicator.png</file>
+            <file>qtlabscontrols-indicators.html</file>
+            <file>images/qtlabscontrols-combobox-contentItem.png</file>
+            <file>images/qtlabscontrols-textfield.png</file>
+            <file>qtlabscontrols-gallery-gallery-pro.html</file>
+            <file>images/used-in-examples/gallery/images/arrow.png</file>
+            <file>qt-labs-templates-qmlmodule.html</file>
+            <file>images/qtlabscontrols-rangeslider.gif</file>
+            <file>images/qtlabscontrols-tabbar-wireframe.png</file>
+            <file>images/btn_next.png</file>
+            <file>images/qtlabscontrols-slider-handle.png</file>
+            <file>images/qtlabscontrols-progressbar-normal.png</file>
+            <file>images/qtlabscontrols-rangeslider-background.png</file>
+            <file>images/qtlabscontrols-scrollindicator.png</file>
+            <file>images/qtlabscontrols-button-disabled.png</file>
+            <file>qtlabscontrols-buttons.html</file>
+            <file>qt-labs-controls-qmlmodule.html</file>
+            <file>images/used-in-examples/gallery/images/arrow@3x.png</file>
+            <file>qml-qt-labs-controls-groupbox-members.html</file>
+            <file>images/qtlabscontrols-drawer-expanded-wireframe.png</file>
+            <file>images/used-in-examples/gallery/images/drawer@3x.png</file>
+            <file>images/qtlabscontrols-spinbox-up.png</file>
+            <file>images/qtlabscontrols-button-background.png</file>
+            <file>qml-qt-labs-calendar-monthgrid.html</file>
+            <file>qt-labs-calendar-qmlmodule.html</file>
+            <file>images/used-in-examples/gallery/images/menu@4x.png</file>
+            <file>qml-qt-labs-controls-rangeslider-members.html</file>
+            <file>images/qtlabscontrols-drawer-wireframe.png</file>
+            <file>images/qtlabscontrols-scrollbar-background.png</file>
+            <file>qml-qt-labs-controls-control.html</file>
+            <file>qml-qt-labs-controls-scrollbar.html</file>
+            <file>qml-qt-labs-controls-container-members.html</file>
+            <file>images/qtlabscontrols-busyindicator.png</file>
+            <file>qml-qt-labs-controls-applicationwindow.html</file>
+            <file>qtlabscontrols-gallery-pages-sliderpage-qml.html</file>
+            <file>images/qtlabscalendar-weeknumbercolumn-layout.png</file>
+            <file>images/qtlabscontrols-slider.png</file>
+            <file>images/qtlabscontrols-groupbox-checkable.png</file>
+            <file>images/qtlabscontrols-button-label.png</file>
+            <file>qml-qt-labs-controls-scrollbar-members.html</file>
+            <file>images/qtlabscontrols-checkbox-focused.png</file>
+            <file>images/home.png</file>
+            <file>qtlabscontrols-gallery-pages-rangesliderpage-qml.html</file>
+            <file>qtlabscontrols-differences.html</file>
+            <file>qtlabscontrols-default.html</file>
+            <file>images/logo.png</file>
+            <file>qml-qt-labs-controls-switch-members.html</file>
+            <file>images/qtlabscontrols-textfield-background.png</file>
+            <file>qml-qt-labs-controls-textfield-members.html</file>
+            <file>qml-qt-labs-controls-textfield.html</file>
+            <file>images/qtlabscontrols-gallery-menu.png</file>
+            <file>images/qtlabscontrols-dial.png</file>
+            <file>qtlabscontrols-gallery-pages-popuppage-qml.html</file>
+            <file>images/used-in-examples/gallery/images/arrows.png</file>
+            <file>images/qtlabscontrols-radiobutton-normal.png</file>
+            <file>qtlabscontrols-gallery-pages-textareapage-qml.html</file>
+            <file>images/qtlabscontrols-scrollindicator-indicator.png</file>
+            <file>images/qtlabscontrols-rangeslider-second-handle.png</file>
+            <file>images/qtlabscalendar-dayofweekrow.png</file>
+            <file>images/used-in-examples/gallery/images/qt-logo.png</file>
+            <file>qml-qt-labs-calendar-dayofweekrow-members.html</file>
+            <file>qtlabscontrols-gallery-pages-progressbarpage-qml.html</file>
+            <file>images/used-in-examples/gallery/images/qt-logo@4x.png</file>
+            <file>images/qtlabscontrols-applicationwindow-wireframe.png</file>
+            <file>qml-qt-labs-calendar-calendarmodel-members.html</file>
+            <file>images/qtlabscontrols-radiobutton-indicator.png</file>
+            <file>qml-qt-labs-controls-menu-members.html</file>
+            <file>qtlabscontrols-input.html</file>
+            <file>images/qtlabscontrols-dial-background.png</file>
+            <file>qtlabscontrols-gallery-example.html</file>
+            <file>images/qtlabscontrols-busyindicator.gif</file>
+            <file>images/qtlabscontrols-slider.gif</file>
+            <file>images/qtlabscontrols-pageindicator.png</file>
+            <file>qml-qt-labs-controls-menu.html</file>
+            <file>images/qtlabscontrols-groupbox-label.png</file>
+            <file>qml-qt-labs-controls-swipeview-members.html</file>
+            <file>images/qtlabscontrols-tabbutton.png</file>
+            <file>qml-qt-labs-controls-label-members.html</file>
+            <file>qtlabscontrols-gallery-pages-scrollindicatorpage-qml.html</file>
+            <file>qml-qt-labs-controls-toolbutton-members.html</file>
+            <file>qtlabscontrols-gallery-pages-drawerpage-qml.html</file>
+            <file>qtlabscontrols-menus.html</file>
+            <file>qml-qt-labs-controls-tabbar.html</file>
+            <file>qml-qt-labs-controls-dial.html</file>
+            <file>qml-qt-labs-controls-tumbler-members.html</file>
+            <file>images/qtlabscontrols-label-background.png</file>
+            <file>qml-qt-labs-controls-stackview-members.html</file>
+            <file>images/qtlabscontrols-rangeslider-first-handle.png</file>
+            <file>qml-qt-labs-controls-slider-members.html</file>
+            <file>images/qtlabscontrols-default.png</file>
+            <file>images/qtlabscontrols-swipeview-wireframe.png</file>
+            <file>images/ico_note.png</file>
+            <file>images/qtlabscontrols-frame-background.png</file>
+            <file>images/qtlabscontrols-spinbox-down.png</file>
+            <file>images/btn_prev.png</file>
+            <file>images/qtlabscontrols-frame-frame.png</file>
+            <file>images/qtlabscontrols-switch-focused.png</file>
+            <file>images/qtlabscontrols-groupbox-background.png</file>
+            <file>qml-qt-labs-controls-radiobutton-members.html</file>
+            <file>images/qtlabscontrols-switch-background.png</file>
+            <file>qml-qt-labs-controls-scrollindicator.html</file>
+            <file>images/qtlabscontrols-rangeslider-second-handle-focused.png</file>
+            <file>images/qtlabscontrols-pane-background.png</file>
+            <file>qml-qt-labs-controls-combobox.html</file>
+            <file>images/used-in-examples/gallery/images/menu@2x.png</file>
+            <file>images/qtlabscontrols-tumbler.png</file>
+            <file>images/qtlabscontrols-rangeslider-normal.png</file>
+            <file>style/offline.css</file>
+            <file>qml-qt-labs-controls-spinbox.html</file>
+            <file>images/qtlabscontrols-switch.png</file>
+            <file>qtlabscontrols-gallery-pages-groupboxpage-qml.html</file>
+            <file>images/qtlabscontrols-itemdelegate-label.png</file>
+            <file>images/qtlabscontrols-textarea.png</file>
+            <file>images/qtlabscontrols-slider-normal.png</file>
+            <file>images/qtlabscontrols-radiobutton-disabled.png</file>
+            <file>qml-qt-labs-controls-drawer.html</file>
+            <file>qtlabscalendar-index.html</file>
+            <file>images/qtlabscontrols-switch-indicator.png</file>
+            <file>images/used-in-examples/gallery/images/arrows@4x.png</file>
+            <file>images/qtlabscontrols-checkbox-disabled.png</file>
+            <file>images/qtlabscontrols-spinbox-background.png</file>
+            <file>qtlabscontrols-material.html</file>
+            <file>images/qtlabscontrols-groupbox-frame.png</file>
+            <file>qtlabscontrols-index.html</file>
+            <file>images/qtlabscontrols-tumbler-wrap.gif</file>
+            <file>qml-qt-labs-controls-busyindicator-members.html</file>
+            <file>images/qtlabscontrols-button-pressed.png</file>
+            <file>images/qtlabscontrols-button.png</file>
+            <file>style/offline-simple.css</file>
+            <file>qtlabscontrols-gallery-pages-pageindicatorpage-qml.html</file>
+            <file>qml-qt-labs-controls-textarea.html</file>
+            <file>images/qtlabscontrols-slider-track.png</file>
+            <file>images/qtlabscontrols-radiobutton-label.png</file>
+            <file>images/qtlabscontrols-checkbox-background.png</file>
+            <file>qml-qt-labs-controls-drawer-members.html</file>
+            <file>qml-qt-labs-controls-buttongroup.html</file>
+            <file>images/bullet_sq.png</file>
+            <file>qml-qt-labs-controls-dial-members.html</file>
+            <file>qml-qt-labs-controls-scrollindicator-members.html</file>
+            <file>qml-qt-labs-controls-page-members.html</file>
+            <file>qml-qt-labs-controls-frame-members.html</file>
+            <file>images/used-in-examples/gallery/images/qt-logo@2x.png</file>
+            <file>qtlabscontrols-highdpi.html</file>
+            <file>images/qtlabscontrols-radiobutton.png</file>
+            <file>images/qtlabscontrols-switch.gif</file>
+            <file>qml-qt-labs-controls-pane-members.html</file>
+            <file>images/qtlabscontrols-gallery-welcome.png</file>
+            <file>images/qtlabscontrols-textfield-disabled.png</file>
+            <file>images/qtlabscontrols-toolbutton.png</file>
+            <file>images/qtlabscontrols-spinbox-textual.png</file>
+            <file>qtlabscontrols-containers.html</file>
+            <file>qml-qt-labs-controls-container.html</file>
+            <file>qml-qt-labs-controls-checkbox.html</file>
+            <file>qml-qt-labs-controls-tabbutton-members.html</file>
+            <file>images/qtlabscontrols-gallery-drawer.png</file>
+            <file>images/qtlabscontrols-textfield-normal.png</file>
+            <file>images/qtlabscontrols-switch-label.png</file>
+            <file>images/qtlabscontrols-radiobutton-focused.png</file>
+            <file>images/used-in-examples/gallery/images/arrow@4x.png</file>
+            <file>images/qtlabscontrols-slider-background.png</file>
+            <file>qml-qt-labs-controls-toolbutton.html</file>
+            <file>images/qtlabscalendar-monthgrid-layout.png</file>
+            <file>images/used-in-examples/gallery/images/drawer@4x.png</file>
+            <file>images/qtlabscontrols-button.gif</file>
+            <file>images/qtlabscontrols-toolbutton-background.png</file>
+            <file>images/used-in-examples/gallery/images/menu.png</file>
+            <file>qml-qt-labs-controls-rangeslider.html</file>
+            <file>images/qtlabscalendar-monthgrid.png</file>
+            <file>qml-qt-labs-controls-spinbox-members.html</file>
+            <file>images/qtlabscontrols-itemdelegate-indicator.png</file>
+            <file>images/qtlabscontrols-page-wireframe.png</file>
+            <file>qml-qt-labs-controls-stackview.html</file>
+            <file>qml-qt-labs-controls-progressbar.html</file>
+            <file>qml-qt-labs-calendar-weeknumbercolumn.html</file>
+            <file>images/qtlabscalendar-weeknumbercolumn.png</file>
+            <file>images/qtlabscontrols-pane.png</file>
+            <file>qtlabscontrols-gallery-pages-buttonpage-qml.html</file>
+            <file>images/qtlabscontrols-rangeslider-first-handle-focused.png</file>
+            <file>images/qtlabscontrols-checkbox-checked.png</file>
+            <file>images/qtlabscontrols-radiobutton-background.png</file>
+            <file>images/qtlabscontrols-button-focused.png</file>
+            <file>images/qtlabscontrols-toolbar.png</file>
+            <file>images/qtlabscontrols-spinbox-contentItem.png</file>
+            <file>images/qtlabscontrols-combobox-delegate.png</file>
+            <file>images/qtlabscontrols-rangeslider-track.png</file>
+            <file>images/qtlabscontrols-scrollindicator-background.png</file>
+            <file>qml-qt-labs-controls-abstractbutton-members.html</file>
+            <file>images/qtlabscontrols-busyindicator-background.png</file>
+            <file>images/qtlabscontrols-switch-disabled.png</file>
+            <file>qml-qt-labs-controls-switch.html</file>
+            <file>qtlabscontrols-gallery-pages-tumblerpage-qml.html</file>
+            <file>qml-qt-labs-calendar-weeknumbercolumn-members.html</file>
+            <file>qtlabscontrols-gallery-pages-radiobuttonpage-qml.html</file>
+            <file>qml-qt-labs-controls-page.html</file>
+            <file>images/qtlabscontrols-checkbox-normal.png</file>
+            <file>images/used-in-examples/gallery/images/arrows@2x.png</file>
+            <file>qtlabscontrols-gallery-gallery-cpp.html</file>
+            <file>qml-qt-labs-controls-control-members.html</file>
+            <file>images/qtlabscalendar-dayofweekrow-layout.png</file>
+            <file>images/qtlabscontrols-label.png</file>
+            <file>images/qtlabscontrols-button-normal.png</file>
+            <file>qml-qt-labs-controls-combobox-members.html</file>
+            <file>qml-qt-labs-controls-checkbox-members.html</file>
+            <file>qml-qt-labs-controls-button.html</file>
+            <file>images/qtlabscontrols-spinbox.png</file>
+            <file>images/qtlabscontrols-menu.png</file>
+            <file>images/qtlabscontrols-universal.png</file>
+            <file>images/qtlabscontrols-tumbler-background.png</file>
+            <file>qtlabscontrols-gallery-pages-scrollbarpage-qml.html</file>
+            <file>qml-qt-labs-calendar-calendar.html</file>
+            <file>qml-qt-labs-controls-pageindicator.html</file>
+            <file>images/qtlabscontrols-universal-button.png</file>
+            <file>images/qtlabscontrols-stackview-wireframe.png</file>
+            <file>qml-qt-labs-calendar-calendarmodel.html</file>
+            <file>images/qtlabscontrols-checkbox.png</file>
+            <file>qtlabscontrols-gallery-pages-textfieldpage-qml.html</file>
+            <file>qml-qt-labs-calendar-dayofweekrow.html</file>
+            <file>images/qtlabscontrols-combobox.png</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

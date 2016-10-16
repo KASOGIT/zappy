@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instructionals module="QtLabsControls">
+    <examples>
+        <example name="Qt Labs Controls - Gallery" docUrl="qthelp://org.qt-project.qtlabscontrols.561/qtlabscontrols/qtlabscontrols-gallery-example.html" projectPath="quickcontrols2/gallery/gallery.pro" imageUrl="qthelp://org.qt-project.qtlabscontrols.561/qtlabscontrols/images/qtlabscontrols-gallery-welcome.png">
+            <description><![CDATA[A gallery of controls]]></description>
+            <tags>gallery,labs,controls</tags>
+            <fileToOpen>quickcontrols2/gallery/gallery.cpp</fileToOpen>
+            <fileToOpen mainFile="true">quickcontrols2/gallery/gallery.qml</fileToOpen>
+        </example>
+    </examples>
+</instructionals>

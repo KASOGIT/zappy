@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qbuffer.cpp -->
+  <title>QBuffer Class | Qt 3D 5.6</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    window.onload = function(){document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");};
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="../qtdoc/supported-platforms-and-configurations.html#qt-5-6">Qt 5.6</a></td><td ><a href="qt3d-index.html">Qt 3D</a></td><td ><a href="qt3d-cpp.html">C++ Classes</a></td><td >QBuffer</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Qt 5.6.1 Reference Documentation</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QBuffer Class</h1>
+<span class="small-subtitle">(<a href="qt3drender-qbuffer.html">Qt3DRender::QBuffer</a>)<br/></span>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;<a href="../qtcore/qbuffer.html">QBuffer</a>&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += 3drender</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Instantiated By:</td><td class="memItemRight bottomAlign"> <a href="qml-qt3d-render-buffer.html">Buffer</a></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="qt3drender-qabstractbuffer.html">QAbstractBuffer</a></td></tr></table></div><ul>
+<li><a href="qt3drender-qbuffer-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qbuffer.html#BufferType-enum">BufferType</a></b> { VertexBuffer, IndexBuffer, PixelPackBuffer, PixelUnpackBuffer }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qbuffer.html#UsageType-enum">UsageType</a></b> { StreamDraw, StreamRead, StreamCopy, StaticDraw, ..., DynamicCopy }</td></tr>
+</table></div>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><a href="qt3drender-qbuffer.html#sync-prop">sync</a></b> : bool</li>
+<li class="fn"><b><a href="qt3drender-qbuffer.html#type-prop">type</a></b> : BufferType</li>
+<li class="fn"><b><a href="qt3drender-qbuffer.html#usage-prop">usage</a></b> : UsageType</li>
+</ul>
+<ul>
+<li class="fn">2 properties inherited from <a href="qt3dcore-qnode.html#properties">Qt3DCore::QNode</a></li>
+<li class="fn">1 property inherited from <a href="../qtcore/qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qbuffer.html#QBuffer">QBuffer</a></b>(BufferType <i>ty</i> = QBuffer::VertexBuffer, Qt3DCore::QNode *<i>parent</i> = Q_NULLPTR)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qbuffer.html#dtor.QBuffer">~QBuffer</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QBufferFunctorPtr </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qbuffer.html#bufferFunctor">bufferFunctor</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qbuffer.html#sync-prop">isSync</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qbuffer.html#setBufferFunctor">setBufferFunctor</a></b>(const QBufferFunctorPtr &amp;<i>functor</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> BufferType </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qbuffer.html#type-prop">type</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> UsageType </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qbuffer.html#usage-prop">usage</a></b>() const</td></tr>
+</table></div>
+<ul>
+<li class="fn">2 public functions inherited from <a href="qt3drender-qabstractbuffer.html#public-functions">Qt3DRender::QAbstractBuffer</a></li>
+<li class="fn">6 public functions inherited from <a href="qt3dcore-qnode.html#public-functions">Qt3DCore::QNode</a></li>
+<li class="fn">31 public functions inherited from <a href="../qtcore/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qbuffer.html#sync-prop">setSync</a></b>(bool <i>sync</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qbuffer.html#type-prop">setType</a></b>(BufferType <i>type</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qbuffer.html#usage-prop">setUsage</a></b>(UsageType <i>usage</i>)</td></tr>
+</table></div>
+<ul>
+<li class="fn">2 public slots inherited from <a href="qt3dcore-qnode.html#public-slots">Qt3DCore::QNode</a></li>
+<li class="fn">1 public slot inherited from <a href="../qtcore/qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qbuffer.html#sync-prop">syncChanged</a></b>(bool <i>sync</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qbuffer.html#type-prop">typeChanged</a></b>(BufferType <i>type</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qbuffer.html#usage-prop">usageChanged</a></b>(UsageType <i>usage</i>)</td></tr>
+</table></div>
+<ul>
+<li class="fn">1 signal inherited from <a href="qt3drender-qabstractbuffer.html#signals">Qt3DRender::QAbstractBuffer</a></li>
+<li class="fn">2 signals inherited from <a href="qt3dcore-qnode.html#signals">Qt3DCore::QNode</a></li>
+<li class="fn">2 signals inherited from <a href="../qtcore/qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h2 id="protected-functions">Protected Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qbuffer.html#QBuffer-1">QBuffer</a></b>(QBufferPrivate &amp;<i>dd</i>, QBuffer::BufferType <i>ty</i>, Qt3DCore::QNode *<i>parent</i> = Q_NULLPTR)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qbuffer.html#copy">copy</a></b>(const Qt3DCore::QNode *<i>ref</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qbuffer.html#sceneChangeEvent">sceneChangeEvent</a></b>(const Qt3DCore::QSceneChangePtr &amp;<i>change</i>)</td></tr>
+</table></div>
+<ul>
+<li class="fn">3 protected functions inherited from <a href="qt3dcore-qnode.html#protected-functions">Qt3DCore::QNode</a></li>
+<li class="fn">9 protected functions inherited from <a href="../qtcore/qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 public variable inherited from <a href="../qtcore/qobject.html#public-variables">QObject</a></li>
+<li class="fn">10 static public members inherited from <a href="../qtcore/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="../qtcore/qobject.html#protected-variables">QObject</a></li>
+<li class="fn">1 static protected member inherited from <a href="qt3dcore-qnode.html#static-protected-members">Qt3DCore::QNode</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QBuffer-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+</div>
+<!-- @@@QBuffer -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$BufferType$$$VertexBuffer$$$IndexBuffer$$$PixelPackBuffer$$$PixelUnpackBuffer -->
+<h3 class="fn" id="BufferType-enum"><a name="BufferType-enum"></a>enum QBuffer::<span class="name">BufferType</span></h3>
+<p>The type of the buffer.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QBuffer::VertexBuffer</code></td><td class="topAlign tblval"><code>0x8892</code></td><td class="topAlign">GL_ARRAY_BUFFER</td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QBuffer::IndexBuffer</code></td><td class="topAlign tblval"><code>0x8893</code></td><td class="topAlign">GL_ELEMENT_ARRAY_BUFFER</td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QBuffer::PixelPackBuffer</code></td><td class="topAlign tblval"><code>0x88EB</code></td><td class="topAlign">GL_PIXEL_PACK_BUFFER</td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QBuffer::PixelUnpackBuffer</code></td><td class="topAlign tblval"><code>0x88EC</code></td><td class="topAlign">GL_PIXEL_UNPACK_BUFFER</td></tr>
+</table></div>
+<!-- @@@BufferType -->
+<!-- $$$UsageType$$$StreamDraw$$$StreamRead$$$StreamCopy$$$StaticDraw$$$StaticRead$$$StaticCopy$$$DynamicDraw$$$DynamicRead$$$DynamicCopy -->
+<h3 class="fn" id="UsageType-enum"><a name="UsageType-enum"></a>enum QBuffer::<span class="name">UsageType</span></h3>
+<p>The type of the usage.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QBuffer::StreamDraw</code></td><td class="topAlign tblval"><code>0x88E0</code></td><td class="topAlign">GL_STREAM_DRAW</td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QBuffer::StreamRead</code></td><td class="topAlign tblval"><code>0x88E1</code></td><td class="topAlign">GL_STREAM_READ</td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QBuffer::StreamCopy</code></td><td class="topAlign tblval"><code>0x88E2</code></td><td class="topAlign">GL_STREAM_COPY</td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QBuffer::StaticDraw</code></td><td class="topAlign tblval"><code>0x88E4</code></td><td class="topAlign">GL_STATIC_DRAW</td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QBuffer::StaticRead</code></td><td class="topAlign tblval"><code>0x88E5</code></td><td class="topAlign">GL_STATIC_READ</td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QBuffer::StaticCopy</code></td><td class="topAlign tblval"><code>0x88E6</code></td><td class="topAlign">GL_STATIC_COPY</td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QBuffer::DynamicDraw</code></td><td class="topAlign tblval"><code>0x88E8</code></td><td class="topAlign">GL_DYNAMIC_DRAW</td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QBuffer::DynamicRead</code></td><td class="topAlign tblval"><code>0x88E9</code></td><td class="topAlign">GL_DYNAMIC_READ</td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QBuffer::DynamicCopy</code></td><td class="topAlign tblval"><code>0x88EA</code></td><td class="topAlign">GL_DYNAMIC_COPY</td></tr>
+</table></div>
+<!-- @@@UsageType -->
+</div>
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$sync-prop$$$isSync$$$setSyncbool$$$syncChangedbool -->
+<h3 class="fn" id="sync-prop"><a name="sync-prop"></a><span class="name">sync</span> : <span class="type">bool</span></h3>
+<p>Holds the sync flag. When sync is true, this will force data created by a <a href="qt3drender-qbufferfunctor.html">Qt3DRender::QBufferFunctor</a> to also be updated on the frontend <a href="qt3drender-qbuffer.html">Qt3DRender::QBuffer</a> node. By default sync is false.</p>
+<p><b>Note: </b>: This has no effect if the buffer's data was set directly using the data property.</p><p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isSync</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setSync</b></span>(bool <i>sync</i>)</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>syncChanged</b></span>(bool <i>sync</i>)</td></tr>
+</table></div>
+<!-- @@@sync -->
+<!-- $$$type-prop$$$type$$$setTypeBufferType$$$typeChangedBufferType -->
+<h3 class="fn" id="type-prop"><a name="type-prop"></a><span class="name">type</span> : <span class="type"><a href="qt3drender-qbuffer.html#BufferType-enum">BufferType</a></span></h3>
+<p>Holds the buffer type.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> BufferType </td><td class="memItemRight bottomAlign"><span class="name"><b>type</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setType</b></span>(BufferType <i>type</i>)</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>typeChanged</b></span>(BufferType <i>type</i>)</td></tr>
+</table></div>
+<!-- @@@type -->
+<!-- $$$usage-prop$$$usage$$$setUsageUsageType$$$usageChangedUsageType -->
+<h3 class="fn" id="usage-prop"><a name="usage-prop"></a><span class="name">usage</span> : <span class="type"><a href="qt3drender-qbuffer.html#UsageType-enum">UsageType</a></span></h3>
+<p>Holds the buffer usage.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> UsageType </td><td class="memItemRight bottomAlign"><span class="name"><b>usage</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setUsage</b></span>(UsageType <i>usage</i>)</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>usageChanged</b></span>(UsageType <i>usage</i>)</td></tr>
+</table></div>
+<!-- @@@usage -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QBuffer[overload1]$$$QBufferBufferTypeQt3DCore::QNode* -->
+<h3 class="fn" id="QBuffer"><a name="QBuffer"></a>QBuffer::<span class="name">QBuffer</span>(<span class="type"><a href="qt3drender-qbuffer.html#BufferType-enum">BufferType</a></span> <i>ty</i> = QBuffer::VertexBuffer, <span class="type">Qt3DCore::QNode</span> *<i>parent</i> = Q_NULLPTR)</h3>
+<p>Default constructs an instance of QBuffer.</p><!-- @@@QBuffer -->
+<!-- $$$QBuffer$$$QBufferQBufferPrivate&QBuffer::BufferTypeQt3DCore::QNode* -->
+<h3 class="fn" id="QBuffer-1"><a name="QBuffer-1"></a><code>[protected] </code>QBuffer::<span class="name">QBuffer</span>(<span class="type">QBufferPrivate</span> &amp;<i>dd</i>, <span class="type"><a href="qt3drender-qbuffer.html#BufferType-enum">QBuffer::BufferType</a></span> <i>ty</i>, <span class="type">Qt3DCore::QNode</span> *<i>parent</i> = Q_NULLPTR)</h3>
+<p>Copy constructor.</p><!-- @@@QBuffer -->
+<!-- $$$~QBuffer[overload1]$$$~QBuffer -->
+<h3 class="fn" id="dtor.QBuffer"><a name="dtor.QBuffer"></a>QBuffer::<span class="name">~QBuffer</span>()</h3>
+<p>Destroys this buffer.</p>
+<!-- @@@~QBuffer -->
+<!-- $$$bufferFunctor[overload1]$$$bufferFunctor -->
+<h3 class="fn" id="bufferFunctor"><a name="bufferFunctor"></a><span class="type"><a href="qbuffer.html#QBufferFunctorPtr-typedef">QBufferFunctorPtr</a></span> QBuffer::<span class="name">bufferFunctor</span>() const</h3>
+<p>Returns the buffer functor.</p>
+<p><b>See also </b><a href="qt3drender-qbuffer.html#setBufferFunctor">setBufferFunctor</a>().</p>
+<!-- @@@bufferFunctor -->
+<!-- $$$copy[overload1]$$$copyconstQt3DCore::QNode* -->
+<h3 class="fn" id="copy"><a name="copy"></a><code>[protected] </code><span class="type">void</span> QBuffer::<span class="name">copy</span>(const <span class="type">Qt3DCore::QNode</span> *<i>ref</i>)</h3>
+<!-- @@@copy -->
+<!-- $$$sceneChangeEvent[overload1]$$$sceneChangeEventconstQt3DCore::QSceneChangePtr& -->
+<h3 class="fn" id="sceneChangeEvent"><a name="sceneChangeEvent"></a><code>[protected] </code><span class="type">void</span> QBuffer::<span class="name">sceneChangeEvent</span>(const <span class="type">Qt3DCore::QSceneChangePtr</span> &amp;<i>change</i>)</h3>
+<!-- @@@sceneChangeEvent -->
+<!-- $$$setBufferFunctor[overload1]$$$setBufferFunctorconstQBufferFunctorPtr& -->
+<h3 class="fn" id="setBufferFunctor"><a name="setBufferFunctor"></a><span class="type">void</span> QBuffer::<span class="name">setBufferFunctor</span>(const <span class="type"><a href="qbuffer.html#QBufferFunctorPtr-typedef">QBufferFunctorPtr</a></span> &amp;<i>functor</i>)</h3>
+<p>Sets the buffer <i>functor</i>.</p>
+<p><b>See also </b><a href="qt3drender-qbuffer.html#bufferFunctor">bufferFunctor</a>().</p>
+<!-- @@@setBufferFunctor -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2016 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

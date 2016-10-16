@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>AdsEffect.qml Example File | Qt 3D 5.6</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    window.onload = function(){document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");};
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="../qtdoc/supported-platforms-and-configurations.html#qt-5-6">Qt 5.6</a></td><td ><a href="qt3d-index.html">Qt 3D</a></td><td ><a href="qt3d-playground-qml-example.html">Qt 3D: Playground QML Example</a></td><td >AdsEffect.qml Example File</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Qt 5.6.1 Reference Documentation</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">AdsEffect.qml Example File</h1>
+<span class="subtitle">playground-qml/AdsEffect.qml</span>
+<!-- $$$playground-qml/AdsEffect.qml-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="qml">
+
+  <span class="comment">/****************************************************************************
+  **
+  ** Copyright (C) 2014 Klaralvdalens Datakonsult AB (KDAB).
+  ** Contact: http://www.qt-project.org/legal
+  **
+  ** This file is part of the Qt3D module of the Qt Toolkit.
+  **
+  ** $QT_BEGIN_LICENSE:LGPL3$
+  ** Commercial License Usage
+  ** Licensees holding valid commercial Qt licenses may use this file in
+  ** accordance with the commercial license agreement provided with the
+  ** Software or, alternatively, in accordance with the terms contained in
+  ** a written agreement between you and The Qt Company. For licensing terms
+  ** and conditions see http://www.qt.io/terms-conditions. For further
+  ** information use the contact form at http://www.qt.io/contact-us.
+  **
+  ** GNU Lesser General Public License Usage
+  ** Alternatively, this file may be used under the terms of the GNU Lesser
+  ** General Public License version 3 as published by the Free Software
+  ** Foundation and appearing in the file LICENSE.LGPLv3 included in the
+  ** packaging of this file. Please review the following information to
+  ** ensure the GNU Lesser General Public License version 3 requirements
+  ** will be met: https://www.gnu.org/licenses/lgpl.html.
+  **
+  ** GNU General Public License Usage
+  ** Alternatively, this file may be used under the terms of the GNU
+  ** General Public License version 2.0 or later as published by the Free
+  ** Software Foundation and appearing in the file LICENSE.GPL included in
+  ** the packaging of this file. Please review the following information to
+  ** ensure the GNU General Public License version 2.0 requirements will be
+  ** met: http://www.gnu.org/licenses/gpl-2.0.html.
+  **
+  ** $QT_END_LICENSE$
+  **
+  ****************************************************************************/</span>
+
+  import Qt3D.Core 2.0
+  import Qt3D.Render 2.0
+
+  <span class="comment">// For Qt.vector3d() and friends. For some reason this is provided by</span>
+  <span class="comment">// QQuickValueTypeProvider in QtQuick rather than the default value</span>
+  <span class="comment">// type provider in QtQml. So we will need to replicate this in Qt3D</span>
+  <span class="comment">// for the types that we wish to support. Otherwise we'll have to import</span>
+  <span class="comment">// QtQuick 2.1 all over the place.</span>
+  import QtQuick 2.1
+
+  <span class="type">Effect</span> {
+      <span class="comment">// TODO add another effect that uses texture for diffuse</span>
+      <span class="comment">//property Texture2D diffuseTexture</span>
+      property <span class="type">vector3d</span> <span class="name">ambient</span>: <span class="name">Qt</span>.<span class="name">vector3d</span>( <span class="number">0.1</span>, <span class="number">0.1</span>, <span class="number">0.1</span> )
+      property <span class="type">vector3d</span> <span class="name">diffuse</span>: <span class="name">Qt</span>.<span class="name">vector3d</span>( <span class="number">0.7</span>, <span class="number">0.7</span>, <span class="number">0.7</span> )
+      property <span class="type">vector3d</span> <span class="name">specular</span>: <span class="name">Qt</span>.<span class="name">vector3d</span>( <span class="number">0.2</span>, <span class="number">0.2</span>, <span class="number">0.2</span> )
+      property <span class="type">real</span> <span class="name">shininess</span>: <span class="number">10.0</span>
+
+      <span class="name">techniques</span>: [
+          <span class="type">Technique</span> {
+              <span class="name">criteria</span> : [
+                  <span class="type">TechniqueCriterion</span> { <span class="name">criterionType</span> : <span class="name">TechniqueCriterion</span>.<span class="name">RenderingStyle</span>; <span class="name">criterionValue</span> : <span class="string">&quot;forward&quot;</span>}
+              ]
+
+              <span class="name">renderPasses</span>: [
+                  <span class="type">RenderPass</span> {
+                      <span class="name">name</span>: <span class="string">&quot;zFill&quot;</span>
+                      <span class="name">shaderProgram</span>: <span class="name">zFillProgram</span>
+                      <span class="comment">//renderStates: [ DepthState { depthTest: true; } ]</span>
+                  },
+
+                  <span class="type">RenderPass</span> {
+                      <span class="name">name</span>: <span class="string">&quot;lighting&quot;</span>
+                      <span class="name">shaderProgram</span>: <span class="name">adsProgram</span>
+                      <span class="comment">//renderStates: [ DepthState { depthWrites: true; depthTest: true; } ]</span>
+                  }
+              ]
+          }
+      ]
+
+      <span class="type">ShaderProgram</span> {
+          <span class="name">id</span>: <span class="name">zFillProgram</span>
+          <span class="name">objectName</span>: <span class="string">&quot;zFillProgram&quot;</span>
+          <span class="name">vertexSourceFile</span>: <span class="string">&quot;:/shaders/zfill.vert&quot;</span>
+          <span class="name">fragmentSourceFile</span>: <span class="string">&quot;:/shaders/zfill.frag&quot;</span>
+      }
+
+      <span class="type">ShaderProgram</span> {
+          <span class="name">id</span>: <span class="name">adsProgram</span>
+          <span class="name">objectName</span>: <span class="string">&quot;adsProgram&quot;</span>
+          <span class="name">vertexSourceFile</span>: <span class="string">&quot;:/shaders/phong.vert&quot;</span>
+          <span class="name">fragmentSourceFile</span>: <span class="string">&quot;:/shaders/phong.frag&quot;</span>
+
+  <span class="comment">//        // How to handle uniforms? Especially arrays and structs</span>
+  <span class="comment">//        uniforms: [</span>
+  <span class="comment">//            Uniform { name: &quot;light[0].position:&quot;;  value: Qt.vector3d( 0.0, 0.0, 0.0 ) },</span>
+  <span class="comment">//            Uniform { name: &quot;light[0].intensity:&quot;; value: Qt.vector3d( 1.0, 1.0, 1.0 ) }</span>
+  <span class="comment">//        ]</span>
+      }
+  }
+
+</pre>
+</div>
+<!-- @@@playground-qml/AdsEffect.qml -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2016 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

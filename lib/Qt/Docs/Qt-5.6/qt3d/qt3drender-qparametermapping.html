@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qparametermapping.cpp -->
+  <title>QParameterMapping Class | Qt 3D 5.6</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    window.onload = function(){document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");};
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="../qtdoc/supported-platforms-and-configurations.html#qt-5-6">Qt 5.6</a></td><td ><a href="qt3d-index.html">Qt 3D</a></td><td ><a href="qt3d-cpp.html">C++ Classes</a></td><td >QParameterMapping</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Qt 5.6.1 Reference Documentation</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QParameterMapping Class</h1>
+<span class="small-subtitle">(<a href="qt3drender-qparametermapping.html">Qt3DRender::QParameterMapping</a>)<br/></span>
+<!-- $$$QParameterMapping-brief -->
+<p>The <a href="qt3drender-qparametermapping.html">QParameterMapping</a> class provides ..&#x2e; <a href="#details">More...</a></p>
+<!-- @@@QParameterMapping -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;QParameterMapping&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += 3drender</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign">  Qt 5.5</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Instantiated By:</td><td class="memItemRight bottomAlign"> <a href="qml-qt3d-render-parametermapping.html">ParameterMapping</a></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="qt3dcore-qnode.html">Qt3DCore::QNode</a></td></tr></table></div><ul>
+<li><a href="qt3drender-qparametermapping-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qparametermapping.html#Binding-enum">Binding</a></b> { Uniform, Attribute, StandardUniform, FragmentOutput, UniformBufferObject, ShaderStorageBufferObject }</td></tr>
+</table></div>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><a href="qt3drender-qparametermapping.html#bindingType-prop">bindingType</a></b> : Binding</li>
+<li class="fn"><b><a href="qt3drender-qparametermapping.html#parameterName-prop">parameterName</a></b> : QString</li>
+<li class="fn"><b><a href="qt3drender-qparametermapping.html#shaderVariableName-prop">shaderVariableName</a></b> : QString</li>
+</ul>
+<ul>
+<li class="fn">2 properties inherited from <a href="qt3dcore-qnode.html#properties">Qt3DCore::QNode</a></li>
+<li class="fn">1 property inherited from <a href="../qtcore/qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qparametermapping.html#QParameterMapping">QParameterMapping</a></b>(Qt3DCore::QNode *<i>parent</i> = Q_NULLPTR)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qparametermapping.html#QParameterMapping-1">QParameterMapping</a></b>(const QString &amp;<i>parameterName</i>, const QString &amp;<i>shaderParameterName</i>, QParameterMapping::Binding <i>bindingType</i>, Qt3DCore::QNode *<i>parent</i> = Q_NULLPTR)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qparametermapping.html#dtor.QParameterMapping">~QParameterMapping</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Binding </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qparametermapping.html#bindingType-prop">bindingType</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qparametermapping.html#parameterName-prop">parameterName</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qparametermapping.html#shaderVariableName-prop">shaderVariableName</a></b>() const</td></tr>
+</table></div>
+<ul>
+<li class="fn">6 public functions inherited from <a href="qt3dcore-qnode.html#public-functions">Qt3DCore::QNode</a></li>
+<li class="fn">31 public functions inherited from <a href="../qtcore/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qparametermapping.html#bindingType-prop">setBindingType</a></b>(Binding <i>type</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qparametermapping.html#parameterName-prop">setParameterName</a></b>(const QString &amp;<i>name</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qparametermapping.html#shaderVariableName-prop">setShaderVariableName</a></b>(const QString &amp;<i>name</i>)</td></tr>
+</table></div>
+<ul>
+<li class="fn">2 public slots inherited from <a href="qt3dcore-qnode.html#public-slots">Qt3DCore::QNode</a></li>
+<li class="fn">1 public slot inherited from <a href="../qtcore/qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qparametermapping.html#bindingType-prop">bindingTypeChanged</a></b>(Binding <i>bindingType</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qparametermapping.html#parameterName-prop">parameterNameChanged</a></b>(const QString &amp;<i>parameterName</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qparametermapping.html#shaderVariableName-prop">shaderVariableNameChanged</a></b>(const QString &amp;<i>shaderVariableName</i>)</td></tr>
+</table></div>
+<ul>
+<li class="fn">2 signals inherited from <a href="qt3dcore-qnode.html#signals">Qt3DCore::QNode</a></li>
+<li class="fn">2 signals inherited from <a href="../qtcore/qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h2 id="protected-functions">Protected Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qparametermapping.html#QParameterMapping-2">QParameterMapping</a></b>(QParameterMappingPrivate &amp;<i>dd</i>, Qt3DCore::QNode *<i>parent</i> = Q_NULLPTR)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qparametermapping.html#copy">copy</a></b>(const Qt3DCore::QNode *<i>ref</i>)</td></tr>
+</table></div>
+<ul>
+<li class="fn">3 protected functions inherited from <a href="qt3dcore-qnode.html#protected-functions">Qt3DCore::QNode</a></li>
+<li class="fn">9 protected functions inherited from <a href="../qtcore/qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 public variable inherited from <a href="../qtcore/qobject.html#public-variables">QObject</a></li>
+<li class="fn">10 static public members inherited from <a href="../qtcore/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="../qtcore/qobject.html#protected-variables">QObject</a></li>
+<li class="fn">1 static protected member inherited from <a href="qt3dcore-qnode.html#static-protected-members">Qt3DCore::QNode</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QParameterMapping-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="qt3drender-qparametermapping.html">QParameterMapping</a> class provides ..&#x2e;</p>
+</div>
+<!-- @@@QParameterMapping -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$Binding$$$Uniform$$$Attribute$$$StandardUniform$$$FragmentOutput$$$UniformBufferObject$$$ShaderStorageBufferObject -->
+<h3 class="fn" id="Binding-enum"><a name="Binding-enum"></a>enum QParameterMapping::<span class="name">Binding</span></h3>
+<div class="table"><table class="valuelist"><tr><th class="tblConst">Constant</th><th class="tblVal">Value</th></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QParameterMapping::Uniform</code></td><td class="topAlign tblval"><code>0</code></td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QParameterMapping::Attribute</code></td><td class="topAlign tblval"><code>1</code></td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QParameterMapping::StandardUniform</code></td><td class="topAlign tblval"><code>2</code></td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QParameterMapping::FragmentOutput</code></td><td class="topAlign tblval"><code>3</code></td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QParameterMapping::UniformBufferObject</code></td><td class="topAlign tblval"><code>4</code></td></tr>
+<tr><td class="topAlign"><code>Qt3DRender::QParameterMapping::ShaderStorageBufferObject</code></td><td class="topAlign tblval"><code>5</code></td></tr>
+</table></div>
+<!-- @@@Binding -->
+</div>
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$bindingType-prop$$$bindingType$$$setBindingTypeBinding$$$bindingTypeChangedBinding -->
+<h3 class="fn" id="bindingType-prop"><a name="bindingType-prop"></a><span class="name">bindingType</span> : <span class="type"><a href="qt3drender-qparametermapping.html#Binding-enum">Binding</a></span></h3>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> Binding </td><td class="memItemRight bottomAlign"><span class="name"><b>bindingType</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setBindingType</b></span>(Binding <i>type</i>)</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>bindingTypeChanged</b></span>(Binding <i>bindingType</i>)</td></tr>
+</table></div>
+<!-- @@@bindingType -->
+<!-- $$$parameterName-prop$$$parameterName$$$setParameterNameconstQString&$$$parameterNameChangedconstQString& -->
+<h3 class="fn" id="parameterName-prop"><a name="parameterName-prop"></a><span class="name">parameterName</span> : <span class="type"><a href="../qtcore/qstring.html">QString</a></span></h3>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>parameterName</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setParameterName</b></span>(const QString &amp;<i>name</i>)</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>parameterNameChanged</b></span>(const QString &amp;<i>parameterName</i>)</td></tr>
+</table></div>
+<!-- @@@parameterName -->
+<!-- $$$shaderVariableName-prop$$$shaderVariableName$$$setShaderVariableNameconstQString&$$$shaderVariableNameChangedconstQString& -->
+<h3 class="fn" id="shaderVariableName-prop"><a name="shaderVariableName-prop"></a><span class="name">shaderVariableName</span> : <span class="type"><a href="../qtcore/qstring.html">QString</a></span></h3>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>shaderVariableName</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setShaderVariableName</b></span>(const QString &amp;<i>name</i>)</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>shaderVariableNameChanged</b></span>(const QString &amp;<i>shaderVariableName</i>)</td></tr>
+</table></div>
+<!-- @@@shaderVariableName -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QParameterMapping[overload1]$$$QParameterMappingQt3DCore::QNode* -->
+<h3 class="fn" id="QParameterMapping"><a name="QParameterMapping"></a>QParameterMapping::<span class="name">QParameterMapping</span>(<span class="type">Qt3DCore::QNode</span> *<i>parent</i> = Q_NULLPTR)</h3>
+<p>Constructs a new <a href="qt3drender-qparametermapping.html">QParameterMapping</a> with the specified <i>parent</i>.</p>
+<!-- @@@QParameterMapping -->
+<!-- $$$QParameterMapping$$$QParameterMappingconstQString&constQString&QParameterMapping::BindingQt3DCore::QNode* -->
+<h3 class="fn" id="QParameterMapping-1"><a name="QParameterMapping-1"></a>QParameterMapping::<span class="name">QParameterMapping</span>(const <span class="type"><a href="../qtcore/qstring.html">QString</a></span> &amp;<i>parameterName</i>, const <span class="type"><a href="../qtcore/qstring.html">QString</a></span> &amp;<i>shaderParameterName</i>, <span class="type"><a href="qt3drender-qparametermapping.html#Binding-enum">QParameterMapping::Binding</a></span> <i>bindingType</i>, <span class="type">Qt3DCore::QNode</span> *<i>parent</i> = Q_NULLPTR)</h3>
+<p>Default constructs an instance of QParameterMapping.</p><!-- @@@QParameterMapping -->
+<!-- $$$QParameterMapping$$$QParameterMappingQParameterMappingPrivate&Qt3DCore::QNode* -->
+<h3 class="fn" id="QParameterMapping-2"><a name="QParameterMapping-2"></a><code>[protected] </code>QParameterMapping::<span class="name">QParameterMapping</span>(<span class="type">QParameterMappingPrivate</span> &amp;<i>dd</i>, <span class="type">Qt3DCore::QNode</span> *<i>parent</i> = Q_NULLPTR)</h3>
+<p>Copy constructor.</p><!-- @@@QParameterMapping -->
+<!-- $$$~QParameterMapping[overload1]$$$~QParameterMapping -->
+<h3 class="fn" id="dtor.QParameterMapping"><a name="dtor.QParameterMapping"></a>QParameterMapping::<span class="name">~QParameterMapping</span>()</h3>
+<p>Destroys the instance of QParameterMapping.</p><!-- @@@~QParameterMapping -->
+<!-- $$$copy[overload1]$$$copyconstQt3DCore::QNode* -->
+<h3 class="fn" id="copy"><a name="copy"></a><code>[protected] </code><span class="type">void</span> QParameterMapping::<span class="name">copy</span>(const <span class="type">Qt3DCore::QNode</span> *<i>ref</i>)</h3>
+<p>Copies the <i>ref</i> instance into this one.</p>
+<!-- @@@copy -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2016 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

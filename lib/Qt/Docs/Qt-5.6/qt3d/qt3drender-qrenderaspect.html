@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>QRenderAspect Class | Qt 3D 5.6</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    window.onload = function(){document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");};
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="../qtdoc/supported-platforms-and-configurations.html#qt-5-6">Qt 5.6</a></td><td ><a href="qt3d-index.html">Qt 3D</a></td><td ><a href="qt3d-cpp.html">C++ Classes</a></td><td >QRenderAspect</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Qt 5.6.1 Reference Documentation</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#reimplemented-public-functions">Reimplemented Public Functions</a></li>
+<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
+<li class="level1"><a href="#reimplemented-protected-functions">Reimplemented Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QRenderAspect Class</h1>
+<span class="small-subtitle">(<a href="qt3drender-qrenderaspect.html">Qt3DRender::QRenderAspect</a>)<br/></span>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="qt3dcore-qabstractaspect.html">Qt3DCore::QAbstractAspect</a></td></tr></table></div><ul>
+<li><a href="qt3drender-qrenderaspect-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrenderaspect.html#RenderType-enum">RenderType</a></b> { Synchronous, Threaded }</td></tr>
+</table></div>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrenderaspect.html#QRenderAspect">QRenderAspect</a></b>(QObject *<i>parent</i> = Q_NULLPTR)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrenderaspect.html#QRenderAspect-1">QRenderAspect</a></b>(RenderType <i>type</i>, QObject *<i>parent</i> = Q_NULLPTR)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrenderaspect.html#renderInitialize">renderInitialize</a></b>(QOpenGLContext *<i>context</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrenderaspect.html#renderShutdown">renderShutdown</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrenderaspect.html#renderSynchronous">renderSynchronous</a></b>()</td></tr>
+</table></div>
+<a name="reimplemented-public-functions"></a>
+<h2 id="reimplemented-public-functions">Reimplemented Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QVector&lt;Qt3DCore::QAspectJobPtr&gt; </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrenderaspect.html#jobsToExecute">jobsToExecute</a></b>(qint64 <i>time</i>)</td></tr>
+</table></div>
+<ul>
+<li class="fn">31 public functions inherited from <a href="../qtcore/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h2 id="protected-functions">Protected Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrenderaspect.html#QRenderAspect-2">QRenderAspect</a></b>(QRenderAspectPrivate &amp;<i>dd</i>, QObject *<i>parent</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVector&lt;Qt3DCore::QAspectJobPtr&gt; </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrenderaspect.html#createGeometryRendererJobs">createGeometryRendererJobs</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVector&lt;Qt3DCore::QAspectJobPtr&gt; </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrenderaspect.html#createRenderBufferJobs">createRenderBufferJobs</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrenderaspect.html#onRootEntityChanged">onRootEntityChanged</a></b>(Qt3DCore::QEntity *<i>rootObject</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrenderaspect.html#registerBackendTypes">registerBackendTypes</a></b>()</td></tr>
+</table></div>
+<a name="reimplemented-protected-functions"></a>
+<h2 id="reimplemented-protected-functions">Reimplemented Protected Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrenderaspect.html#onCleanup">onCleanup</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrenderaspect.html#onInitialize">onInitialize</a></b>(const QVariantMap &amp;<i>data</i>)</td></tr>
+</table></div>
+<ul>
+<li class="fn">2 protected functions inherited from <a href="qt3dcore-qabstractaspect.html#protected-functions">Qt3DCore::QAbstractAspect</a></li>
+<li class="fn">9 protected functions inherited from <a href="../qtcore/qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 property inherited from <a href="../qtcore/qobject.html#properties">QObject</a></li>
+<li class="fn">1 public slot inherited from <a href="../qtcore/qobject.html#public-slots">QObject</a></li>
+<li class="fn">2 signals inherited from <a href="../qtcore/qobject.html#signals">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="../qtcore/qobject.html#public-variables">QObject</a></li>
+<li class="fn">10 static public members inherited from <a href="../qtcore/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="../qtcore/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$RenderType$$$Synchronous$$$Threaded -->
+<h3 class="fn" id="RenderType-enum"><a name="RenderType-enum"></a>enum QRenderAspect::<span class="name">RenderType</span></h3>
+<!-- @@@RenderType -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QRenderAspect[overload1]$$$QRenderAspectQObject* -->
+<h3 class="fn" id="QRenderAspect"><a name="QRenderAspect"></a>QRenderAspect::<span class="name">QRenderAspect</span>(<span class="type"><a href="../qtcore/qobject.html#QObject">QObject</a></span> *<i>parent</i> = Q_NULLPTR)</h3>
+<p>Default constructs an instance of QRenderAspect.</p><!-- @@@QRenderAspect -->
+<!-- $$$QRenderAspect$$$QRenderAspectRenderTypeQObject* -->
+<h3 class="fn" id="QRenderAspect-1"><a name="QRenderAspect-1"></a>QRenderAspect::<span class="name">QRenderAspect</span>(<span class="type"><a href="qt3drender-qrenderaspect.html#RenderType-enum">RenderType</a></span> <i>type</i>, <span class="type"><a href="../qtcore/qobject.html#QObject">QObject</a></span> *<i>parent</i> = Q_NULLPTR)</h3>
+<p>Default constructs an instance of QRenderAspect.</p><!-- @@@QRenderAspect -->
+<!-- $$$QRenderAspect$$$QRenderAspectQRenderAspectPrivate&QObject* -->
+<h3 class="fn" id="QRenderAspect-2"><a name="QRenderAspect-2"></a><code>[protected] </code>QRenderAspect::<span class="name">QRenderAspect</span>(<span class="type">QRenderAspectPrivate</span> &amp;<i>dd</i>, <span class="type"><a href="../qtcore/qobject.html#QObject">QObject</a></span> *<i>parent</i>)</h3>
+<p>Copy constructor.</p><!-- @@@QRenderAspect -->
+<!-- $$$createGeometryRendererJobs[overload1]$$$createGeometryRendererJobs -->
+<h3 class="fn" id="createGeometryRendererJobs"><a name="createGeometryRendererJobs"></a><code>[protected] </code><span class="type"><a href="../qtcore/qvector.html">QVector</a></span>&lt;<span class="type">Qt3DCore::QAspectJobPtr</span>&gt; QRenderAspect::<span class="name">createGeometryRendererJobs</span>()</h3>
+<!-- @@@createGeometryRendererJobs -->
+<!-- $$$createRenderBufferJobs[overload1]$$$createRenderBufferJobs -->
+<h3 class="fn" id="createRenderBufferJobs"><a name="createRenderBufferJobs"></a><code>[protected] </code><span class="type"><a href="../qtcore/qvector.html">QVector</a></span>&lt;<span class="type">Qt3DCore::QAspectJobPtr</span>&gt; QRenderAspect::<span class="name">createRenderBufferJobs</span>()</h3>
+<!-- @@@createRenderBufferJobs -->
+<!-- $$$jobsToExecute[overload1]$$$jobsToExecuteqint64 -->
+<h3 class="fn" id="jobsToExecute"><a name="jobsToExecute"></a><code>[virtual] </code><span class="type"><a href="../qtcore/qvector.html">QVector</a></span>&lt;<span class="type">Qt3DCore::QAspectJobPtr</span>&gt; QRenderAspect::<span class="name">jobsToExecute</span>(<span class="type"><a href="../qtcore/qtglobal.html#qint64-typedef">qint64</a></span> <i>time</i>)</h3>
+<!-- @@@jobsToExecute -->
+<!-- $$$onCleanup[overload1]$$$onCleanup -->
+<h3 class="fn" id="onCleanup"><a name="onCleanup"></a><code>[virtual protected] </code><span class="type">void</span> QRenderAspect::<span class="name">onCleanup</span>()</h3>
+<!-- @@@onCleanup -->
+<!-- $$$onInitialize[overload1]$$$onInitializeconstQVariantMap& -->
+<h3 class="fn" id="onInitialize"><a name="onInitialize"></a><code>[virtual protected] </code><span class="type">void</span> QRenderAspect::<span class="name">onInitialize</span>(const <span class="type"><a href="../qtcore/qvariant.html#QVariantMap-typedef">QVariantMap</a></span> &amp;<i>data</i>)</h3>
+<!-- @@@onInitialize -->
+<!-- $$$onRootEntityChanged[overload1]$$$onRootEntityChangedQt3DCore::QEntity* -->
+<h3 class="fn" id="onRootEntityChanged"><a name="onRootEntityChanged"></a><code>[protected] </code><span class="type">void</span> QRenderAspect::<span class="name">onRootEntityChanged</span>(<span class="type">Qt3DCore::QEntity</span> *<i>rootObject</i>)</h3>
+<!-- @@@onRootEntityChanged -->
+<!-- $$$registerBackendTypes[overload1]$$$registerBackendTypes -->
+<h3 class="fn" id="registerBackendTypes"><a name="registerBackendTypes"></a><code>[protected] </code><span class="type">void</span> QRenderAspect::<span class="name">registerBackendTypes</span>()</h3>
+<!-- @@@registerBackendTypes -->
+<!-- $$$renderInitialize[overload1]$$$renderInitializeQOpenGLContext* -->
+<h3 class="fn" id="renderInitialize"><a name="renderInitialize"></a><span class="type">void</span> QRenderAspect::<span class="name">renderInitialize</span>(<span class="type"><a href="../qtgui/qopenglcontext.html">QOpenGLContext</a></span> *<i>context</i>)</h3>
+<!-- @@@renderInitialize -->
+<!-- $$$renderShutdown[overload1]$$$renderShutdown -->
+<h3 class="fn" id="renderShutdown"><a name="renderShutdown"></a><span class="type">void</span> QRenderAspect::<span class="name">renderShutdown</span>()</h3>
+<!-- @@@renderShutdown -->
+<!-- $$$renderSynchronous[overload1]$$$renderSynchronous -->
+<h3 class="fn" id="renderSynchronous"><a name="renderSynchronous"></a><span class="type">void</span> QRenderAspect::<span class="name">renderSynchronous</span>()</h3>
+<!-- @@@renderSynchronous -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2016 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

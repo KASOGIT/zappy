@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tagfile>
+    <compound kind="class">
+        <name>Qt.labs.calendar.Calendar</name>
+        <filename>qml-qt-labs-calendar-calendar.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.calendar.CalendarModel</name>
+        <filename>qml-qt-labs-calendar-calendarmodel.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.calendar.DayOfWeekRow</name>
+        <filename>qml-qt-labs-calendar-dayofweekrow.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.calendar.MonthGrid</name>
+        <filename>qml-qt-labs-calendar-monthgrid.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.calendar.WeekNumberColumn</name>
+        <filename>qml-qt-labs-calendar-weeknumbercolumn.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.AbstractButton</name>
+        <filename>qml-qt-labs-controls-abstractbutton.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.ApplicationWindow</name>
+        <filename>qml-qt-labs-controls-applicationwindow.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.BusyIndicator</name>
+        <filename>qml-qt-labs-controls-busyindicator.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.Button</name>
+        <filename>qml-qt-labs-controls-button.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.ButtonGroup</name>
+        <filename>qml-qt-labs-controls-buttongroup.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.CheckBox</name>
+        <filename>qml-qt-labs-controls-checkbox.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.ComboBox</name>
+        <filename>qml-qt-labs-controls-combobox.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.Container</name>
+        <filename>qml-qt-labs-controls-container.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.Control</name>
+        <filename>qml-qt-labs-controls-control.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.Dial</name>
+        <filename>qml-qt-labs-controls-dial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.Drawer</name>
+        <filename>qml-qt-labs-controls-drawer.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.Frame</name>
+        <filename>qml-qt-labs-controls-frame.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.GroupBox</name>
+        <filename>qml-qt-labs-controls-groupbox.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.ItemDelegate</name>
+        <filename>qml-qt-labs-controls-itemdelegate.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.Label</name>
+        <filename>qml-qt-labs-controls-label.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.Menu</name>
+        <filename>qml-qt-labs-controls-menu.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.MenuItem</name>
+        <filename>qml-qt-labs-controls-menuitem.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.Page</name>
+        <filename>qml-qt-labs-controls-page.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.PageIndicator</name>
+        <filename>qml-qt-labs-controls-pageindicator.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.Pane</name>
+        <filename>qml-qt-labs-controls-pane.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.Popup</name>
+        <filename>qml-qt-labs-controls-popup.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.ProgressBar</name>
+        <filename>qml-qt-labs-controls-progressbar.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.RadioButton</name>
+        <filename>qml-qt-labs-controls-radiobutton.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.RangeSlider</name>
+        <filename>qml-qt-labs-controls-rangeslider.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.ScrollBar</name>
+        <filename>qml-qt-labs-controls-scrollbar.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.ScrollIndicator</name>
+        <filename>qml-qt-labs-controls-scrollindicator.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.Slider</name>
+        <filename>qml-qt-labs-controls-slider.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.SpinBox</name>
+        <filename>qml-qt-labs-controls-spinbox.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.StackView</name>
+        <filename>qml-qt-labs-controls-stackview.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.SwipeView</name>
+        <filename>qml-qt-labs-controls-swipeview.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.Switch</name>
+        <filename>qml-qt-labs-controls-switch.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.TabBar</name>
+        <filename>qml-qt-labs-controls-tabbar.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.TabButton</name>
+        <filename>qml-qt-labs-controls-tabbutton.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.TextArea</name>
+        <filename>qml-qt-labs-controls-textarea.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.TextField</name>
+        <filename>qml-qt-labs-controls-textfield.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.ToolBar</name>
+        <filename>qml-qt-labs-controls-toolbar.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.ToolButton</name>
+        <filename>qml-qt-labs-controls-toolbutton.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>Qt.labs.controls.Tumbler</name>
+        <filename>qml-qt-labs-controls-tumbler.html</filename>
+    </compound>
+</tagfile>

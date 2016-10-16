@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qframegraphselector.cpp -->
+  <title>QFrameGraphSelector Class | Qt 3D 5.6</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    window.onload = function(){document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");};
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="../qtdoc/supported-platforms-and-configurations.html#qt-5-6">Qt 5.6</a></td><td ><a href="qt3d-index.html">Qt 3D</a></td><td ><a href="qt3d-cpp.html">C++ Classes</a></td><td >QFrameGraphSelector</td></tr></table><table class="buildversion"><tr>
+<td id="buildversion" width="100%" align="right">Qt 5.6.1 Reference Documentation</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QFrameGraphSelector Class</h1>
+<span class="small-subtitle">(<a href="qt3drender-qframegraphselector.html">Qt3DRender::QFrameGraphSelector</a>)<br/></span>
+<!-- $$$QFrameGraphSelector-brief -->
+<p><a href="qt3drender-qframegraphselector.html">Qt3DRender::QFrameGraphSelector</a> provide a way to select a one or more subtree of the <a href="qml-qt3d-render-framegraph.html">FrameGraph</a> at runtime <a href="#details">More...</a></p>
+<!-- @@@QFrameGraphSelector -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;QFrameGraphSelector&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += 3drender</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="qt3drender-qframegraphnode.html">QFrameGraphNode</a></td></tr></table></div><ul>
+<li><a href="qt3drender-qframegraphselector-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qframegraphselector.html#QFrameGraphSelector">QFrameGraphSelector</a></b>(Qt3DCore::QNode *<i>parent</i> = Q_NULLPTR)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qframegraphselector.html#dtor.QFrameGraphSelector">~QFrameGraphSelector</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QFrameGraphSelectorFunctorPtr </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qframegraphselector.html#selectionFunctor">selectionFunctor</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qframegraphselector.html#setSelectionFunctor">setSelectionFunctor</a></b>(QFrameGraphSelectorFunctorPtr <i>functor</i>)</td></tr>
+</table></div>
+<ul>
+<li class="fn">2 public functions inherited from <a href="qt3drender-qframegraphnode.html#public-functions">Qt3DRender::QFrameGraphNode</a></li>
+<li class="fn">6 public functions inherited from <a href="qt3dcore-qnode.html#public-functions">Qt3DCore::QNode</a></li>
+<li class="fn">31 public functions inherited from <a href="../qtcore/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h2 id="protected-functions">Protected Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qframegraphselector.html#copy">copy</a></b>(const Qt3DCore::QNode *<i>ref</i>)</td></tr>
+</table></div>
+<ul>
+<li class="fn">3 protected functions inherited from <a href="qt3dcore-qnode.html#protected-functions">Qt3DCore::QNode</a></li>
+<li class="fn">9 protected functions inherited from <a href="../qtcore/qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 property inherited from <a href="qt3drender-qframegraphnode.html#properties">Qt3DRender::QFrameGraphNode</a></li>
+<li class="fn">2 properties inherited from <a href="qt3dcore-qnode.html#properties">Qt3DCore::QNode</a></li>
+<li class="fn">1 property inherited from <a href="../qtcore/qobject.html#properties">QObject</a></li>
+<li class="fn">1 public slot inherited from <a href="qt3drender-qframegraphnode.html#public-slots">Qt3DRender::QFrameGraphNode</a></li>
+<li class="fn">2 public slots inherited from <a href="qt3dcore-qnode.html#public-slots">Qt3DCore::QNode</a></li>
+<li class="fn">1 public slot inherited from <a href="../qtcore/qobject.html#public-slots">QObject</a></li>
+<li class="fn">1 signal inherited from <a href="qt3drender-qframegraphnode.html#signals">Qt3DRender::QFrameGraphNode</a></li>
+<li class="fn">2 signals inherited from <a href="qt3dcore-qnode.html#signals">Qt3DCore::QNode</a></li>
+<li class="fn">2 signals inherited from <a href="../qtcore/qobject.html#signals">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="../qtcore/qobject.html#public-variables">QObject</a></li>
+<li class="fn">10 static public members inherited from <a href="../qtcore/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="../qtcore/qobject.html#protected-variables">QObject</a></li>
+<li class="fn">1 static protected member inherited from <a href="qt3dcore-qnode.html#static-protected-members">Qt3DCore::QNode</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QFrameGraphSelector-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p><a href="qt3drender-qframegraphselector.html">Qt3DRender::QFrameGraphSelector</a> provide a way to select a one or more subtree of the <a href="qml-qt3d-render-framegraph.html">FrameGraph</a> at runtime</p>
+<p>The selection is made by executing <a href="qt3drender-qframegraphselectorfunctor.html">Qt3DRender::QFrameGraphSelectorFunctor</a> that will return a vector containing the indices of the <a href="qt3drender-qframegraph.html">FrameGraph</a> subtree to be used for the current frame.</p>
+</div>
+<!-- @@@QFrameGraphSelector -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QFrameGraphSelector[overload1]$$$QFrameGraphSelectorQt3DCore::QNode* -->
+<h3 class="fn" id="QFrameGraphSelector"><a name="QFrameGraphSelector"></a>QFrameGraphSelector::<span class="name">QFrameGraphSelector</span>(<span class="type">Qt3DCore::QNode</span> *<i>parent</i> = Q_NULLPTR)</h3>
+<p>Default constructs an instance of QFrameGraphSelector.</p><!-- @@@QFrameGraphSelector -->
+<!-- $$$~QFrameGraphSelector[overload1]$$$~QFrameGraphSelector -->
+<h3 class="fn" id="dtor.QFrameGraphSelector"><a name="dtor.QFrameGraphSelector"></a>QFrameGraphSelector::<span class="name">~QFrameGraphSelector</span>()</h3>
+<p>Destroys the instance of QFrameGraphSelector.</p><!-- @@@~QFrameGraphSelector -->
+<!-- $$$copy[overload1]$$$copyconstQt3DCore::QNode* -->
+<h3 class="fn" id="copy"><a name="copy"></a><code>[protected] </code><span class="type">void</span> QFrameGraphSelector::<span class="name">copy</span>(const <span class="type">Qt3DCore::QNode</span> *<i>ref</i>)</h3>
+<!-- @@@copy -->
+<!-- $$$selectionFunctor[overload1]$$$selectionFunctor -->
+<h3 class="fn" id="selectionFunctor"><a name="selectionFunctor"></a><span class="type"><a href="qt3drender.html#QFrameGraphSelectorFunctorPtr-typedef">QFrameGraphSelectorFunctorPtr</a></span> QFrameGraphSelector::<span class="name">selectionFunctor</span>() const</h3>
+<p>Returns the functor to be used for selecting <a href="qml-qt3d-render-framegraph.html">FrameGraph</a> subtrees.</p>
+<p><b>See also </b><a href="qt3drender-qframegraphselector.html#setSelectionFunctor">setSelectionFunctor</a>().</p>
+<!-- @@@selectionFunctor -->
+<!-- $$$setSelectionFunctor[overload1]$$$setSelectionFunctorQFrameGraphSelectorFunctorPtr -->
+<h3 class="fn" id="setSelectionFunctor"><a name="setSelectionFunctor"></a><span class="type">void</span> QFrameGraphSelector::<span class="name">setSelectionFunctor</span>(<span class="type"><a href="qt3drender.html#QFrameGraphSelectorFunctorPtr-typedef">QFrameGraphSelectorFunctorPtr</a></span> <i>functor</i>)</h3>
+<p>Sets the functor <i>functor</i> to be used for selecting <a href="qt3drender-qframegraph.html">FrameGraph</a> subtrees at runtime.</p>
+<p><b>See also </b><a href="qt3drender-qframegraphselector.html#selectionFunctor">selectionFunctor</a>().</p>
+<!-- @@@setSelectionFunctor -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2016 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>
